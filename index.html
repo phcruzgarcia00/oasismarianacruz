@@ -56,7 +56,7 @@
 
     /* ===== HEADER ===== */
     .main-header {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -411,7 +411,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(139, 123, 109, 0.85); /* #2B3423 com opacidade */
+      background-color: rgba(139, 123, 109, 0.85);
       color: #F4F0E5;
       display: flex;
       align-items: center;
@@ -543,7 +543,7 @@
     <div class="header-container">
       <div class="header-title">
         <span class="header-name">Dra. Mariana Cruz</span>
-        <span class="header-subtitle"></span>
+        <span class="header-subtitle">Estética íntima</span>
       </div>
       <nav class="main-nav">
         <ul class="nav-list">
@@ -857,9 +857,25 @@
       navList.classList.toggle('active');
     });
 
-    document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        document.querySelector('.nav-list').classList.remove('active');
+    // Rolagem suave para todos os links com âncora
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          // Fecha menu mobile
+          document.querySelector('.nav-list')?.classList.remove('active');
+
+          // Rolagem suave com offset para header fixo
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
       });
     });
 
@@ -870,14 +886,12 @@
       const isRevealed = container.getAttribute('data-revealed') === 'true';
 
       if (isRevealed) {
-        // Esconder novamente
         img.style.filter = 'blur(8px)';
         overlay.style.opacity = '1';
         overlay.style.pointerEvents = 'auto';
         container.style.cursor = 'pointer';
         container.setAttribute('data-revealed', 'false');
       } else {
-        // Revelar
         img.style.filter = 'blur(0)';
         overlay.style.opacity = '0';
         overlay.style.pointerEvents = 'none';
@@ -907,7 +921,7 @@
       mensagem += `*Expectativa de investimento:* ${investimento}%0A%0A`;
       mensagem += `Gostaria de agendar uma consulta.`;
 
-      const numero = '5517997760646'; // número internacional sem + ou espaços
+      const numero = '5517997760646';
       const url = `https://wa.me/${numero}?text=${mensagem}`;
 
       window.open(url, '_blank');
