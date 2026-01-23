@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dra. Mariana Cruz | Estética Íntima Não Cirúrgica</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      line-height: 1.6;
+      color: #000000;
+      background-color: #F4F0E5;
+      padding-top: 80px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Times New Roman", serif;
+      font-weight: normal;
+      color: #000000;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    section {
+      padding: 3rem 0;
+      background-color: #F4F0E5;
+    }
+
+    .text-center { text-align: center; }
+    .mb-3 { margin-bottom: 2rem; }
+
+    /* Linha divisória entre seções */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #A9725B;
+      margin: 2rem auto;
+      border: none;
+    }
+
+    /* ===== HEADER ===== */
+    .main-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #F4F0E5;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      border-bottom: 1px solid #A9725B;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 60px;
+    }
+
+    .header-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .header-name {
+      font-size: 1.35rem;
+      color: #000000;
+      font-weight: bold;
+    }
+
+    .header-subtitle {
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 0.9rem;
+      color: #000000;
+    }
+
+    .main-nav .nav-list {
+      display: flex;
+      list-style: none;
+      gap: 1.2rem;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #000000;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      color: #A9725B;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: #2B3423;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: linear-gradient(135deg, #F4F0E5 0%, #EDE6D9 100%);
+      padding: 4rem 0;
+      border-bottom: 1px solid #A9725B;
+    }
+
+    .hero-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+    }
+
+    .hero-content {
+      flex: 1;
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .highlight {
+      color: #A9725B;
+      font-weight: bold;
+    }
+
+    .hero p.subheadline {
+      font-size: 1.1rem;
+      color: #818A77;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      background-color: #A9725B;
+      color: #F4F0E5;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      border: 2px solid #A9725B;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: transparent;
+      color: #A9725B;
+      transform: translateY(-2px);
+    }
+
+    .hero-image {
+      flex: 0 0 auto;
+    }
+
+    .hero-profile-photo {
+      width: 300px;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(43, 52, 35, 0.15);
+      border: 3px solid #B5A083;
+    }
+
+    /* ===== SEÇÕES ===== */
+    .section-title {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title:after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: #A9725B;
+      margin: 0.5rem auto;
+      border-radius: 2px;
+    }
+
+    ul.checklist {
+      list-style: none;
+      padding-left: 1rem;
+    }
+
+    ul.checklist li::before {
+      content: "• ";
+      color: #A9725B;
+      font-weight: bold;
+      font-size: 1.4rem;
+    }
+
+    blockquote {
+      font-style: italic;
+      padding: 1.5rem;
+      background: #F4F0E5;
+      border-left: 4px solid #A9725B;
+      margin: 1.5rem 0;
+      border-radius: 0 8px 8px 0;
+      color: #2B3423;
+    }
+
+    .faq-item {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background: #F4F0E5;
+      border-radius: 8px;
+      border-left: 3px solid #A9725B;
+    }
+
+    .faq-question {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .clinic-photos {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .clinic-photos img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #B5A083;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #818A77;
+      border-radius: 6px;
+      font-family: 'Source Sans 3', sans-serif;
+      background: #F4F0E5;
+      color: #2B3423;
+    }
+
+    .submit-btn {
+      background-color: #A9725B;
+      color: #F4F0E5;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #8a5e4a;
+      transform: translateY(-2px);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #A9725B;
+      color: #F4F0E5;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 28px;
+      box-shadow: 0 4px 12px rgba(43, 52, 35, 0.25);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float a {
+      color: #F4F0E5;
+      text-decoration: none;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ===== Antes x Depois Cards ===== */
+    .before-after-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    .before-after-card {
+      background: #F4F0E5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      max-width: 280px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #E6E0D4;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .before-after-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .before-after-card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #2B3423;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .before-after-card h4::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 2px;
+      background: #A9725B;
+      margin: 0.4rem auto 0;
+      border-radius: 1px;
+    }
+
+    .image-pair {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    /* Proteção de imagens sensíveis */
+    .protected-image {
+      position: relative;
+      cursor: pointer;
+      width: 135px;
+      height: 135px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid #A9725B;
+    }
+
+    .protected-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(8px);
+      transition: filter 0.3s ease;
+    }
+
+    .protected-image .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(139, 123, 109, 0.85); /* #2B3423 com opacidade */
+      color: #F4F0E5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 0.25rem;
+      box-sizing: border-box;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background-color: #F4F0E5;
+      padding: 2.5rem 0 1.5rem;
+      color: #A9725B;
+      font-family: 'Source Sans 3', sans-serif;
+      border-top: 1px solid #A9725B;
+    }
+
+    .footer-link {
+      color: #2B3423;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-link:hover {
+      color: #A9725B;
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 90px;
+      }
+
+      .header-container {
+        height: auto;
+        padding: 1rem;
+      }
+
+      .header-title {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .main-nav .nav-list {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #F4F0E5;
+        flex-direction: column;
+        gap: 0;
+        box-shadow: 0 4px 10px rgba(43, 52, 35, 0.1);
+        padding: 1rem 0;
+        border-top: 1px solid #A9725B;
+      }
+
+      .main-nav .nav-list.active {
+        display: flex;
+      }
+
+      .nav-link {
+        padding: 0.8rem 2rem;
+        display: block;
+        color: #2B3423;
+      }
+
+      .nav-link:hover {
+        color: #A9725B;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 1.8rem;
+        padding: 2rem 5%;
+      }
+
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .hero-profile-photo {
+        width: 180px;
+        height: 180px;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .clinic-photos img {
+        width: 180px;
+        height: 135px;
+      }
+
+      .before-after-card {
+        max-width: 260px;
+      }
+
+      .before-after-card img,
+      .protected-image {
+        width: 120px;
+        height: 120px;
+      }
+
+      .site-footer .container > div {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="header-title">
+        <span class="header-name">Dra. Mariana Cruz</span>
+        <span class="header-subtitle"></span>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="#oque-faco" class="nav-link">O que eu faço</a></li>
+          <li><a href="#antes-depois" class="nav-link">Antes x Depois</a></li>
+          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
+          <li><a href="#sobre-mim" class="nav-link">Sobre mim</a></li>
+          <li><a href="#processo" class="nav-link">Processo de atendimento</a></li>
+          <li><a href="#faq" class="nav-link">Principais dúvidas</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="menuToggle">☰</div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1>Estética íntima de alta performance, sem cirurgia, com naturalidade, conforto e resultados reais.<br>
+          <span class="highlight">Pioneira e ÚNICA em Ninfoplastia não cirúrgica em Rio Preto e região.</span>
+        </h1>
+        <p class="subheadline">Protocolos exclusivos para mulheres que buscam mais conforto, autoestima e confiança — com atendimento especializado e individualizado.</p>
+        <a href="https://wa.me/5517997760646" class="btn-whatsapp" target="_blank">Agendar consulta agora pelo WhatsApp</a>
+      </div>
+      <div class="hero-image">
+        <img src="WhatsApp Image 2026-01-22 at 17.29.40.jpeg" alt="Dra. Mariana Cruz" class="hero-profile-photo">
+      </div>
+    </div>
+  </section>
+
+  <!-- O que eu faço -->
+  <section id="oque-faco">
+    <div class="container">
+      <h2 class="section-title">O que eu faço</h2>
+      <p>Atuo exclusivamente com estética íntima feminina, oferecendo tratamentos não cirúrgicos para:</p>
+      <ul class="checklist mb-3">
+        <li>Flacidez íntima (interna e externa)</li>
+        <li>Alterações estéticas da região íntima</li>
+        <li>Rejuvenescimento e melhora da qualidade tecidual</li>
+        <li>Autoestima e bem-estar feminino</li>
+      </ul>
+      <p>Sempre com avaliação individual e indicação responsável.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Antes x Depois -->
+  <section id="antes-depois">
+    <div class="container">
+      <h2 class="section-title">Antes x Depois</h2>
+      <p class="text-center mb-3">Resultados reais, naturais e progressivos, respeitando a anatomia e a individualidade de cada mulher.<br>
+        <em>(Sempre apresentados com ética, autorização e discrição.)</em>
+      </p>
+
+      <!-- Linha 1: 3 Ninfoplastias -->
+      <div class="before-after-grid">
+        <div class="before-after-card">
+          <h4>Ninfoplastia – Caso 1</h4>
+          <div class="image-pair">
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="p1.PNG" alt="Ninfoplastia Antes 1">
+              <div class="overlay">Clique para ver</div>
+            </div>
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="p2.PNG" alt="Ninfoplastia Depois 1">
+              <div class="overlay">Clique para ver</div>
+            </div>
+          </div>
+        </div>
+        <div class="before-after-card">
+          <h4>Ninfoplastia – Caso 2</h4>
+          <div class="image-pair">
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="q1.PNG" alt="Ninfoplastia Antes 2">
+              <div class="overlay">Clique para ver</div>
+            </div>
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="q2.PNG" alt="Ninfoplastia Depois 2">
+              <div class="overlay">Clique para ver</div>
+            </div>
+          </div>
+        </div>
+        <div class="before-after-card">
+          <h4>Ninfoplastia – Caso 3</h4>
+          <div class="image-pair">
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="w1.PNG" alt="Ninfoplastia Antes 3">
+              <div class="overlay">Clique para ver</div>
+            </div>
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="w2.PNG" alt="Ninfoplastia Depois 3">
+              <div class="overlay">Clique para ver</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linha 2: Clareamento e Bioestimulador -->
+      <div class="before-after-grid second-row">
+        <div class="before-after-card">
+          <h4>Clareamento Íntimo</h4>
+          <div class="image-pair">
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="https://via.placeholder.com/135x135?text=Antes+C" alt="Clareamento Antes">
+              <div class="overlay">Clique para ver</div>
+            </div>
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="https://via.placeholder.com/135x135?text=Depois+C" alt="Clareamento Depois">
+              <div class="overlay">Clique para ver</div>
+            </div>
+          </div>
+        </div>
+        <div class="before-after-card">
+          <h4>Bioestimulador</h4>
+          <div class="image-pair">
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="https://via.placeholder.com/135x135?text=Antes+B" alt="Bioestimulador Antes">
+              <div class="overlay">Clique para ver</div>
+            </div>
+            <div class="protected-image" onclick="revealImage(this)">
+              <img src="https://via.placeholder.com/135x135?text=Depois+B" alt="Bioestimulador Depois">
+              <div class="overlay">Clique para ver</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Depoimentos -->
+  <section id="depoimentos">
+    <div class="container">
+      <h2 class="section-title">Depoimentos</h2>
+      <blockquote>“Retomei minha confiança e me sinto segura com meu corpo novamente. O acolhimento da Dra. Mariana fez toda a diferença.”</blockquote>
+      <blockquote>“Resultado natural, sem dor, sem cirurgia. Me senti respeitada do início ao fim.”</blockquote>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Sobre mim -->
+  <section id="sobre-mim">
+    <div class="container">
+      <h2 class="section-title">Sobre mim – Dra. Mariana Cruz</h2>
+      <p>Sou especialista em estética íntima feminina, com atuação focada em tratamentos não cirúrgicos e protocolos personalizados.<br>
+      Referência no Brasil, busco unir ciência, técnica e sensibilidade para oferecer um atendimento ético, humano e de alto padrão.<br>
+      Pioneira e única em Rio Preto e região com a técnica de ninfoplastia não cirúrgica.</p>
+      <p class="mb-0">Meu compromisso é cuidar da intimidade feminina com respeito, segurança e excelência.</p>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Processo de atendimento -->
+  <section id="processo">
+    <div class="container">
+      <h2 class="section-title">Processo de atendimento</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+        <div style="flex: 1; min-width: 250px; text-align: center;">
+          <h3>🔍 Consulta</h3>
+          <p>Consulta especializada em estética íntima, com avaliação detalhada, escuta ativa e definição do protocolo ideal para cada paciente.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px; text-align: center;">
+          <h3>🧾 Planejamento</h3>
+          <p>Indicação personalizada, explicação clara do tratamento, expectativas reais e investimento.</p>
+        </div>
+        <div style="flex: 1; min-width: 250px; text-align: center;">
+          <h3>💎 Procedimento</h3>
+          <p>Realizado em ambiente seguro, confortável, com tecnologia de ponta e acompanhamento próximo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <h2 class="section-title">Principais dúvidas</h2>
+      <div class="faq-item">
+        <p class="faq-question">O procedimento é cirúrgico?</p>
+        <p>Não. É 100% não cirúrgico, sem cortes, sem anestesia geral e sem tempo de recuperação prolongado.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-question">Dói ou precisa de afastamento?</p>
+        <p>O desconforto é mínimo. A maioria das pacientes retoma suas atividades no mesmo dia.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-question">Em quanto tempo vejo resultados?</p>
+        <p>Resultados iniciais aparecem após a primeira sessão, com evolução nas semanas seguintes.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-question">Sessão única?</p>
+        <p>Depende do caso. Alguns protocolos exigem 1 a 3 sessões para resultado ideal.</p>
+      </div>
+      <div class="faq-item">
+        <p class="faq-question">Quem pode ou não realizar o tratamento?</p>
+        <p>Avaliamos individualmente. Contraindicações incluem gestação, infecções ativas ou condições dermatológicas específicas.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Localização & Estrutura -->
+  <section id="localizacao">
+    <div class="container text-center">
+      <h2 class="section-title">Localização & Estrutura</h2>
+      <p>📍 Clínica localizada no Navarro Building, sala 324, em ambiente moderno, discreto e acolhedor.<br>
+      Estrutura pensada para conforto, privacidade e segurança em cada etapa do atendimento.</p>
+      <div class="clinic-photos">
+        <img src="recepção.jpeg" alt="Recepção">
+        <img src="sala de pro.jpeg" alt="Consultório">
+        <img src="dd.jpeg" alt="Sala de Procedimentos">
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Formulário de Interesse -->
+  <section id="formulario">
+    <div class="container">
+      <h2 class="section-title">Formulário de Interesse</h2>
+      <p class="text-center mb-3">Agende sua consulta de forma prática</p>
+      <form id="whatsappForm">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp (com DDD)</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="(17) 99999-9999" required>
+        </div>
+        <div class="form-group">
+          <label for="queixa">Principal queixa</label>
+          <textarea id="queixa" name="queixa" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="investimento">Expectativa de investimento</label>
+          <select id="investimento" name="investimento" required>
+            <option value="">Selecione</option>
+            <option value="até R$ 2.000">Até R$ 2.000</option>
+            <option value="R$ 2.000 – R$ 4.000">R$ 2.000 – R$ 4.000</option>
+            <option value="acima de R$ 4.000">Acima de R$ 4.000</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">Enviar solicitação</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; margin-bottom: 1.5rem;">
+        <!-- Informações de Contato -->
+        <div style="flex: 1; min-width: 250px;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: #2B3423;">Contato</h3>
+          <p style="margin: 0.6rem 0; color: #2B3423;">📞 (17) 99776-0646</p>
+          <p style="margin: 0.6rem 0; color: #2B3423;">✉️ contato@marianacruz.com.br</p>
+          <p style="margin: 0.6rem 0; color: #2B3423;">
+            📍 Navarro Building, Sala 324<br>
+            São José do Rio Preto – SP
+          </p>
+          <div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; justify-content: flex-start;">
+            <a href="https://wa.me/5517997760646" target="_blank" style="color: #F4F0E5; background-color: #A9725B; padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.95rem; display: inline-block; text-align: center;">WhatsApp</a>
+            <a href="https://instagram.com/dra.marianacruz" target="_blank" style="color: #2B3423; background-color: #F4F0E5; padding: 8px 16px; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 0.95rem; border: 1px solid #A9725B; display: inline-block; text-align: center;">Instagram</a>
+          </div>
+        </div>
+
+        <!-- Links Rápidos -->
+        <div style="flex: 1; min-width: 200px;">
+          <h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: #2B3423;">Links Rápidos</h3>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="margin: 0.5rem 0;"><a href="#oque-faco" class="footer-link">O que eu faço</a></li>
+            <li style="margin: 0.5rem 0;"><a href="#antes-depois" class="footer-link">Antes x Depois</a></li>
+            <li style="margin: 0.5rem 0;"><a href="#depoimentos" class="footer-link">Depoimentos</a></li>
+            <li style="margin: 0.5rem 0;"><a href="#sobre-mim" class="footer-link">Sobre mim</a></li>
+            <li style="margin: 0.5rem 0;"><a href="#processo" class="footer-link">Processo de atendimento</a></li>
+            <li style="margin: 0.5rem 0;"><a href="#faq" class="footer-link">Principais dúvidas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Linha divisória -->
+      <hr class="section-divider" style="margin: 1.5rem 0;">
+
+      <!-- Créditos -->
+      <div style="text-align: center; color: #818A77; font-size: 0.95rem;">
+        <p>© 2026 Dra. Mariana Cruz | Estética Íntima Não Cirúrgica</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Flutuante -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5517997760646" target="_blank">💬</a>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Menu mobile
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      const navList = document.querySelector('.nav-list');
+      navList.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-list').classList.remove('active');
+      });
+    });
+
+    // Toggle: revelar ou esconder imagem ao clicar
+    function revealImage(container) {
+      const img = container.querySelector('img');
+      const overlay = container.querySelector('.overlay');
+      const isRevealed = container.getAttribute('data-revealed') === 'true';
+
+      if (isRevealed) {
+        // Esconder novamente
+        img.style.filter = 'blur(8px)';
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = 'auto';
+        container.style.cursor = 'pointer';
+        container.setAttribute('data-revealed', 'false');
+      } else {
+        // Revelar
+        img.style.filter = 'blur(0)';
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        container.style.cursor = 'default';
+        container.setAttribute('data-revealed', 'true');
+      }
+    }
+
+    // Formulário → WhatsApp
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('nome').value.trim();
+      const whatsapp = document.getElementById('whatsapp').value.trim();
+      const queixa = document.getElementById('queixa').value.trim();
+      const investimento = document.getElementById('investimento').value;
+
+      if (!nome || !whatsapp || !queixa || !investimento) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      let mensagem = `Oasis Clinic%0A%0A`;
+      mensagem += `*Nome:* ${nome}%0A`;
+      mensagem += `*WhatsApp:* ${whatsapp}%0A`;
+      mensagem += `*Queixa principal:* ${queixa}%0A`;
+      mensagem += `*Expectativa de investimento:* ${investimento}%0A%0A`;
+      mensagem += `Gostaria de agendar uma consulta.`;
+
+      const numero = '5517997760646'; // número internacional sem + ou espaços
+      const url = `https://wa.me/${numero}?text=${mensagem}`;
+
+      window.open(url, '_blank');
+    });
+  </script>
+
+</body>
+</html>
