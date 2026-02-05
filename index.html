@@ -16,14 +16,18 @@ box-sizing: border-box;
 body {
 font-family: 'Source Sans 3', sans-serif;
 line-height: 1.6;
-color: #000000; /* Preto */
-background-color: #2F402C; /* Verde escuro */
+color: #FFFFFF; /* Branco para contraste no fundo escuro */
+/* ÚNICO FUNDO EM DEGRADÊ - PRETO PARA #2F402C */
+background: linear-gradient(135deg, #000000 0%, #121a13 20%, #1d2820 40%, #253328 60%, #2A3A2D 80%, #2F402C 100%);
+background-attachment: fixed;
 padding-top: 80px;
+min-height: 100vh;
 }
 h1, h2, h3, h4, h5, h6 {
 font-family: "Times New Roman", serif;
 font-weight: normal;
-color: #000000; /* Preto */
+color: #FFFFFF;
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 .container {
 width: 90%;
@@ -33,7 +37,9 @@ padding: 2rem 0;
 }
 section {
 padding: 3rem 0;
-background-color: #2F402C; /* Verde escuro */
+/* SEÇÕES SEM FUNDO - TOTALMENTE TRANSPARENTES */
+background: transparent;
+margin-bottom: 2rem;
 }
 .text-center { text-align: center; }
 .mb-3 { margin-bottom: 2rem; }
@@ -41,8 +47,8 @@ background-color: #2F402C; /* Verde escuro */
 .section-divider {
 width: 100%;
 height: 1px;
-background-color: #000000; /* Prata */
-margin: 2rem auto;
+background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+margin: 2.5rem auto;
 border: none;
 }
 /* ===== HEADER ===== */
@@ -51,10 +57,11 @@ position: absolute;
 top: 0;
 left: 0;
 width: 100%;
-background-color: #2F402C; /* Verde escuro */
-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+/* Header sem fundo - transparente */
+background: transparent;
+box-shadow: none;
 z-index: 1000;
-border-bottom: 1px solid #000000; /* Prata */
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .header-container {
 display: flex;
@@ -72,13 +79,15 @@ gap: 0.2rem;
 }
 .header-name {
 font-size: 1.35rem;
-color: #000000; /* Preto */
+color: #ffffff;
 font-weight: bold;
+text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 .header-subtitle {
 font-family: 'Source Sans 3', sans-serif;
 font-size: 0.9rem;
-color: #000000; /* Preto */
+color: #ffffff;
+font-weight: 600;
 }
 .main-nav .nav-list {
 display: flex;
@@ -90,26 +99,42 @@ line-height: 1;
 }
 .nav-link {
 text-decoration: none;
-color: #000000; /* Preto */
+color: #ffffff;
 font-weight: 600;
 font-size: 0.95rem;
 transition: color 0.3s;
 white-space: nowrap;
+position: relative;
 }
-.nav-link:hover {
-color: #C0C0C0; /* Prata */
+.nav-link:hover, .nav-link.active {
+color: #A9C1A0;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 2px;
+background: #A9C1A0;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
 }
 .menu-toggle {
 display: none;
 font-size: 1.8rem;
 cursor: pointer;
-color: #000000; /* Preto */
+color: #FFFFFF;
 }
 /* ===== HERO SECTION ===== */
 .hero {
-background: linear-gradient(135deg, #2F402C 0%, #3A4F38 100%); /* Gradiente verde escuro */
+/* Hero sem fundo - totalmente transparente */
+background: transparent;
 padding: 4rem 0;
-border-bottom: 1px solid #000000; /* Prata */
+margin-bottom: 2.5rem;
+position: relative;
 }
 .hero-container {
 display: flex;
@@ -119,6 +144,7 @@ gap: 2.5rem;
 max-width: 1200px;
 margin: 0 auto;
 padding: 0 5%;
+position: relative;
 }
 .hero-content {
 flex: 1;
@@ -128,21 +154,26 @@ max-width: 650px;
 font-size: 2.2rem;
 margin-bottom: 1.2rem;
 line-height: 1.35;
+color: #ffffff;
+text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 .highlight {
-color: #C0C0C0; /* Prata - apenas essa frase fica prata */
+color: #249b00;
 font-weight: bold;
 font-size: 1.1em;
+display: block;
+margin-top: 8px;
+text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 .hero p.subheadline {
 font-size: 1.1rem;
-color: #000000; /* Preto */
+color: #ffffff;
 margin-bottom: 2rem;
 line-height: 1.6;
 }
 .btn-whatsapp {
 display: inline-block;
-background-color: #25D366; /* Cor original do WhatsApp */
+background: linear-gradient(to right, #25D366, #128C7E);
 color: #FFFFFF;
 padding: 12px 24px;
 text-decoration: none;
@@ -151,13 +182,26 @@ border-radius: 30px;
 font-size: 1.1rem;
 transition: all 0.3s ease;
 border: 2px solid #25D366;
-box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
+position: relative;
+overflow: hidden;
+}
+.btn-whatsapp::after {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+transition: left 0.7s;
 }
 .btn-whatsapp:hover {
-background-color: #128C7E; /* Tom mais escuro do WhatsApp */
-color: #FFFFFF;
 transform: translateY(-2px);
-box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+box-shadow: 0 6px 20px rgba(37, 211, 102, 0.8);
+}
+.btn-whatsapp:hover::after {
+left: 100%;
 }
 .hero-image {
 flex: 0 0 auto;
@@ -167,8 +211,14 @@ width: 300px;
 height: 400px;
 object-fit: cover;
 border-radius: 12px;
-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-border: 3px solid #000000; /* Prata */
+box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+border: 3px solid rgba(255, 255, 255, 0.9);
+transform: perspective(1000px) rotateY(-5deg);
+transition: transform 0.5s ease;
+}
+.hero-profile-photo:hover {
+transform: perspective(1000px) rotateY(0deg);
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
 }
 /* ===== SEÇÕES ===== */
 .section-title {
@@ -176,51 +226,82 @@ text-align: center;
 font-size: 1.8rem;
 margin-bottom: 2rem;
 position: relative;
-color: #000000; /* Preto */
+color: #FFFFFF;
+display: inline-block;
+left: 50%;
+transform: translateX(-50%);
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 .section-title:after {
 content: '';
-display: block;
-width: 50px;
-height: 3px;
-background: #000000; /* Prata */
-margin: 0.5rem auto;
-border-radius: 2px;
+display: none; /* REMOVIDA LINHA EMBAIXO DO TÍTULO */
 }
 ul.checklist {
 list-style: none;
-padding-left: 1rem;
+padding-left: 1.5rem;
+margin-top: 1rem;
+}
+ul.checklist li {
+margin-bottom: 0.75rem;
+padding-left: 1.2rem;
+position: relative;
+color: #ffffff;
 }
 ul.checklist li::before {
-content: "• ";
-color: #000000; /* Preto */
+content: "✓";
+color: #249b00;
 font-weight: bold;
-font-size: 1.4rem;
+font-size: 1.1rem;
+position: absolute;
+left: -1.3rem;
+top: -2px;
 }
 blockquote {
 font-style: italic;
 padding: 1.5rem;
-background: #3A4F38; /* Verde médio */
-border-left: 4px solid #000000; /* Prata */
+/* Sem fundo */
+background: transparent;
+border-left: 4px solid #ffffff;
 margin: 1.5rem 0;
 border-radius: 0 8px 8px 0;
-color: #000000; /* Preto */
+color: #ffffff;
 }
 .faq-item {
 margin-bottom: 1.5rem;
-padding: 1rem;
-background: #3A4F38; /* Verde médio */
-border-radius: 8px;
-border-left: 3px solid #000000; /* Prata */
+padding: 1.2rem;
+/* Sem fundo */
+background: transparent;
+border-radius: 10px;
+border-left: 3px solid #ffffff;
+transition: all 0.3s ease;
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.faq-item:hover {
+transform: translateX(5px);
+border-color: rgba(255, 255, 255, 0.3);
 }
 .faq-question {
 font-weight: 600;
 margin-bottom: 0.5rem;
-color: #000000; /* Preto */
+color: #FFFFFF;
+font-size: 1.05rem;
+cursor: pointer;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.faq-question::after {
+content: "+";
+font-size: 1.2rem;
+transition: transform 0.3s ease;
+}
+.faq-item.active .faq-question::after {
+content: "-";
+transform: rotate(90deg);
 }
 .clinic-photos {
 display: flex;
-gap: 1rem;
+gap: 1.2rem;
 flex-wrap: wrap;
 justify-content: center;
 margin-top: 1.5rem;
@@ -229,71 +310,104 @@ margin-top: 1.5rem;
 width: 200px;
 height: 150px;
 object-fit: cover;
-border-radius: 8px;
-border: 2px solid #000000; /* Prata */
+border-radius: 10px;
+border: 2px solid rgba(255, 255, 255, 0.7);
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+transition: all 0.3s ease;
+}
+.clinic-photos img:hover {
+transform: scale(1.03);
+box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+border-color: #ffffff;
 }
 .form-group {
-margin-bottom: 1rem;
+margin-bottom: 1.2rem;
 }
 .form-group label {
 display: block;
-margin-bottom: 0.3rem;
+margin-bottom: 0.4rem;
 font-weight: 600;
-color: #000000; /* Preto */
+color: #FFFFFF;
+font-size: 0.95rem;
 }
 .form-group input,
 .form-group textarea,
 .form-group select {
 width: 100%;
-padding: 10px;
-border: 1px solid #000000; /* Prata */
-border-radius: 6px;
+padding: 12px 15px;
+border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 8px;
 font-family: 'Source Sans 3', sans-serif;
-background: #3A4F38; /* Verde médio */
-color: #000000; /* Preto */
+/* Sem fundo - transparente */
+background: transparent;
+color: #FFFFFF;
+font-size: 1rem;
+transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+outline: none;
+border-color: #ffffff;
+box-shadow: 0 0 0 3px rgba(169, 193, 160, 0.3);
 }
 .submit-btn {
-background-color: #25D366; /* Cor original do WhatsApp */
-color: #FFFFFF; /* Alterado para branco conforme solicitado */
-padding: 12px 24px;
+background: linear-gradient(to right, #25D366, #128C7E);
+color: #FFFFFF;
+padding: 12px 28px;
 border: none;
 border-radius: 30px;
 font-size: 1.1rem;
 cursor: pointer;
 font-weight: 600;
 transition: all 0.3s ease;
-box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
+width: 100%;
+max-width: 280px;
+margin-top: 0.5rem;
 }
 .submit-btn:hover {
-background-color: #128C7E; /* Tom mais escuro do WhatsApp */
 transform: translateY(-2px);
-box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+box-shadow: 0 6px 20px rgba(37, 211, 102, 0.8);
 }
+/* ===== BOTÃO FLUTUANTE WHATSAPP COM ÍCONE ===== */
 .whatsapp-float {
 position: fixed;
 width: 60px;
 height: 60px;
-bottom: 20px;
-right: 20px;
-background-color: #25D366; /* Cor original do WhatsApp */
-color: #FFFFFF;
+bottom: 25px;
+right: 25px;
+background: transparent;
 border-radius: 50px;
-text-align: center;
-font-size: 28px;
-box-shadow: 0 4px 12px rgba(37, 211, 102, 0.5);
+box-shadow: 0 4px 15px rgba(37, 211, 102, 0.7);
 z-index: 1000;
 display: flex;
 align-items: center;
 justify-content: center;
-transition: transform 0.3s;
+transition: all 0.3s ease;
+animation: pulse 2s infinite;
+padding: 0;
+}
+.whatsapp-icon {
+width: 100%;
+height: 100%;
+object-fit: contain;
+border-radius: 50%;
+transition: all 0.3s ease;
+}
+.whatsapp-float:hover .whatsapp-icon {
+transform: scale(1.1) rotate(10deg);
+animation: none;
+}
+@keyframes pulse {
+0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.9); }
+70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
+100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
 .whatsapp-float:hover {
-transform: scale(1.1);
-box-shadow: 0 6px 18px rgba(37, 211, 102, 0.7);
+box-shadow: 0 6px 20px rgba(37, 211, 102, 0.9);
 }
 .whatsapp-float a {
-color: #FFFFFF;
-text-decoration: none;
 width: 100%;
 height: 100%;
 display: flex;
@@ -309,40 +423,48 @@ gap: 2rem;
 margin: 2.5rem 0;
 }
 .before-after-card {
-background: #3A4F38; /* Verde médio que combina */
+/* Sem fundo */
+background: transparent;
 border-radius: 12px;
-padding: 1.5rem;
+padding: 1.8rem 1.5rem;
 max-width: 280px;
 width: 100%;
 text-align: center;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-border: 1px solid #000000; /* Prata */
-transition: transform 0.3s ease, box-shadow 0.3s ease;
+border: 1px solid rgba(255, 255, 255, 0.15);
+transition: all 0.4s ease;
+position: relative;
+overflow: hidden;
+}
+.before-after-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 4px;
+background: linear-gradient(to right, #A9C1A0, #25D366);
 }
 .before-after-card:hover {
-transform: translateY(-4px);
-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+transform: translateY(-8px);
+border-color: rgba(255, 255, 255, 0.3);
 }
 .before-after-card h4 {
-font-size: 1.1rem;
-margin-bottom: 1rem;
-color: #000000; /* Preto */
+font-size: 1.15rem;
+margin-bottom: 1.2rem;
+color: #FFFFFF;
 position: relative;
-padding-bottom: 0.5rem;
+padding-bottom: 0.6rem;
+display: inline-block;
 }
 .before-after-card h4::after {
 content: '';
-display: block;
-width: 30px;
-height: 2px;
-background: #000000; /* Prata */
-margin: 0.4rem auto 0;
-border-radius: 1px;
+display: none; /* REMOVIDA LINHA EMBAIXO DO TÍTULO */
 }
 .image-pair {
 display: flex;
 justify-content: center;
 gap: 0.75rem;
+margin-top: 0.5rem;
 }
 /* Proteção de imagens sensíveis */
 .protected-image {
@@ -350,16 +472,26 @@ position: relative;
 cursor: pointer;
 width: 135px;
 height: 135px;
-border-radius: 8px;
+border-radius: 10px;
 overflow: hidden;
-border: 2px solid #000000; /* Prata */
+border: 2px solid rgba(255, 255, 255, 0.7);
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+transition: all 0.3s ease;
+}
+.protected-image:hover {
+border-color: #A9C1A0;
+transform: scale(1.03);
 }
 .protected-image img {
 width: 100%;
 height: 100%;
 object-fit: cover;
-filter: blur(8px);
-transition: filter 0.3s ease;
+filter: blur(6px);
+transition: filter 0.4s ease, transform 0.4s ease;
+}
+.protected-image:hover img {
+filter: blur(4px);
+transform: scale(1.05);
 }
 .protected-image .overlay {
 position: absolute;
@@ -367,20 +499,35 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background-color: rgba(42, 90, 46, 0.85); /* Prata com transparência */
-color: #FFFFFF;
+background: rgba(169, 193, 160, 0.85);
+color: #2F402C;
 display: flex;
 align-items: center;
 justify-content: center;
-font-size: 0.75rem;
+font-size: 0.8rem;
 font-weight: 600;
 text-align: center;
-padding: 0.25rem;
+padding: 0.4rem;
 box-sizing: border-box;
 opacity: 1;
-transition: opacity 0.3s ease;
+transition: opacity 0.3s ease, background 0.4s ease;
+flex-direction: column;
 }
-
+.protected-image .overlay::before {
+content: "★";
+font-size: 1.8rem;
+margin-bottom: 4px;
+}
+.protected-image:hover .overlay {
+background: rgba(169, 193, 160, 0.85);
+}
+.protected-image.revealed .overlay {
+opacity: 0;
+}
+.protected-image.revealed img {
+filter: blur(0);
+transform: scale(1);
+}
 /* ===== MODAL DE VERIFICAÇÃO DE IDADE +18 ===== */
 .age-verification-modal {
 display: none;
@@ -389,64 +536,94 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background-color: rgba(0, 0, 0, 0.85);
+background-color: rgba(0, 0, 0, 0.92);
 z-index: 2000;
 justify-content: center;
 align-items: center;
+backdrop-filter: blur(5px);
 }
 .age-verification-content {
-background-color: #2F402C;
+/* Sem fundo - transparente */
+background: transparent;
 border-radius: 16px;
 padding: 3rem;
 max-width: 500px;
 width: 90%;
 text-align: center;
-border: 2px solid #000000;
-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+border: 2px solid rgba(255, 255, 255, 0.3);
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+position: relative;
+overflow: hidden;
+}
+.age-verification-content::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 6px;
+background: linear-gradient(to right, #A9C1A0, #25D366, #9b59b6);
 }
 .age-verification-content h2 {
-color: #000000;
+color: #FFFFFF;
 font-size: 2rem;
 margin-bottom: 1.5rem;
+position: relative;
+display: inline-block;
+}
+.age-verification-content h2::after {
+content: '';
+position: absolute;
+bottom: -8px;
+left: 50%;
+transform: translateX(-50%);
+width: 70%;
+height: 3px;
+background: linear-gradient(to right, #A9C1A0, #25D366);
+border-radius: 2px;
 }
 .age-verification-content p {
-color: #000000;
+color: #F4F0E5;
 margin-bottom: 2rem;
 line-height: 1.6;
+font-size: 1.05rem;
 }
 .age-verification-btns {
 display: flex;
-gap: 1rem;
+gap: 1.2rem;
 justify-content: center;
+margin-top: 1rem;
 }
 .age-verification-btn {
-padding: 12px 30px;
+padding: 14px 32px;
 border-radius: 30px;
 font-size: 1.1rem;
 font-weight: 600;
 cursor: pointer;
 transition: all 0.3s ease;
 border: 2px solid transparent;
+width: 48%;
 }
 .age-verification-btn.yes {
-background-color: #25D366;
+background: linear-gradient(to right, #25D366, #128C7E);
 color: #FFFFFF;
+box-shadow: 0 4px 15px rgba(37, 211, 102, 0.6);
 }
 .age-verification-btn.yes:hover {
-background-color: #128C7E;
 transform: translateY(-2px);
-box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5);
+box-shadow: 0 6px 20px rgba(37, 211, 102, 0.8);
+background: linear-gradient(to right, #128C7E, #075E54);
 }
 .age-verification-btn.no {
-background-color: #FF4444;
+background: linear-gradient(to right, #e74c3c, #c0392b);
 color: #FFFFFF;
+box-shadow: 0 4px 15px rgba(231, 76, 60, 0.5);
 }
 .age-verification-btn.no:hover {
-background-color: #CC0000;
 transform: translateY(-2px);
-box-shadow: 0 6px 16px rgba(204, 0, 0, 0.5);
+box-shadow: 0 6px 20px rgba(231, 76, 60, 0.7);
+background: linear-gradient(to right, #c0392b, #a93226);
 }
-
 /* ===== BOTÃO INSTAGRAM ===== */
 .btn-instagram {
 display: inline-block;
@@ -459,17 +636,17 @@ border-radius: 30px;
 font-size: 1.1rem;
 transition: all 0.3s ease;
 border: 2px solid transparent;
-box-shadow: 0 4px 12px rgba(188, 24, 136, 0.3);
+box-shadow: 0 4px 15px rgba(188, 24, 136, 0.6);
 }
 .btn-instagram:hover {
 transform: translateY(-2px);
-box-shadow: 0 6px 16px rgba(188, 24, 136, 0.5);
-border-color: #FFFFFF;
+box-shadow: 0 6px 20px rgba(188, 24, 136, 0.8);
+border-color: rgba(255, 255, 255, 0.6);
 }
 /* ===== BOTÃO TELEGRAM ===== */
 .btn-telegram {
 display: inline-block;
-background-color: #0088CC; /* Cor oficial do Telegram */
+background: linear-gradient(to right, #0088cc, #0077b5);
 color: #FFFFFF;
 padding: 12px 24px;
 text-decoration: none;
@@ -477,13 +654,13 @@ font-weight: 600;
 border-radius: 30px;
 font-size: 1.1rem;
 transition: all 0.3s ease;
-border: 2px solid #0088CC;
-box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+border: 2px solid #0088cc;
+box-shadow: 0 4px 15px rgba(0, 136, 204, 0.6);
 }
 .btn-telegram:hover {
-background-color: #0077b5; /* Tom mais escuro do Telegram */
+background: linear-gradient(to right, #0077b5, #0066a3);
 transform: translateY(-2px);
-box-shadow: 0 6px 16px rgba(0, 136, 204, 0.5);
+box-shadow: 0 6px 20px rgba(0, 136, 204, 0.8);
 }
 /* ===== DEPOIMENTOS ===== */
 .depoimentos-container {
@@ -492,39 +669,66 @@ flex-direction: column;
 gap: 2rem;
 }
 .depoimentos-section {
-background: #3A4F38;
+/* Sem fundo */
+background: transparent;
 border-radius: 12px;
 padding: 2rem;
-border: 1px solid #000000;
+border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .depoimentos-section h3 {
 text-align: center;
-font-size: 1.5rem;
+font-size: 1.55rem;
 margin-bottom: 1.5rem;
-color: #000000;
+color: #FFFFFF;
+position: relative;
+display: inline-block;
+left: 50%;
+transform: translateX(-50%);
+}
+.depoimentos-section h3::after {
+content: '';
+display: none; /* REMOVIDA LINHA EMBAIXO DOS TÍTULOS */
 }
 /* ===== AVALIAÇÕES DO GOOGLE ===== */
 .google-reviews {
-margin-bottom: 1rem;
+margin-bottom: 1.5rem;
 }
 .google-review {
-background: #2F402C;
-padding: 1rem;
-border-radius: 8px;
-margin-bottom: 1rem;
-border-left: 3px solid #000000;
+/* Sem fundo */
+background: transparent;
+padding: 1.3rem;
+border-radius: 10px;
+margin-bottom: 1.3rem;
+border-left: 3px solid #A9C1A0;
+border: 1px solid rgba(255, 255, 255, 0.1);
+transition: all 0.3s ease;
+}
+.google-review:hover {
+transform: translateX(3px);
+border-color: rgba(255, 255, 255, 0.3);
 }
 .google-review p {
-margin-bottom: 0.5rem;
+margin-bottom: 0.6rem;
+color: #ffffff;
+line-height: 1.5;
 }
 .google-review .stars {
-font-size: 0.85rem;
-color: #C0C0C0;
+font-size: 1.1rem;
+color: #FFD700;
+margin-bottom: 0.5rem;
+display: block;
+text-align: center;
+}
+.google-review .reviewer-name {
+color: #25D366; /* VERMELHO */
+font-weight: 600;
 margin-top: 0.5rem;
+margin-bottom: 0.8rem;
+display: block;
 }
 .btn-google-reviews {
 display: inline-block;
-background: #4285F4; /* Cor do Google */
+background: linear-gradient(to right, #4285F4, #3367D6);
 color: #FFFFFF;
 padding: 12px 24px;
 text-decoration: none;
@@ -533,13 +737,13 @@ border-radius: 30px;
 font-size: 1.1rem;
 transition: all 0.3s ease;
 border: 2px solid #4285F4;
-box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+box-shadow: 0 4px 15px rgba(66, 133, 244, 0.6);
 margin-top: 1.5rem;
 }
 .btn-google-reviews:hover {
-background: #3367D6; /* Tom mais escuro do Google */
 transform: translateY(-2px);
-box-shadow: 0 6px 16px rgba(66, 133, 244, 0.5);
+box-shadow: 0 6px 20px rgba(66, 133, 244, 0.8);
+background: linear-gradient(to right, #3367D6, #2a56c6);
 }
 /* ===== CARROSSEL DE DEPOIMENTOS WHATSAPP - AJUSTADO ===== */
 .whatsapp-carousel-container {
@@ -562,39 +766,51 @@ box-sizing: border-box;
 .whatsapp-carousel-slide .whatsapp-depoimentos {
 display: grid;
 grid-template-columns: repeat(2, 1fr);
-gap: 1.5rem;
+gap: 1.8rem;
 align-items: center;
 }
 .whatsapp-depoimento-card {
-background: #2F402C;
+/* Sem fundo */
+background: transparent;
 border-radius: 12px;
 padding: 1rem;
-border: 2px solid #000000;
-transition: all 0.3s ease;
+border: 2px solid rgba(255, 255, 255, 0.15);
+transition: all 0.4s ease;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+position: relative;
+overflow: hidden;
+}
+.whatsapp-depoimento-card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 4px;
+background: linear-gradient(to right, #25D366, #128C7E);
 }
 .whatsapp-depoimento-card:hover {
 transform: scale(1.03);
-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-border-color: #000000;
+border-color: rgba(255, 255, 255, 0.3);
 }
 .whatsapp-depoimento-card img {
 width: 100%;
-height: 350px; /* Altura fixa maior para melhor visualização */
-object-fit: contain; /* Contém toda a imagem, mantendo proporção */
+height: 350px;
+object-fit: contain;
 border-radius: 8px;
-border: 2px solid #000000;
+border: 2px solid rgba(255, 255, 255, 0.8);
 display: block;
-background-color: #3A4F38; /* Fundo para quando imagem não preencher tudo */
-padding: 10px;
+padding: 12px;
 box-sizing: border-box;
-transition: transform 0.3s ease;
+transition: transform 0.4s ease, border-color 0.4s ease;
+box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
 }
 .whatsapp-depoimento-card:hover img {
 transform: scale(1.02);
+border-color: #25D366;
 }
 .carousel-nav {
 display: flex;
@@ -604,8 +820,8 @@ margin-top: 2rem;
 gap: 1rem;
 }
 .carousel-btn {
-background: #3A4F38;
-color: #FFFFFF;
+background: linear-gradient(to right, #A9C1A0, #818A77);
+color: #2F402C;
 border: none;
 width: 50px;
 height: 50px;
@@ -616,44 +832,52 @@ display: flex;
 align-items: center;
 justify-content: center;
 transition: all 0.3s ease;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+box-shadow: 0 4px 12px rgba(169, 193, 160, 0.5);
+border: 2px solid rgba(255, 255, 255, 0.9);
 }
 .carousel-btn:hover {
-background: #3A4F38;
-transform: scale(1.1);
+transform: scale(1.1) rotate(5deg);
+box-shadow: 0 6px 16px rgba(105, 116, 100, 0.7);
+background: linear-gradient(to right, #818A77, #6B7366);
 }
 .carousel-dots {
 display: flex;
 gap: 10px;
-margin-top: 1rem;
+margin-top: 1.2rem;
 }
 .carousel-dot {
 width: 12px;
 height: 12px;
 border-radius: 50%;
-background: #C0C0C0;
+background: rgba(255, 255, 255, 0.5);
 cursor: pointer;
 transition: all 0.3s ease;
+border: 2px solid rgba(255, 255, 255, 0.9);
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
 }
 .carousel-dot.active {
-background: #000000;
+background: #A9C1A0;
 transform: scale(1.3);
+box-shadow: 0 0 0 2px #A9C1A0, 0 3px 8px rgba(169, 193, 160, 0.6);
 }
 /* ===== FOOTER ===== */
 .site-footer {
-background-color: #2F402C; /* Verde escuro */
+/* Sem fundo */
+background: transparent;
 padding: 2.5rem 0 1.5rem;
-color: #000000; /* Preto */
+color: #F4F0E5;
 font-family: 'Source Sans 3', sans-serif;
-border-top: 1px solid #000000; /* Prata */
+border-top: 1px solid rgba(255, 255, 255, 0.2);
+margin-top: 3rem;
 }
 .footer-link {
-color: #000000; /* Preto */
+color: #FFFFFF;
 text-decoration: none;
 transition: color 0.3s;
+font-weight: 500;
 }
 .footer-link:hover {
-color: #C0C0C0; /* Prata */
+color: #A9C1A0;
 }
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 768px) {
@@ -675,49 +899,58 @@ position: absolute;
 top: 60px;
 left: 0;
 width: 100%;
-background: #2F402C; /* Verde escuro */
+background: transparent;
 flex-direction: column;
 gap: 0;
-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-padding: 1rem 0;
-border-top: 1px solid #C0C0C0; /* Prata */
+padding: 1.2rem 0;
+border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 .main-nav .nav-list.active {
 display: flex;
 }
 .nav-link {
-padding: 0.8rem 2rem;
+padding: 0.9rem 2rem;
 display: block;
-color: #000000; /* Preto */
+color: #FFFFFF;
 }
 .nav-link:hover {
-color: #C0C0C0; /* Prata */
+color: #A9C1A0;
 }
 .menu-toggle {
 display: block;
 }
 .hero-container {
-flex-direction: column-reverse;
+flex-direction: column;
 text-align: center;
-gap: 1.8rem;
+gap: 2rem;
 padding: 2rem 5%;
 }
 .hero h1 {
-font-size: 1.7rem;
+font-size: 1.8rem;
 }
 .hero-profile-photo {
-width: 180px;
-height: 180px;
+width: 220px;
+height: 280px;
+margin-top: 1.5rem;
 }
 .section-title {
-font-size: 1.5rem;
+font-size: 1.6rem;
+left: auto;
+transform: none;
+margin-bottom: 1.8rem;
+display: block;
+text-align: center;
+}
+.section-title:after {
+display: none;
 }
 .clinic-photos img {
-width: 180px;
-height: 135px;
+width: 170px;
+height: 128px;
 }
 .before-after-card {
 max-width: 260px;
+padding: 1.5rem;
 }
 .before-after-card img,
 .protected-image {
@@ -728,13 +961,13 @@ height: 120px;
 grid-template-columns: 1fr;
 }
 .whatsapp-depoimento-card img {
-height: 300px; /* Altura menor para mobile */
+height: 300px;
 object-fit: contain;
 }
 .carousel-btn {
-width: 40px;
-height: 40px;
-font-size: 1.2rem;
+width: 42px;
+height: 42px;
+font-size: 1.3rem;
 }
 .age-verification-content {
 padding: 2rem;
@@ -746,14 +979,30 @@ text-align: center;
 }
 }
 @media (max-width: 480px) {
+.hero h1 {
+font-size: 1.6rem;
+}
+.hero-profile-photo {
+width: 190px;
+height: 250px;
+}
 .whatsapp-depoimento-card img {
-height: 250px; /* Altura ainda menor para telas pequenas */
+height: 260px;
 }
 .age-verification-content {
-padding: 1.5rem;
+padding: 1.8rem;
+font-size: 0.95rem;
 }
 .age-verification-btns {
 flex-direction: column;
+gap: 0.8rem;
+}
+.age-verification-btn {
+width: 100%;
+padding: 12px;
+}
+.section-title {
+font-size: 1.5rem;
 }
 }
 </style>
@@ -798,14 +1047,14 @@ flex-direction: column;
 <section id="oque-faco">
 <div class="container">
 <h2 class="section-title">O que eu faço</h2>
-<p>Atuo exclusivamente com estética íntima feminina, oferecendo tratamentos não cirúrgicos para:</p>
+<p style="color: #F4F0E5;">Atuo exclusivamente com estética íntima feminina, oferecendo tratamentos não cirúrgicos para:</p>
 <ul class="checklist mb-3">
 <li>Flacidez íntima (interna e externa)</li>
 <li>Alterações estéticas da região íntima</li>
 <li>Rejuvenescimento e melhora da qualidade tecidual</li>
 <li>Autoestima e bem-estar feminino</li>
 </ul>
-<p>Sempre com avaliação individual e indicação responsável.</p>
+<p style="color: #F4F0E5;">Sempre com avaliação individual e indicação responsável.</p>
 </div>
 </section>
 <div class="section-divider"></div>
@@ -813,7 +1062,7 @@ flex-direction: column;
 <section id="antes-depois">
 <div class="container">
 <h2 class="section-title">Antes x Depois</h2>
-<p class="text-center mb-3">Resultados reais, naturais e progressivos, respeitando a anatomia e a individualidade de cada mulher.<br>
+<p class="text-center mb-3" style="color: #F4F0E5;">Resultados reais, naturais e progressivos, respeitando a anatomia e a individualidade de cada mulher.<br>
 <em>(Sempre apresentados com ética, autorização e discrição.)</em>
 </p>
 <!-- Linha 1: 3 Ninfoplastias -->
@@ -864,11 +1113,11 @@ flex-direction: column;
 <h4>Clareamento Íntimo</h4>
 <div class="image-pair">
 <div class="protected-image" onclick="checkAgeAndReveal(this)">
-<img src="https://via.placeholder.com/135x135?text=Antes+C" alt="Clareamento Antes">
+<img src="https://images.unsplash.com/photo-1584212685413-6f4c2ad4c2a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Clareamento Antes">
 <div class="overlay">Clique para ver +18</div>
 </div>
 <div class="protected-image" onclick="checkAgeAndReveal(this)">
-<img src="https://via.placeholder.com/135x135?text=Depois+C" alt="Clareamento Depois">
+<img src="https://images.unsplash.com/photo-1584212685413-6f4c2ad4c2a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Clareamento Depois">
 <div class="overlay">Clique para ver +18</div>
 </div>
 </div>
@@ -877,11 +1126,11 @@ flex-direction: column;
 <h4>Bioestimulador</h4>
 <div class="image-pair">
 <div class="protected-image" onclick="checkAgeAndReveal(this)">
-<img src="https://via.placeholder.com/135x135?text=Antes+B" alt="Bioestimulador Antes">
+<img src="https://images.unsplash.com/photo-1584212685413-6f4c2ad4c2a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Bioestimulador Antes">
 <div class="overlay">Clique para ver +18</div>
 </div>
 <div class="protected-image" onclick="checkAgeAndReveal(this)">
-<img src="https://via.placeholder.com/135x135?text=Depois+B" alt="Bioestimulador Depois">
+<img src="https://images.unsplash.com/photo-1584212685413-6f4c2ad4c2a0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=300&q=80" alt="Bioestimulador Depois">
 <div class="overlay">Clique para ver +18</div>
 </div>
 </div>
@@ -889,7 +1138,7 @@ flex-direction: column;
 </div>
 <!-- Botão Telegram -->
 <div style="text-align: center; margin-top: 2rem;">
-<a href="https://t.me/+KhSJKuCW7b4wZjEx" class="btn-telegram" target="_blank">💬 Telegram</a>
+<a href="https://t.me/+KhSJKuCW7b4wZjEx" class="btn-telegram" target="_blank">💬 Antes e Depois</a>
 </div>
 </div>
 </section>
@@ -905,20 +1154,20 @@ flex-direction: column;
 <div class="google-reviews">
 <div class="google-review">
 <p class="stars">⭐⭐⭐⭐⭐</p>
-<p>- Nosso mundo malu e Allan</p>
+<p class="reviewer-name">- Nosso mundo malu e Allan</p>
 <p>"Local e atendimento ótimo, muito aconchegante o atendimento é bem humanizado de acordo com a nessecidade de cada paciente. Ambiente bem acolhedor. As profissionais que ali estão para atendimento são excelentes..
 Amei a experiência ❤️
 Indico pra quem ainda quer dá o primeiro passo ao cuidado, a autoestima e a saúde...♥️"</p>
 </div>
 <div class="google-review">
 <p class="stars">⭐⭐⭐⭐⭐</p>
-<p>- Yanne Lima Gomes</p>
+<p class="reviewer-name">- Yanne Lima Gomes</p>
 <p>"Doutora Mariana um amor de pessoa super atenciosa muito carismática, tirou todas minhas dúvidas.. uma excelente profissional♥️
 "</p>
 </div>
 <div class="google-review">
 <p class="stars">⭐⭐⭐⭐⭐</p>
-<p>- Kelly Raasch</p>
+<p class="reviewer-name">- Kelly Raasch</p>
 <p>"Minha experiência foi ótima, depois de conversarmos muito, a Dra. Me deixou bem mais tranquila e confiante para realizar o procedimento, estou gostando. Super indico a todas vocês."</p>
 </div>
 </div>
@@ -999,10 +1248,12 @@ Indico pra quem ainda quer dá o primeiro passo ao cuidado, a autoestima e a sa�
 <section id="sobre-mim">
 <div class="container">
 <h2 class="section-title">Sobre mim – Dra. Mariana Cruz</h2>
-<p>Sou especialista em estética íntima feminina, com atuação focada em tratamentos não cirúrgicos e protocolos personalizados.<br>
+<div style="text-align: center; max-width: 800px; margin: 0 auto;">
+<p style="color: #F4F0E5; margin-bottom: 1rem;">Sou especialista em estética íntima feminina, com atuação focada em tratamentos não cirúrgicos e protocolos personalizados.<br>
 Referência no Brasil, busco unir ciência, técnica e sensibilidade para oferecer um atendimento ético, humano e de alto padrão.<br>
 Pioneira e única em Rio Preto e região com a técnica de ninfoplastia não cirúrgica.</p>
-<p class="mb-0">Meu compromisso é cuidar da intimidade feminina com respeito, segurança e excelência.</p>
+<p class="mb-0" style="color: #F4F0E5;">Meu compromisso é cuidar da intimidade feminina com respeito, segurança e excelência.</p>
+</div>
 </div>
 </section>
 <div class="section-divider"></div>
@@ -1011,16 +1262,16 @@ Pioneira e única em Rio Preto e região com a técnica de ninfoplastia não cir
 <div class="container">
 <h2 class="section-title">Processo de atendimento</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
-<div style="flex: 1; min-width: 250px; text-align: center; color: #000000;">
-<h3 style="color: #000000;">Consulta</h3>
+<div style="flex: 1; min-width: 250px; text-align: center; color: #F4F0E5;">
+<h3 style="color: #FFFFFF; margin-bottom: 0.8rem;">Consulta</h3>
 <p>Consulta especializada em estética íntima, com avaliação detalhada, escuta ativa e definição do protocolo ideal para cada paciente.</p>
 </div>
-<div style="flex: 1; min-width: 250px; text-align: center; color: #000000;">
-<h3 style="color: #000000;">Planejamento</h3>
+<div style="flex: 1; min-width: 250px; text-align: center; color: #F4F0E5;">
+<h3 style="color: #FFFFFF; margin-bottom: 0.8rem;">Planejamento</h3>
 <p>Indicação personalizada, explicação clara do tratamento, expectativas reais e investimento.</p>
 </div>
-<div style="flex: 1; min-width: 250px; text-align: center; color: #000000;">
-<h3 style="color: #000000;">Procedimento</h3>
+<div style="flex: 1; min-width: 250px; text-align: center; color: #F4F0E5;">
+<h3 style="color: #FFFFFF; margin-bottom: 0.8rem;">Procedimento</h3>
 <p>Realizado em ambiente seguro, confortável, com tecnologia de ponta e acompanhamento próximo.</p>
 </div>
 </div>
@@ -1033,23 +1284,23 @@ Pioneira e única em Rio Preto e região com a técnica de ninfoplastia não cir
 <h2 class="section-title">Principais dúvidas</h2>
 <div class="faq-item">
 <p class="faq-question">O procedimento é cirúrgico?</p>
-<p>Não. É 100% não cirúrgico, sem cortes, sem anestesia geral e sem tempo de recuperação prolongado.</p>
+<p style="color: #F4F0E5;">Não. É 100% não cirúrgico, sem cortes, sem anestesia geral e sem tempo de recuperação prolongado.</p>
 </div>
 <div class="faq-item">
 <p class="faq-question">Dói ou precisa de afastamento?</p>
-<p>O desconforto é mínimo. A maioria das pacientes retoma suas atividades no mesmo dia.</p>
+<p style="color: #F4F0E5;">O desconforto é mínimo. A maioria das pacientes retoma suas atividades no mesmo dia.</p>
 </div>
 <div class="faq-item">
 <p class="faq-question">Em quanto tempo vejo resultados?</p>
-<p>Resultados iniciais aparecem após a primeira sessão, com evolução nas semanas seguintes.</p>
+<p style="color: #F4F0E5;">Resultados iniciais aparecem após a primeira sessão, com evolução nas semanas seguintes.</p>
 </div>
 <div class="faq-item">
 <p class="faq-question">Sessão única?</p>
-<p>Depende do caso. Alguns protocolos exigem 1 a 3 sessões para resultado ideal.</p>
+<p style="color: #F4F0E5;">Depende do caso. Alguns protocolos exigem 1 a 3 sessões para resultado ideal.</p>
 </div>
 <div class="faq-item">
 <p class="faq-question">Quem pode ou não realizar o tratamento?</p>
-<p>Avaliamos individualmente. Contraindicações incluem gestação, infecções ativas ou condições dermatológicas específicas.</p>
+<p style="color: #F4F0E5;">Avaliamos individualmente. Contraindicações incluem gestação, infecções ativas ou condições dermatológicas específicas.</p>
 </div>
 </div>
 </section>
@@ -1057,8 +1308,8 @@ Pioneira e única em Rio Preto e região com a técnica de ninfoplastia não cir
 <!-- Localização & Estrutura -->
 <section id="localizacao">
 <div class="container text-center">
-<h2 class="section-title">Localização & Estrutura</h2>
-<p style="color: #000000;">📍 Clínica localizada no Navarro Building, sala 324, em ambiente moderno, discreto e acolhedor.<br>
+<h2 class="section-title" style="text-align: center; left: auto; transform: none; display: block;">Localização & Estrutura</h2>
+<p style="color: #F4F0E5; margin-bottom: 1.5rem;">📍 Clínica localizada no Navarro Building, sala 324, em ambiente moderno, discreto e acolhedor.<br>
 Estrutura pensada para conforto, privacidade e segurança em cada etapa do atendimento.</p>
 <div class="clinic-photos">
 <img src="recepção.jpeg" alt="Recepção">
@@ -1072,7 +1323,7 @@ Estrutura pensada para conforto, privacidade e segurança em cada etapa do atend
 <section id="formulario">
 <div class="container">
 <h2 class="section-title">Formulário de Interesse</h2>
-<p class="text-center mb-3" style="color: #000000;">Agende sua consulta de forma prática</p>
+<p class="text-center mb-3" style="color: #F4F0E5;">Agende sua consulta de forma prática</p>
 <form id="whatsappForm">
 <div class="form-group">
 <label for="nome">Nome</label>
@@ -1084,7 +1335,7 @@ Estrutura pensada para conforto, privacidade e segurança em cada etapa do atend
 </div>
 <div class="form-group">
 <label for="queixa">Principal queixa</label>
-<textarea id="queixa" name="queixa" rows="3" required></textarea>
+<textarea id="queixa" name="queixa" rows="3" required style="color: #FFFFFF;"></textarea>
 </div>
 <div class="form-group">
 <label for="investimento">Expectativa de investimento</label>
@@ -1105,45 +1356,46 @@ Estrutura pensada para conforto, privacidade e segurança em cada etapa do atend
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; margin-bottom: 1.5rem;">
 <!-- Informações de Contato -->
 <div style="flex: 1; min-width: 250px;">
-<h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: #000000;">Contato</h3>
-<p style="margin: 0.6rem 0; color: #000000;">📞 (17) 99776-0646</p>
-<p style="margin: 0.6rem 0; color: #000000;">✉️ contato@marianacruz.com.br</p>
-<p style="margin: 0.6rem 0; color: #000000;">
+<h3 style="font-size: 1.25rem; margin-bottom: 1.2rem; color: #FFFFFF;">Contato</h3>
+<p style="margin: 0.7rem 0; color: #F4F0E5;">📞 (17) 99776-0646</p>
+<p style="margin: 0.7rem 0; color: #F4F0E5;">✉️ contato@marianacruz.com.br</p>
+<p style="margin: 0.7rem 0; color: #F4F0E5;">
 📍 Navarro Building, Sala 324<br>
 São José do Rio Preto – SP
 </p>
-<div style="display: flex; gap: 1rem; margin-top: 1rem; flex-wrap: wrap; justify-content: flex-start;">
-<a href="https://wa.me/5517997760646" target="_blank" class="btn-whatsapp" style="padding: 8px 16px; font-size: 0.95rem;">WhatsApp</a>
-<a href="https://www.instagram.com/amariicruz/" target="_blank" class="btn-instagram" style="padding: 8px 16px; font-size: 0.95rem;">Instagram</a>
-<a href="https://t.me/+KhSJKuCW7b4wZjEx" target="_blank" class="btn-telegram" style="padding: 8px 16px; font-size: 0.95rem;">Telegram</a>
+<div style="display: flex; gap: 0.8rem; margin-top: 1.2rem; flex-wrap: wrap; justify-content: flex-start;">
+<a href="https://wa.me/5517997760646" target="_blank" class="btn-whatsapp" style="padding: 8px 16px; font-size: 0.95rem; width: auto;">WhatsApp</a>
+<a href="https://www.instagram.com/amariicruz/" target="_blank" class="btn-instagram" style="padding: 8px 16px; font-size: 0.95rem; width: auto;">Instagram</a>
+<a href="https://t.me/+KhSJKuCW7b4wZjEx" target="_blank" class="btn-telegram" style="padding: 8px 16px; font-size: 0.95rem; width: auto;">Telegram</a>
 </div>
 </div>
 <!-- Links Rápidos -->
 <div style="flex: 1; min-width: 200px;">
-<h3 style="font-size: 1.2rem; margin-bottom: 1rem; color: #000000;">Links Rápidos</h3>
+<h3 style="font-size: 1.25rem; margin-bottom: 1.2rem; color: #FFFFFF;">Links Rápidos</h3>
 <ul style="list-style: none; padding: 0; margin: 0;">
-<li style="margin: 0.5rem 0;"><a href="#oque-faco" class="footer-link">O que eu faço</a></li>
-<li style="margin: 0.5rem 0;"><a href="#antes-depois" class="footer-link">Antes x Depois</a></li>
-<li style="margin: 0.5rem 0;"><a href="#depoimentos" class="footer-link">Depoimentos</a></li>
-<li style="margin: 0.5rem 0;"><a href="#sobre-mim" class="footer-link">Sobre mim</a></li>
-<li style="margin: 0.5rem 0;"><a href="#processo" class="footer-link">Processo de atendimento</a></li>
-<li style="margin: 0.5rem 0;"><a href="#faq" class="footer-link">Principais dúvidas</a></li>
+<li style="margin: 0.65rem 0;"><a href="#oque-faco" class="footer-link">O que eu faço</a></li>
+<li style="margin: 0.65rem 0;"><a href="#antes-depois" class="footer-link">Antes x Depois</a></li>
+<li style="margin: 0.65rem 0;"><a href="#depoimentos" class="footer-link">Depoimentos</a></li>
+<li style="margin: 0.65rem 0;"><a href="#sobre-mim" class="footer-link">Sobre mim</a></li>
+<li style="margin: 0.65rem 0;"><a href="#processo" class="footer-link">Processo de atendimento</a></li>
+<li style="margin: 0.65rem 0;"><a href="#faq" class="footer-link">Principais dúvidas</a></li>
 </ul>
 </div>
 </div>
 <!-- Linha divisória -->
-<hr class="section-divider" style="margin: 1.5rem 0;">
+<hr class="section-divider" style="margin: 1.8rem 0; opacity: 0.7;">
 <!-- Créditos -->
-<div style="text-align: center; color: #000000; font-size: 0.95rem;">
+<div style="text-align: center; color: #F4F0E5; font-size: 0.95rem;">
 <p>© 2026 Dra. Mariana Cruz | Estética Íntima Não Cirúrgica</p>
 </div>
 </div>
 </footer>
 <!-- WhatsApp Flutuante -->
 <div class="whatsapp-float">
-<a href="https://wa.me/5517997760646" target="_blank">💬</a>
+<a href="https://wa.me/5517997760646" target="_blank">
+<img src="whatsapp-icon.png.png" alt="WhatsApp" class="whatsapp-icon">
+</a>
 </div>
-
 <!-- Modal de Verificação de Idade +18 -->
 <div class="age-verification-modal" id="ageVerificationModal">
 <div class="age-verification-content">
@@ -1156,7 +1408,6 @@ São José do Rio Preto – SP
 </div>
 </div>
 </div>
-
 <!-- JavaScript -->
 <script>
 // Menu mobile
@@ -1213,19 +1464,11 @@ window.location.href = '#oque-faco';
 function revealImage(container) {
 const img = container.querySelector('img');
 const overlay = container.querySelector('.overlay');
-const isRevealed = container.getAttribute('data-revealed') === 'true';
+const isRevealed = container.classList.contains('revealed');
 if (isRevealed) {
-img.style.filter = 'blur(8px)';
-overlay.style.opacity = '1';
-overlay.style.pointerEvents = 'auto';
-container.style.cursor = 'pointer';
-container.setAttribute('data-revealed', 'false');
+container.classList.remove('revealed');
 } else {
-img.style.filter = 'blur(0)';
-overlay.style.opacity = '0';
-overlay.style.pointerEvents = 'none';
-container.style.cursor = 'default';
-container.setAttribute('data-revealed', 'true');
+container.classList.add('revealed');
 }
 }
 // Fechar modal ao clicar fora do conteúdo
@@ -1313,6 +1556,14 @@ clearInterval(autoPlayInterval);
 });
 carousel.addEventListener('mouseleave', () => {
 autoPlayInterval = setInterval(nextSlide, 5000);
+});
+// FAQ toggle
+const faqItems = document.querySelectorAll('.faq-item');
+faqItems.forEach(item => {
+const question = item.querySelector('.faq-question');
+question.addEventListener('click', () => {
+item.classList.toggle('active');
+});
 });
 });
 </script>
