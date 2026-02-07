@@ -80,8 +80,7 @@ display: flex;
 align-items: center;
 gap: 0.75rem;
 }
-
-/* ========== HERO SECTION COM LOGO DE FUNDO AJUSTÁVEL ========== */
+/* ========== HERO SECTION COM LOGO DE FUNDO FIXADO ========== */
 #heroSection {
 background: linear-gradient(135deg, #F2EEEB, #F2EEEB, #F2EEEB);
 padding: 8rem 2rem 6rem;
@@ -91,26 +90,26 @@ align-items: center;
 position: relative;
 overflow: hidden;
 }
-
-/* LOGO DE FUNDO - TOTALMENTE AJUSTÁVEL */
+/* LOGO DE FUNDO - FIXADO PARA DESKTOP E MOBILE */
 .hero-background-logo {
-position: absolute;
-/* AJUSTE A POSIÇÃO HORIZONTAL AQUI ↓ */
-left: 20%; /* 0% = esquerda total | 50% = centro | 100% = direita total */
-/* AJUSTE A POSIÇÃO VERTICAL AQUI ↓ */
-top: 15%; /* 0% = topo total | 50% = centro vertical | 100% = base total */
-/* REMOVA O transform PARA USAR left/top DIRETAMENTE */
-/* transform: translate(-50%, -50%); */
-
-/* AJUSTE O TAMANHO AQUI ↓ */
-width: 560px; /* Tamanho da logo - aumente ou diminua conforme necessário */
+position: fixed; /* FIXADO NA TELA */
+left: 50%; /* CENTRALIZA HORIZONTALMENTE */
+top: 50%; /* CENTRALIZA VERTICALMENTE */
+transform: translate(-50%, -50%); /* AJUSTA PARA O CENTRO EXATO */
+width: 850px; /* TAMANHO PADRÃO PARA DESKTOP */
 height: auto;
-opacity: 0.12; /* Transparência: 0 = invisível | 1 = opaco */
+opacity: 0.12; /* Transparência */
 z-index: 0;
 pointer-events: none;
 object-fit: contain;
+max-width: 90%; /* LIMITA O TAMANHO MÁXIMO */
 }
-
+/* AJUSTE PARA MOBILE */
+@media (max-width: 767px) {
+.hero-background-logo {
+width: 350px; /* TAMANHO MENOR PARA MOBILE */
+}
+}
 /* Container principal com z-index acima da logo */
 .hero-container {
 display: flex;
@@ -129,7 +128,6 @@ z-index: 1;
 flex-direction: row;
 }
 }
-
 /* Texto e botão */
 .hero-text {
 flex: 1;
@@ -194,7 +192,6 @@ border-radius: 1rem;
 box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 /* ========== FIM HERO SECTION ========== */
-
 /* Seção de Serviços - NOVO DESIGN */
 #servicos {
 background: linear-gradient(135deg, #F2EEEB, #F2EEEB, #F2EEEB);
@@ -1207,6 +1204,13 @@ align-items: center;
 justify-content: space-between;
 gap: 2rem;
 }
+
+.footer-icon-img {
+width: 60px; /* Ajuste conforme o tamanho do seu ícone */
+height: auto;
+display: block;
+margin: 0 auto;
+}
 @media (min-width: 768px) {
 .footer-content {
 flex-direction: row;
@@ -1314,7 +1318,7 @@ padding: 2rem;
 <!-- APENAS TEXTO - ÍCONE REMOVIDO -->
 <div>
 <h1 class="header-title">
-Dra. Mariana Cruz <span class="header-title-span"></span>
+Dra. Mariana Cruz  <span class="header-title-span"></span>
 </h1>
 <p id="headerPhrase" class="text-xs"></p>
 </div>
@@ -1338,9 +1342,9 @@ Dra. Mariana Cruz <span class="header-title-span"></span>
 </div>
 </div>
 </header>
-<!-- Hero Section COM LOGO DE FUNDO AJUSTÁVEL -->
+<!-- Hero Section COM LOGO DE FUNDO FIXADO -->
 <section id="heroSection">
-<!-- Logo de fundo - AJUSTE left/top E width NO CSS -->
+<!-- Logo de fundo - FIXADO NO CENTRO DA TELA -->
 <img src="LOGO VERDE.png" alt="Logo Dra. Mariana Cruz" class="hero-background-logo">
 <div class="hero-container">
 <!-- Texto e botão -->
@@ -1352,7 +1356,7 @@ Estética íntima de alta performance, sem cirurgia, com naturalidade, conforto 
 Pioneira e ÚNICA em Ninfoplastia não cirúrgica em Rio Preto e região.<br>
 Protocolos exclusivos para mulheres que buscam mais conforto, autoestima e confiança — com atendimento especializado e individualizado.
 </p>
-<a href="https://wa.me/5511999999999" class="hero-button" target="_blank">
+<a href="https://wa.me/5517997760646" class="hero-button" target="_blank">
 Agendar consulta agora pelo WhatsApp
 </a>
 </div>
@@ -1534,7 +1538,7 @@ Clique para ver +18
 </div>
 <!-- Botão Telegram -->
 <div class="telegram-button-container">
-<a href="https://t.me/seucanal" target="_blank" class="telegram-button">💬 Telegram</a>
+<a href="https://t.me/+KhSJKuCW7b4wZjEx" target="_blank" class="telegram-button">💬 Telegram</a>
 </div>
 </div>
 </section>
@@ -1679,7 +1683,7 @@ Minha experiência foi ótima, depois de conversarmos muito, a Dra. Me deixou be
 </div>
 </div>
 <!-- Botão Ver Todas Avaliações -->
-<a href="https://www.google.com/search?q=Dra.+Mariana+Cruz+Est%C3%A9tica+%C3%8Dntima" target="_blank" class="view-reviews-button">
+<a href="https://www.google.com/search?q=dra.+mariana+cruz&sca_esv=f58ddf8c0126f90b&sxsrf=ANbL-n5-qUU-WH1E-juLfsLu2Scnxfk0mw%3A1770486281309&ei=CXqHaarMEr3e1sQPjvnB4Ac&biw=1920&bih=953&ved=0ahUKEwjq9IGv98eSAxU9r5UCHY58EHwQ4dUDCBE&uact=5&oq=dra.+mariana+cruz&gs_lp=Egxnd3Mtd2l6LXNlcnAiEWRyYS4gbWFyaWFuYSBjcnV6MgQQIxgnMggQABiABBjLATIIEAAYgAQYywEyDhAuGIAEGMcBGMsBGK8BMggQABiABBjLATIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5I1QVQtARYtARwAXgAkAEAmAGWAaABlgGqAQMwLjG4AQPIAQD4AQGYAgKgAp4BwgILEAAYgAQYsAMYogSYAwCIBgGQBgSSBwMxLjGgB6YNsgcDMC4xuAecAcIHBTAuMS4xyAcGgAgA&sclient=gws-wiz-serp#lrd=0x94bdb3601d3df641:0xf1bc7b2086a4a98d,1,,,," target="_blank" class="view-reviews-button">
 Ver todas as avaliações no Google
 </a>
 </div>
@@ -1852,7 +1856,7 @@ Preencha o formulário e entraremos em contato para agendar sua consulta inicial
 </div>
 <div>
 <h4 class="titulo">Telefone/WhatsApp</h4>
-<p class="descricao">(11) 99999-9999</p>
+<p class="descricao">17 99776-0646</p>
 </div>
 </div>
 <div class="item">
@@ -1887,13 +1891,13 @@ Preencha o formulário e entraremos em contato para agendar sua consulta inicial
 <div class="redes-sociais">
 <h4>Nos siga nas redes sociais</h4>
 <div class="redes-icons">
-<a href="https://wa.me/5511999999999" target="_blank" aria-label="WhatsApp">
+<a href="https://wa.me/5517997760646" target="_blank" aria-label="WhatsApp">
 <i class="fab fa-whatsapp"></i>
 </a>
-<a href="https://www.instagram.com/dra.marianacruz.estetica/" target="_blank" aria-label="Instagram">
+<a href="https://www.instagram.com/dramariana.cruz/" target="_blank" aria-label="Instagram">
 <i class="fab fa-instagram"></i>
 </a>
-<a href="https://t.me/dra_marianacruz_oficial" target="_blank" aria-label="Telegram">
+<a href="https://t.me/+KhSJKuCW7b4wZjEx" target="_blank" aria-label="Telegram">
 <i class="fab fa-telegram"></i>
 </a>
 </div>
@@ -1909,7 +1913,8 @@ Preencha o formulário e entraremos em contato para agendar sua consulta inicial
 <!-- Marca -->
 <div class="footer-brand">
 <div class="footer-icon">
-<i class="fas fa-spa"></i>
+<!-- Substitua o ícone abaixo pela sua imagem PNG -->
+<img src="LOGO VERDE.png" alt="Dra. Mariana Cruz" class="footer-icon-img">
 </div>
 <div>
 <h2 class="footer-title">
@@ -1921,15 +1926,15 @@ Dra. Mariana Cruz <span class="footer-title-span">Estética</span>
 <!-- Direitos autorais -->
 <div class="footer-rights">
 <p class="footer-copy">
-&copy; <span id="anoAtual"></span> Dra. Mariana Cruz Estética. Todos os direitos reservados.
+&copy; <span id="anoAtual"></span> Dra. Mariana Cruz Estética.
 </p>
-<p class="footer-oab">CRM: 123.456 | RQE: 78.901</p>
+<p class="footer-oab"></p>
 </div>
 </div>
 </div>
 </footer>
 <!-- Botão WhatsApp -->
-<a href="https://wa.me/5511999999999" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contato WhatsApp">
+<a href="https://wa.me/5517997760646" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contato WhatsApp">
 <i class="fab fa-whatsapp"></i>
 </a>
 <!-- Modal de Verificação de Idade -->
@@ -1970,7 +1975,7 @@ const texto =
 '*WhatsApp:* ' + telefone + '%0A' +
 '*Principal queixa:* ' + (mensagem || 'Não informado') + '%0A' +
 '*Expectativa de investimento:* ' + investimentoMap[investimento];
-const numero = '5511999999999';
+const numero = '5517997760646';
 const link = `https://wa.me/${numero}?text=${texto}`;
 window.open(link, '_blank');
 });
