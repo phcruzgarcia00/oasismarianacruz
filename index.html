@@ -4,232 +4,194 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Dra. Mariana Cruz | Estética Íntima e Bem-Estar Feminino</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 <style>
+/* ===== RESET & BASE ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-background: linear-gradient(135deg, #F2EEEB, #F2EEEB, #F2EEEB);
+font-family: 'Montserrat', sans-serif;
+background-color: #FDFCFA;
+color: #2C2C2C;
+line-height: 1.7;
+font-size: 15px;
 }
-/* Header principal - SEM ÍCONE/LOGO */
-#mainHeader {
-color: #A9BFA3;
-font-family: Arial, sans-serif;
-background-color: #F2EEEB;
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-/* Container interno do header */
-#mainHeader .header-container {
-padding: 1rem;
-max-width: 1400px;
+.container {
+max-width: 1200px;
 margin: 0 auto;
+padding: 60px 40px;
 }
-/* Nome do escritório - centralizado sem logo */
-#mainHeader .header-title {
-font-size: 1.3rem;
-font-weight: bold;
-color: #000000;
-margin: 0;
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3, h4 {
+font-family: 'Playfair Display', serif;
+font-weight: 400;
+font-style: italic;
+color: #3D4F3E;
+line-height: 1.3;
 }
-/* Parte dourada do nome */
-#mainHeader .header-title-span {
-color: #A9BFA3;
+h1 { font-size: 42px; margin-bottom: 20px; }
+h2 { font-size: 48px; margin-bottom: 40px; }
+h3 {
+font-size: 22px;
+font-weight: 600;
+font-style: normal;
+color: #2C2C2C;
+margin-bottom: 15px;
 }
-/* Frase abaixo do nome */
-#headerPhrase {
-font-size: 0.75rem;
-color: #000000;
-margin: 0.25rem 0 0 0;
+h4 { font-size: 18px; font-weight: 600; color: #2C2C2C; margin-bottom: 10px; }
+p {
+font-family: 'Montserrat', sans-serif;
+font-size: 15px;
+color: #555;
+line-height: 1.7;
 }
-/* Menu de navegação */
-#mainHeader nav ul {
-display: flex;
-gap: 1.2rem;
-list-style: none;
-margin: 0;
-padding: 0;
-}
-/* Links do menu */
-#mainHeader nav ul li a {
-color: #000000;
-text-decoration: none;
-transition: color 0.3s;
-font-weight: 500;
-font-size: 0.95rem;
-padding: 0.5rem 0;
-}
-/* Efeito hover nos links */
-#mainHeader nav ul li a:hover {
-color: #A9BFA3;
-}
-/* Botão de menu (mobile) */
-#mainHeader button i {
-color: #000000;
-font-size: 1.5rem;
-}
-/* Flex container do header */
-#mainHeader .header-container > div {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-/* Logo e informações - REMOVIDO O ÍCONE, APENAS TEXTO */
-#mainHeader .header-container > div > div:first-child {
-display: flex;
-align-items: center;
-gap: 0.75rem;
-}
-/* ========== HERO SECTION COM LOGO DE FUNDO FIXADO ========== */
-#heroSection {
-background: linear-gradient(135deg, #F2EEEB, #F2EEEB, #F2EEEB);
-padding: 8rem 2rem 6rem;
-min-height: 600px;
-display: flex;
-align-items: center;
+a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+/* ===== HEADER STYLE (ATUALIZADO) ===== */
+#mainHeader {
+background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+color: #3D4F3E;
+padding: 60px 40px 80px;
+text-align: center;
 position: relative;
 overflow: hidden;
 }
-/* LOGO DE FUNDO - FIXADO PARA DESKTOP E MOBILE */
-.hero-background-logo {
-position: fixed; /* FIXADO NA TELA */
-left: 50%; /* CENTRALIZA HORIZONTALMENTE */
-top: 50%; /* CENTRALIZA VERTICALMENTE */
-transform: translate(-50%, -50%); /* AJUSTA PARA O CENTRO EXATO */
-width: 850px; /* TAMANHO PADRÃO PARA DESKTOP */
+#mainHeader .shell-icon {
+margin-bottom: 30px;
+display: flex;
+justify-content: center;
+}
+/* ===== LOGO PERSONALIZADA - CONTROLE DE TAMANHO EM PX ===== */
+#mainHeader .shell-icon img {
+width: 300px;
 height: auto;
-opacity: 0.12; /* Transparência */
-z-index: 0;
-pointer-events: none;
+max-height: 550px;
 object-fit: contain;
-max-width: 90%; /* LIMITA O TAMANHO MÁXIMO */
+display: block;
+margin: 0 auto;
 }
-/* AJUSTE PARA MOBILE */
-@media (max-width: 767px) {
-.hero-background-logo {
-width: 350px; /* TAMANHO MENOR PARA MOBILE */
+#mainHeader .main-title {
+font-family: 'Playfair Display', serif;
+font-size: 3.5rem;
+font-weight: 400;
+letter-spacing: 8px;
+margin: 0 0 15px 0;
+color: #3D4F3E;
+text-transform: capitalize;
 }
+#mainHeader .subtitle {
+font-family: 'Montserrat', sans-serif;
+font-size: 1.3rem;
+font-weight: 300;
+letter-spacing: 4px;
+margin: 0 0 30px 0;
+color: #555;
+text-transform: uppercase;
 }
-/* Container principal com z-index acima da logo */
+#mainHeader .description {
+font-family: 'Montserrat', sans-serif;
+font-size: 1rem;
+font-weight: 300;
+line-height: 1.8;
+max-width: 700px;
+margin: 0 auto;
+color: #555;
+letter-spacing: 1px;
+}
+#mainHeader .decorative-line {
+width: 100px;
+height: 2px;
+background: #3D4F3E;
+margin: 40px auto 0;
+}
+/* ===== HERO SECTION ===== */
+#heroSection {
+padding: 80px 40px 100px;
+background: linear-gradient(135deg, #c2c5c227 0%, #ffffff 100%);
+position: relative;
+overflow: hidden;
+min-height: 70vh;
+display: flex;
+align-items: center;
+}
 .hero-container {
 display: flex;
-flex-direction: column;
 align-items: center;
-justify-content: center;
-gap: 3rem;
+gap: 60px;
 max-width: 1200px;
 margin: 0 auto;
-padding: 0 1.5rem;
 position: relative;
 z-index: 1;
 }
-@media (min-width: 768px) {
-.hero-container {
-flex-direction: row;
-}
-}
-/* Texto e botão */
-.hero-text {
-flex: 1;
-text-align: center;
-}
-@media (min-width: 768px) {
-.hero-text {
-text-align: left;
-}
-}
+.hero-text { flex: 1; }
 .hero-title {
-font-size: 2.5rem;
-font-weight: bold;
-background: linear-gradient(90deg, #023a07, #023a07, #023a07);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-color: transparent;
-margin-bottom: 1.5rem;
-line-height: 1.2;
-}
-@media (min-width: 768px) {
-.hero-title {
-font-size: 3rem;
-}
+font-size: 2.8rem;
+margin-bottom: 25px;
+color: #3D4F3E;
 }
 .hero-paragraph {
-font-size: 1.125rem;
-color: #000000;
-line-height: 1.6;
-margin-bottom: 2rem;
+font-size: 1.1rem;
+color: #555;
+margin-bottom: 35px;
+max-width: 550px;
 }
 .hero-button {
-background-color: #25D366;
-color: #FFFFFF;
-border: none;
-padding: 0.85rem 2.5rem;
-border-radius: 50px;
-font-weight: bold;
-font-size: 1.1rem;
-transition: all 0.3s ease;
 display: inline-block;
-text-decoration: none;
-box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+background-color: #3D4F3E;
+color: #ffffff;
+font-family: 'Montserrat', sans-serif;
+font-size: 1rem;
+font-weight: 500;
+padding: 16px 45px;
+border-radius: 50px;
+border: 2px solid #3D4F3E;
+transition: all 0.3s ease;
 }
 .hero-button:hover {
-background-color: #1ebe5d;
+background-color: transparent;
+color: #3D4F3E;
 transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+box-shadow: 0 10px 30px rgba(61, 79, 62, 0.2);
 }
 .hero-image {
 flex: 1;
 display: flex;
 justify-content: center;
-align-items: center;
 }
 .hero-image img {
-width: 100%;
-max-width: 450px;
+max-width: 100%;
+width: 400px;
 height: auto;
-border-radius: 1rem;
-box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+border-radius: 12px;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0);
+object-fit: cover;
 }
-/* ========== FIM HERO SECTION ========== */
-/* Seção de Serviços - NOVO DESIGN */
+/* ===== SEÇÃO SERVIÇOS ===== */
 #servicos {
-background: linear-gradient(135deg, #F2EEEB, #F2EEEB, #F2EEEB);
-padding: 5rem 2rem;
-margin: 3rem 0;
+padding: 80px 40px;
+background-color: #ffffff;
 }
-#servicesTitle {
-font-size: 2.25rem;
-font-weight: bold;
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
+.section-header {
 text-align: center;
-margin-bottom: 1rem;
+margin-bottom: 60px;
 }
-#servicesTitle .text-gold {
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
+.section-header h2 {
+font-size: 48px;
+margin-bottom: 20px;
 }
-.services-line {
-width: 80px;
-height: 4px;
-background-color: #00000000;
-margin: 1rem auto;
-border-radius: 2px;
+.section-divider {
+width: 60px;
+height: 2px;
+background-color: #3D4F3E;
+margin: 0 auto 25px;
 }
-.services-description {
-max-width: 800px;
-margin: 1.5rem auto 3rem;
-color: #000000;
-font-size: 1.1rem;
-text-align: center;
-line-height: 1.6;
+.section-description {
+max-width: 700px;
+margin: 0 auto;
+color: #555;
+font-size: 1.05rem;
 }
-/* Novo estilo de lista de serviços */
 .services-list {
 max-width: 900px;
 margin: 0 auto;
@@ -237,181 +199,103 @@ margin: 0 auto;
 .service-item {
 display: flex;
 align-items: flex-start;
-gap: 2rem;
-padding: 2rem 0;
-border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+gap: 25px;
+padding: 30px 0;
+border-bottom: 1px solid rgba(61, 79, 62, 0.1);
 transition: all 0.3s ease;
 }
 .service-item:hover {
-background-color: rgba(169, 191, 163, 0.05);
-transform: translateX(5px);
+background-color: rgba(61, 79, 62, 0.03);
+padding-left: 10px;
 }
-.service-item:last-child {
-border-bottom: none;
-}
+.service-item:last-child { border-bottom: none; }
 .service-number-circle {
 flex-shrink: 0;
-width: 60px;
-height: 60px;
+width: 50px;
+height: 50px;
 border-radius: 50%;
-background: linear-gradient(135deg, #A9BFA3, #8a9c85);
-color: #000000;
-font-weight: bold;
-font-size: 1.5rem;
+background: #3D4F3E;
+color: #ffffff;
+font-weight: 600;
+font-size: 1.2rem;
 display: flex;
 align-items: center;
 justify-content: center;
-box-shadow: 0 4px 10px rgba(169, 191, 163, 0.3);
+font-family: 'Montserrat', sans-serif;
 }
-.service-content {
-flex: 1;
-}
+.service-content { flex: 1; }
 .service-title {
-font-size: 1.4rem;
-font-weight: bold;
-color: #000000;
-margin-bottom: 0.75rem;
-position: relative;
-padding-left: 15px;
+font-family: 'Playfair Display', serif;
+font-size: 1.3rem;
+font-weight: 600;
+font-style: normal;
+color: #2C2C2C;
+margin-bottom: 8px;
 }
-
-.service-text {
-color: #000000;
-font-size: 1.05rem;
-line-height: 1.7;
-margin-left: 15px;
-}
-/* Responsive para mobile */
-@media (max-width: 767px) {
-.service-item {
-flex-direction: column;
-align-items: center;
-text-align: center;
-}
-.service-number-circle {
-width: 50px;
-height: 50px;
-font-size: 1.25rem;
-}
-.service-content {
-width: 100%;
-}
-.service-title {
-text-align: center;
-padding-left: 0;
-}
-.service-title::before {
-left: 50%;
-transform: translate(-50%, -50%);
-}
-.service-text {
-text-align: center;
-margin-left: 0;
-}
-}
-/* Seção Antes x Depois */
+.service-text { color: #555; }
+/* ===== ANTES X DEPOIS ===== */
 .before-after-section {
-background-color: #F2EEEB;
-padding: 5rem 2rem;
-}
-.before-after-title {
-font-size: 2.5rem;
-font-weight: bold;
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-text-align: center;
-margin-bottom: 1rem;
-}
-.before-after-title .text-gold {
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-}
-.before-after-divider {
-width: 80px;
-height: 4px;
-background-color: #00000000;
-margin: 1rem auto;
-border-radius: 2px;
+padding: 80px 40px;
+background: linear-gradient(135deg, #c2c5c227 0%, #ffffff 100%);
 }
 .before-after-subtitle {
-color: #000000;
-font-size: 1.125rem;
-max-width: 800px;
-margin: 1.5rem auto 3rem;
 text-align: center;
-line-height: 1.6;
+max-width: 750px;
+margin: 0 auto 50px;
+color: #555;
 }
-/* Grid para Ninfoplastia (3 cards em linha) */
 .ninfoplastia-grid {
 display: grid;
-grid-template-columns: 1fr;
-gap: 2.5rem;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
 max-width: 1200px;
-margin: 0 auto;
+margin: 0 auto 40px;
 }
-@media (min-width: 768px) {
-.ninfoplastia-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-}
-@media (min-width: 1024px) {
-.ninfoplastia-grid {
-grid-template-columns: repeat(3, 1fr);
-}
-}
-/* Grid para outros casos (centralizado com 2 cards) */
 .other-cases-grid {
 display: grid;
-grid-template-columns: 1fr;
-gap: 2.5rem;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
 max-width: 800px;
-margin: 3rem auto 0;
-}
-@media (min-width: 768px) {
-.other-cases-grid {
-grid-template-columns: repeat(2, 1fr);
-}
+margin: 0 auto;
+justify-content: center;
 }
 .case-card {
 background-color: #ffffff;
 border-radius: 12px;
-padding: 1.5rem;
-box-shadow: 0 4px 10px rgba(169, 191, 163, 0.1);
+padding: 25px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.06);
 transition: transform 0.3s ease;
-}
-.case-card:hover {
-transform: translateY(-4px);
-}
-.case-title {
-font-size: 1.25rem;
-font-weight: bold;
-color: #000000;
-margin-bottom: 1.25rem;
 text-align: center;
-border-bottom: 2px solid #A9BFA3;
-padding-bottom: 0.75rem;
+}
+.case-card:hover { transform: translateY(-5px); }
+.case-title {
+font-family: 'Playfair Display', serif;
+font-size: 1.2rem;
+font-weight: 600;
+font-style: normal;
+color: #2C2C2C;
+margin-bottom: 20px;
+padding-bottom: 15px;
+border-bottom: 2px solid rgba(61, 79, 62, 0.2);
 }
 .case-images {
 display: grid;
 grid-template-columns: 1fr 1fr;
-gap: 1rem;
+gap: 12px;
 }
 .case-image-container {
 position: relative;
 border-radius: 8px;
 overflow: hidden;
 cursor: pointer;
-height: 200px;
+height: 180px;
+background: #f5f5f5;
 }
 .blurred-image {
 width: 100%;
 height: 100%;
 object-fit: cover;
-filter: blur(8px);
+filter: blur(10px);
 transition: filter 0.3s ease;
 }
 .overlay {
@@ -420,7 +304,7 @@ top: 0;
 left: 0;
 width: 100%;
 height: 100%;
-background: rgba(0, 0, 0, 0.7);
+background: rgba(61, 79, 62, 0.85);
 color: #ffffff;
 display: flex;
 flex-direction: column;
@@ -428,210 +312,122 @@ justify-content: center;
 align-items: center;
 text-align: center;
 padding: 1rem;
-font-weight: bold;
-font-size: 0.9rem;
+font-size: 0.85rem;
 transition: background 0.3s ease;
 }
 .overlay-text {
-margin-bottom: 0.5rem;
-font-size: 0.85rem;
+margin-bottom: 5px;
+font-weight: 500;
 }
-.overlay:hover {
-background: rgba(0, 0, 0, 0.85);
-}
-.case-image-container:hover .blurred-image {
-filter: blur(6px);
-}
-/* Imagem revelada */
-.revealed-image {
-filter: blur(0px) !important;
-}
-.revealed-overlay {
-display: none !important;
-}
-/* Modais */
-.modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.9);
-z-index: 1000;
-justify-content: center;
-align-items: center;
-}
-.modal-content {
-background-color: #ffffff;
-padding: 2.5rem;
-border-radius: 15px;
-max-width: 500px;
-width: 90%;
-text-align: center;
-position: relative;
-}
-.modal-title {
-font-size: 1.75rem;
-font-weight: bold;
-color: #000000;
-margin-bottom: 1.5rem;
-}
-.modal-text {
-color: #000000;
-font-size: 1.1rem;
-line-height: 1.6;
-margin-bottom: 2rem;
-}
-.modal-buttons {
-display: flex;
-gap: 1rem;
-justify-content: center;
-}
-.modal-btn {
-padding: 0.85rem 2rem;
-border-radius: 50px;
-font-weight: bold;
-font-size: 1rem;
-cursor: pointer;
-transition: all 0.3s ease;
-border: none;
-}
-.modal-btn-yes {
-background-color: #000000;
-color: #A9BFA3;
-}
-.modal-btn-yes:hover {
-background-color: #D4AF37;
-transform: translateY(-2px);
-}
-.modal-btn-no {
-background-color: #A9BFA3;
-color: #000000;
-}
-.modal-btn-no:hover {
-background-color: #8a9c85;
-transform: translateY(-2px);
+.case-image-container:hover .blurred-image { filter: blur(8px); }
+.revealed-image { filter: blur(0) !important; }
+.revealed-overlay { display: none !important; }
+
+/* 🔹 NOVO: Estilo para indicar que pode clicar para ocultar 🔹 */
+.case-image-container.revealed .overlay-text::after {
+content: ' (clique para ocultar)';
+font-size: 0.75rem;
+opacity: 0.8;
 }
 .telegram-button-container {
 text-align: center;
-margin-top: 3rem;
+margin-top: 40px;
 }
 .telegram-button {
 display: inline-block;
 background-color: #0088cc;
 color: #ffffff;
-padding: 0.75rem 2rem;
+padding: 14px 35px;
 border-radius: 50px;
-font-weight: bold;
-font-size: 1.1rem;
-text-decoration: none;
+font-weight: 500;
+font-size: 1rem;
 transition: all 0.3s ease;
-box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
 }
 .telegram-button:hover {
 background-color: #006699;
 transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6);
+box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
 }
-/* Seção Sobre */
+/* ===== SOBRE (COM PLANO DE FUNDO PERSONALIZÁVEL) ===== */
 #sobre {
-background: linear-gradient(135deg, #F2EEEB, #A9BFA3, #F2EEEB);
-padding: 5rem 2rem;
-margin: 3rem 0;
+padding: 80px 40px;
+background-color: #ffffff;
+position: relative;
+overflow: hidden;
+}
+/* 🔹 PLANO DE FUNDO COM OPACIDADE CONTROLÁVEL 🔹 */
+#sobre::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+/* 🎨 CONFIGURAÇÕES DO FUNDO */
+background-image: url('ChatGPT\ Image\ 24\ de\ fev.\ de\ 2026\,\ 12_36_07-Photoroom.png'); /* ← COLOQUE O CAMINHO DA SUA IMAGEM AQUI */
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+/* 🔹 CONTROLE DE TRANSPARÊNCIA (AJUSTE AQUI) 🔹 */
+/* Opção 1: Usar rgba para cor de sobreposição */
+background-color: rgba(0, 0, 0, 0.082); /* ← Último valor: 0.0 (transparente) a 1.0 (opaco) */
+/* Opção 2: Usar opacity para controlar toda a camada */
+opacity: 0.03; /* ← Ajuste este valor (0.0 = invisível, 1.0 = totalmente visível) */
+z-index: 0;
+}
+/* Garante que o conteúdo fique acima do fundo */
+#sobre .container {
+position: relative;
+z-index: 1;
 }
 .about-container {
 display: flex;
-flex-direction: column;
-gap: 3rem;
-max-width: 1200px;
+align-items: center;
+gap: 60px;
+max-width: 1100px;
 margin: 0 auto;
 }
-@media (min-width: 768px) {
-.about-container {
-flex-direction: row;
-align-items: center;
-}
-}
 .about-image {
-flex: 1;
-border-radius: 20px;
+flex: 0 0 350px;
+border-radius: 12px;
 overflow: hidden;
-box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0);
 }
 .about-image img {
 width: 100%;
 height: auto;
 display: block;
-object-fit: cover;
 }
-.about-content {
-flex: 1;
-color: #000000;
-}
-.about-title {
-font-size: 2rem;
-font-weight: bold;
-font-family: 'Playfair Display', serif;
-color: #000000;
-margin-bottom: 1.5rem;
-}
-@media (min-width: 768px) {
+.about-content { flex: 1; }
 .about-title {
 font-size: 2.5rem;
-}
-}
-.about-title .text-gold {
-color: #000000;
-font-weight: bold;
+margin-bottom: 25px;
+color: #3D4F3E;
 }
 .about-line {
 width: 60px;
-height: 3px;
-background-color: #00000000;
-margin: 1rem 0 1.5rem;
+height: 2px;
+background-color: #ffffff;
+margin: 0 0 25px;
 }
 .about-paragraph {
-color: #000000;
-font-size: 1.05rem;
-line-height: 1.7;
-margin-bottom: 1.25rem;
+margin-bottom: 18px;
+color: #555;
 }
-/* Depoimentos */
+/* ===== DEPOIMENTOS ===== */
 .testimonial-section {
-background-color: #F2EEEB;
-padding: 5rem 2rem;
-}
-.testimonial-title {
-font-size: 2.5rem;
-font-weight: bold;
-font-family: 'Playfair Display', serif;
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-text-align: center;
-margin-bottom: 1rem;
-}
-.testimonial-divider {
-width: 80px;
-height: 4px;
-background-color: #00000000;
-margin: 1rem auto;
-border-radius: 2px;
+padding: 80px 40px;
+background: linear-gradient(135deg, #c2c5c227 0%, #ffffff 100%);
 }
 .testimonial-subtitle {
-font-size: 1.125rem;
-color: #000000;
-max-width: 700px;
-margin: 1.5rem auto 3rem;
 text-align: center;
-line-height: 1.6;
+max-width: 600px;
+margin: 0 auto 45px;
+color: #555;
 }
-/* CARROSSEL DE DEPOIMENTOS DO WHATSAPP */
 .whatsapp-testimonials {
 position: relative;
-max-width: 1200px;
+max-width: 900px;
 margin: 0 auto;
 overflow: hidden;
 }
@@ -643,705 +439,611 @@ transition: transform 0.5s ease;
 min-width: 100%;
 display: flex;
 justify-content: center;
-align-items: center;
-padding: 0 1.5rem;
+padding: 0 20px;
 }
 .whatsapp-testimonial-image {
 max-width: 100%;
-max-height: 600px;
+max-height: 500px;
 object-fit: contain;
 border-radius: 12px;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+box-shadow: 0 10px 35px rgba(0,0,0,0.1);
 }
 .whatsapp-testimonials-btn {
 position: absolute;
 top: 50%;
 transform: translateY(-50%);
-background-color: rgba(0, 0, 0, 0.5);
+background-color: rgba(61, 79, 62, 0.8);
 color: white;
 border: none;
-padding: 1rem;
+width: 45px;
+height: 45px;
+border-radius: 50%;
 cursor: pointer;
 z-index: 10;
-font-size: 1.5rem;
-width: 50px;
-height: 50px;
-border-radius: 50%;
+font-size: 1.2rem;
 display: flex;
 align-items: center;
 justify-content: center;
 transition: all 0.3s;
 }
 .whatsapp-testimonials-btn:hover {
-background-color: rgba(0, 0, 0, 0.7);
+background-color: #3D4F3E;
 transform: translateY(-50%) scale(1.1);
 }
-.whatsapp-testimonials-btn.prev {
-left: 10px;
-}
-.whatsapp-testimonials-btn.next {
-right: 10px;
-}
-/* Botão Ver Avaliações */
-.view-reviews-button {
-display: block;
-width: 100%;
-max-width: 350px;
-margin: 3rem auto 0;
-background-color: #000000;
-color: #A9BFA3;
-border: none;
-padding: 1rem 2.5rem;
-border-radius: 50px;
-font-weight: bold;
-font-size: 1.1rem;
-text-align: center;
-text-decoration: none;
-transition: all 0.3s ease;
-box-shadow: 0 4px 15px rgba(169, 191, 163, 0.3);
-}
-.view-reviews-button:hover {
-background-color: #D4AF37;
-transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(169, 191, 163, 0.4);
-}
-/* SEÇÃO AVALIAÇÕES DO GOOGLE - NOVA */
+.whatsapp-testimonials-btn.prev { left: 10px; }
+.whatsapp-testimonials-btn.next { right: 10px; }
+/* ===== GOOGLE REVIEWS ===== */
 .google-reviews-section {
-background-color: #F2EEEB;
-padding: 5rem 2rem;
-}
-.google-reviews-title {
-font-size: 2.5rem;
-font-weight: bold;
-font-family: 'Playfair Display', serif;
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-text-align: center;
-margin-bottom: 1rem;
-}
-.google-reviews-divider {
-width: 80px;
-height: 4px;
-background-color: #00000000;
-margin: 1rem auto;
-border-radius: 2px;
+padding: 80px 40px;
+background-color: #ffffff;
 }
 .google-reviews-subtitle {
-font-size: 1.125rem;
-color: #000000;
-max-width: 700px;
-margin: 1.5rem auto 3rem;
 text-align: center;
-line-height: 1.6;
+max-width: 600px;
+margin: 0 auto 45px;
+color: #555;
 }
 .google-reviews-container {
-max-width: 1200px;
-margin: 0 auto;
 display: grid;
-grid-template-columns: 1fr;
-gap: 2rem;
-}
-@media (min-width: 768px) {
-.google-reviews-container {
-grid-template-columns: repeat(2, 1fr);
-}
-}
-@media (min-width: 1024px) {
-.google-reviews-container {
-grid-template-columns: repeat(3, 1fr);
-}
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 25px;
+max-width: 1100px;
+margin: 0 auto;
 }
 .google-review-card {
-background-color: #ffffff;
+background: linear-gradient(135deg, #ffffff27 0%, #ffffff 100%);
 border-radius: 12px;
-padding: 2rem;
-box-shadow: 0 4px 10px rgba(169, 191, 163, 0.1);
+padding: 28px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+border-left: 3px solid #3D4F3E;
 transition: transform 0.3s ease;
-border-left: 4px solid #A9BFA3;
 }
-.google-review-card:hover {
-transform: translateY(-4px);
-box-shadow: 0 6px 15px rgba(169, 191, 163, 0.2);
-}
+.google-review-card:hover { transform: translateY(-4px); }
 .google-review-header {
 display: flex;
 align-items: center;
-margin-bottom: 1rem;
+margin-bottom: 15px;
 }
 .google-review-stars {
 color: #FFC107;
-font-size: 1.5rem;
-margin-right: 1rem;
+font-size: 1.1rem;
+margin-right: 12px;
 }
 .google-logo {
-font-size: 1.2rem;
+font-size: 1.3rem;
 color: #4285F4;
-font-weight: bold;
+font-weight: 600;
 }
 .google-review-author {
-font-size: 1.1rem;
-font-weight: bold;
-color: #000000;
-margin-top: 0.5rem;
+font-weight: 600;
+color: #2C2C2C;
+font-size: 0.95rem;
+margin-top: 5px;
 }
 .google-review-text {
-color: #000000;
-font-size: 1rem;
+color: #555;
+font-size: 0.95rem;
 line-height: 1.7;
-margin-top: 1rem;
+margin-top: 12px;
 font-style: italic;
 }
 .google-review-footer {
 display: flex;
 align-items: center;
-margin-top: 1rem;
-color: #666666;
-font-size: 0.85rem;
+margin-top: 15px;
+color: #888;
+font-size: 0.8rem;
 }
-.google-review-date {
-margin-right: 1rem;
-}
-.google-review-photos {
-color: #A9BFA3;
-}
-/* Abordagem */
-.approach-section {
-background: linear-gradient(135deg, #F2EEEB, #F2EEEB, #F2EEEB);
-padding: 5rem 2rem;
-}
-.approach-title {
-font-size: 2.5rem;
-font-weight: bold;
-background: linear-gradient(90deg, #A9BFA3, #A9BFA3);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
+.google-review-date { margin-right: 15px; }
+.google-review-photos { color: #3D4F3E; }
+.view-reviews-button {
+display: block;
+max-width: 380px;
+margin: 45px auto 0;
+background-color: #3D4F3E;
+color: #ffffff;
+padding: 15px 35px;
+border-radius: 50px;
+font-weight: 500;
 text-align: center;
-margin-bottom: 1rem;
+border: 2px solid #3D4F3E;
+transition: all 0.3s ease;
 }
-.approach-title .text-gold {
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
+.view-reviews-button:hover {
+background-color: transparent;
+color: #3D4F3E;
+transform: translateY(-2px);
 }
-.approach-divider {
-width: 80px;
-height: 4px;
-background-color: #00000000;
-margin: 1rem auto;
-border-radius: 2px;
+/* ===== ABORDAGEM ===== */
+.approach-section {
+padding: 80px 40px;
+background: linear-gradient(135deg, #c2c5c227 0%, #ffffff 100%);
 }
 .approach-subtitle {
-color: #000000;
-font-size: 1.125rem;
-max-width: 700px;
-margin: 1.5rem auto 3rem;
 text-align: center;
-line-height: 1.6;
+max-width: 600px;
+margin: 0 auto 50px;
+color: #555;
 }
 .approach-grid {
 display: grid;
-grid-template-columns: 1fr;
-gap: 2.5rem;
-max-width: 1200px;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 30px;
+max-width: 1100px;
 margin: 0 auto;
 }
-@media (min-width: 768px) {
-.approach-grid {
-grid-template-columns: repeat(3, 1fr);
-}
-}
 .approach-step {
-background-color: #A9BFA3;
-padding: 2.5rem;
-border-radius: 15px;
+background-color: #ffffff;
+padding: 35px 30px;
+border-radius: 12px;
 text-align: center;
-box-shadow: 0 4px 12px rgba(133, 133, 133, 0.89);
+box-shadow: 0 5px 20px rgba(0,0,0,0.06);
 transition: transform 0.3s ease;
 }
-.approach-step:hover {
-transform: translateY(-6px);
-}
+.approach-step:hover { transform: translateY(-5px); }
 .approach-icon {
-font-size: 3rem;
-color: #000000;
-margin-bottom: 1.25rem;
+font-size: 2.5rem;
+color: #3D4F3E;
+margin-bottom: 20px;
 }
 .approach-step-title {
-color: #000000;
-font-size: 1.35rem;
-font-weight: bold;
-margin-bottom: 1rem;
+font-family: 'Playfair Display', serif;
+font-size: 1.3rem;
+font-weight: 600;
+font-style: normal;
+color: #2C2C2C;
+margin-bottom: 15px;
 }
-.approach-step-text {
-color: #000000;
-font-size: 1rem;
-line-height: 1.6;
-}
-/* Principais Dúvidas (FAQ) */
+.approach-step-text { color: #555; font-size: 0.95rem; }
+/* ===== FAQ ===== */
 .faq-section {
-background-color: #F2EEEB;
-padding: 5rem 2rem;
-}
-.faq-title {
-font-size: 2.5rem;
-font-weight: bold;
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-text-align: center;
-margin-bottom: 1rem;
-}
-.faq-title .text-gold {
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-}
-.faq-divider {
-width: 80px;
-height: 4px;
-background-color: #00000000;
-margin: 1rem auto;
-border-radius: 2px;
+padding: 80px 40px;
+background-color: #ffffff;
 }
 .faq-subtitle {
-color: #000000;
-font-size: 1.125rem;
-max-width: 700px;
-margin: 1.5rem auto 3rem;
 text-align: center;
-line-height: 1.6;
+max-width: 600px;
+margin: 0 auto 45px;
+color: #555;
 }
 .faq-container {
-max-width: 1000px;
+max-width: 850px;
 margin: 0 auto;
 }
 .faq-item {
-background-color: #ffffff;
+background: linear-gradient(135deg, #ffffff27 0%, #ffffff 100%);
 border-radius: 12px;
-padding: 2rem;
-margin-bottom: 1.5rem;
-box-shadow: 0 4px 10px rgba(169, 191, 163, 0.1);
+padding: 25px 30px;
+margin-bottom: 15px;
+box-shadow: 0 3px 15px rgba(0,0,0,0.04);
 transition: all 0.3s ease;
-}
-.faq-item:hover {
-transform: translateY(-4px);
-box-shadow: 0 6px 15px rgba(169, 191, 163, 0.2);
-}
-.faq-question {
-font-size: 1.25rem;
-font-weight: bold;
-color: #000000;
-margin-bottom: 1rem;
 cursor: pointer;
+}
+.faq-item:hover { box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+.faq-question {
+font-family: 'Playfair Display', serif;
+font-size: 1.15rem;
+font-weight: 600;
+font-style: normal;
+color: #2C2C2C;
 display: flex;
 justify-content: space-between;
 align-items: center;
 }
 .faq-question i {
-font-size: 1.2rem;
-color: #A9BFA3;
+color: #3D4F3E;
 transition: transform 0.3s ease;
 }
 .faq-answer {
-color: #000000;
-font-size: 1rem;
+color: #555;
+font-size: 0.95rem;
 line-height: 1.7;
 max-height: 0;
 overflow: hidden;
 transition: max-height 0.3s ease, padding 0.3s ease;
+margin-top: 0;
 }
 .faq-item.active .faq-answer {
-max-height: 500px;
-padding-top: 1rem;
+max-height: 300px;
+padding-top: 15px;
 }
-.faq-item.active .faq-question i {
-transform: rotate(180deg);
-}
-/* Localização & Estrutura */
+.faq-item.active .faq-question i { transform: rotate(180deg); }
+/* ===== LOCALIZAÇÃO ===== */
 .location-section {
-background: linear-gradient(135deg, #F2EEEB, #A9BFA3, #F2EEEB);
-padding: 5rem 2rem;
-}
-.location-title {
-font-size: 2.5rem;
-font-weight: bold;
-background: linear-gradient(90deg, #0b531d, #0b531d);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-text-align: center;
-margin-bottom: 1rem;
-}
-.location-title .text-gold {
-background: linear-gradient(90deg, #0b531d, #0b531d);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-}
-.location-divider {
-width: 80px;
-height: 4px;
-background-color: #00000000;
-margin: 1rem auto;
-border-radius: 2px;
+padding: 80px 40px;
+background: linear-gradient(135deg, #c2c5c227 0%, #ffffff 100%);
 }
 .location-subtitle {
-color: #000000;
-font-size: 1.125rem;
-max-width: 700px;
-margin: 1.5rem auto 3rem;
 text-align: center;
-line-height: 1.6;
+max-width: 600px;
+margin: 0 auto 45px;
+color: #555;
 }
 .location-container {
-max-width: 1000px;
+max-width: 800px;
 margin: 0 auto;
 background-color: #ffffff;
 border-radius: 15px;
-padding: 3rem;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+padding: 40px;
+box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+text-align: center;
 }
 .location-content {
-color: #000000;
-font-size: 1.1rem;
-line-height: 1.8;
-text-align: center;
+color: #555;
+font-size: 1.05rem;
+line-height: 1.9;
 }
-/* Contato */
+.location-image-wrapper {
+margin-top: 40px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.location-image {
+max-width: 100%;
+width: 100%;
+max-height: 600px;
+object-fit: cover;
+border-radius: 12px;
+box-shadow: 0 15px 50px rgba(255, 255, 255, 0.15);
+display: block;
+}
+/* ===== CONTATO ===== */
 .contact-section {
-background: linear-gradient(135deg, #F2EEEB, #F2EEEB, #F2EEEB);
-padding: 5rem 2rem;
-}
-.contact-title {
-font-size: 2.5rem;
-font-weight: bold;
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-text-align: center;
-margin-bottom: 1rem;
-}
-.contact-title .text-gold {
-background: linear-gradient(90deg, #7da872, #7da872);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
-}
-.contact-divider {
-width: 80px;
-height: 4px;
-background-color: #00000000;
-margin: 1rem auto;
-border-radius: 2px;
+padding: 80px 40px;
+background-color: #ffffff;
 }
 .contact-subtitle {
-color: #000000;
-font-size: 1.125rem;
-max-width: 700px;
-margin: 1.5rem auto 3rem;
 text-align: center;
-line-height: 1.6;
+max-width: 650px;
+margin: 0 auto 50px;
+color: #555;
 }
 .contact-container {
 display: flex;
-flex-direction: column;
-gap: 3rem;
-max-width: 1200px;
+gap: 50px;
+max-width: 1100px;
 margin: 0 auto;
 }
-@media (min-width: 768px) {
-.contact-container {
-flex-direction: row;
-}
-}
-.contact-form {
-flex: 1;
-}
+.contact-form { flex: 1; }
 .contact-form label {
 display: block;
-margin-bottom: 0.65rem;
-font-weight: 600;
-color: #000000;
-font-size: 0.95rem;
+margin-bottom: 8px;
+font-weight: 500;
+color: #2C2C2C;
+font-size: 0.9rem;
 }
 .contact-form input,
 .contact-form textarea,
 .contact-form select {
 width: 100%;
-padding: 0.85rem 1.25rem;
-border: 1px solid #000000;
+padding: 14px 18px;
+border: 1px solid rgba(61, 79, 62, 0.3);
 border-radius: 8px;
-font-size: 1rem;
-font-family: inherit;
-color: #000000;
-background-color: #F2EEEB;
-transition: border-color 0.2s, box-shadow 0.2s;
+font-size: 0.95rem;
+font-family: 'Montserrat', sans-serif;
+color: #2C2C2C;
+background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+transition: all 0.3s ease;
+margin-bottom: 20px;
 }
 .contact-form input:focus,
 .contact-form textarea:focus,
 .contact-form select:focus {
 outline: none;
-border-color: #A9BFA3;
-box-shadow: 0 0 0 3px rgba(169, 191, 163, 0.3);
+border-color: #3D4F3E;
+box-shadow: 0 0 0 3px rgba(61, 79, 62, 0.15);
 }
 .contact-button {
-background-color: #000000;
-color: #A9BFA3;
-font-weight: bold;
-padding: 0.95rem 2.5rem;
+background-color: #3D4F3E;
+color: #ffffff;
+font-weight: 500;
+padding: 16px 40px;
 border: none;
 border-radius: 50px;
-font-size: 1.05rem;
+font-size: 1rem;
 cursor: pointer;
-transition: background-color 0.3s ease;
-margin-top: 1rem;
+transition: all 0.3s ease;
 width: 100%;
-box-shadow: 0 4px 15px rgba(169, 191, 163, 0.3);
+margin-top: 10px;
 }
 .contact-button:hover {
-background-color: #D4AF37;
+background-color: transparent;
+color: #3D4F3E;
+border: 2px solid #3D4F3E;
 transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(169, 191, 163, 0.4);
 }
 .info-contato {
-background-color: #F2EEEB;
-padding: 2.5rem;
+flex: 0 0 320px;
+background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+padding: 35px;
 border-radius: 15px;
-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-border: 1px solid #000000;
-flex: 1;
+box-shadow: 0 10px 35px rgba(0,0,0,0.07);
+align-self: flex-start;
+position: sticky;
+top: 20px;
 }
 .info-contato h3 {
-font-size: 1.65rem;
-font-weight: bold;
-color: #000000;
-margin-bottom: 1.75rem;
-padding-bottom: 1rem;
-border-bottom: 2px solid #A9BFA3;
+font-family: 'Playfair Display', serif;
+font-size: 1.5rem;
+font-weight: 600;
+font-style: normal;
+color: #2C2C2C;
+margin-bottom: 25px;
+padding-bottom: 15px;
+border-bottom: 2px solid rgba(61, 79, 62, 0.2);
 }
 .info-contato .item {
 display: flex;
 align-items: flex-start;
-gap: 1rem;
-margin-bottom: 1.5rem;
+gap: 15px;
+margin-bottom: 22px;
 }
 .info-contato .icon i {
-font-size: 1.4rem;
-color: #A9BFA3;
-margin-top: 0.25rem;
+font-size: 1.2rem;
+color: #3D4F3E;
+margin-top: 3px;
+width: 20px;
+text-align: center;
 }
 .info-contato .titulo {
-font-size: 1.1rem;
-font-weight: bold;
-color: #000000;
-margin-bottom: 0.35rem;
+font-weight: 600;
+color: #2C2C2C;
+margin-bottom: 3px;
+font-size: 0.95rem;
 }
 .info-contato .descricao {
-font-size: 1rem;
-color: #000000;
-line-height: 1.5;
+font-size: 0.9rem;
+color: #555;
+line-height: 1.6;
 }
+.redes-sociais { margin-top: 30px; }
 .redes-sociais h4 {
-font-weight: bold;
-margin-top: 2rem;
-margin-bottom: 1rem;
-color: #000000;
-font-size: 1.1rem;
+font-weight: 600;
+margin-bottom: 15px;
+color: #2C2C2C;
+font-size: 0.95rem;
 }
-.redes-icons {
-display: flex;
-gap: 1rem;
-}
+.redes-icons { display: flex; gap: 12px; }
 .redes-icons a {
-background-color: #A9BFA3;
-color: #000000;
-width: 45px;
-height: 45px;
+background-color: #3D4F3E;
+color: #ffffff;
+width: 42px;
+height: 42px;
 display: flex;
 justify-content: center;
 align-items: center;
 border-radius: 50%;
-font-size: 1.3rem;
-transition: background-color 0.3s, transform 0.3s;
+font-size: 1.1rem;
+transition: all 0.3s;
 }
 .redes-icons a:hover {
-background-color: #000000;
-color: #A9BFA3;
+background-color: #2C2C2C;
 transform: translateY(-3px);
 }
-/* Footer */
+/* ===== FOOTER ===== */
 .footer {
-background-color: #F2EEEB;
-color: #A9BFA3;
-padding: 2.5rem 0;
+background: linear-gradient(135deg, #c2c5c227 0%, #ffffff 100%);
+color: #3D4F3E;
+padding: 40px 0;
+border-top: 1px solid rgba(61, 79, 62, 0.1); /* Opcional: linha separadora */
 }
 .footer-container {
 max-width: 1200px;
 margin: 0 auto;
-padding: 0 1.5rem;
+padding: 0 40px;
 }
 .footer-content {
 display: flex;
-flex-direction: column;
-align-items: center;
 justify-content: space-between;
-gap: 2rem;
-}
-
-.footer-icon-img {
-width: 60px; /* Ajuste conforme o tamanho do seu ícone */
-height: auto;
-display: block;
-margin: 0 auto;
-}
-@media (min-width: 768px) {
-.footer-content {
-flex-direction: row;
 align-items: center;
-justify-content: space-between;
+flex-wrap: wrap;
+gap: 20px;
 }
-}
+/* 🔹 CONFIGURAÇÃO DA LOGO E NOME 🔹 */
 .footer-brand {
 display: flex;
-align-items: center;
-gap: 1rem;
+flex-direction: column; /* Coloca o texto embaixo da imagem */
+align-items: center;    /* Centraliza tudo */
+gap: 10px;              /* Espaço entre logo e texto */
 }
-.footer-icon i {
-font-size: 1.75rem;
-color: #A9BFA3;
+/* ⚙️ AJUSTE O TAMANHO DA LOGO AQUI ⚙️ */
+.footer-icon-img {
+width: 80px;            /* <--- MUDE ESTE VALOR (ex: 60px, 100px) */
+height: auto;
+display: block;
 }
-.footer-title {
-font-weight: bold;
-font-size: 1.35rem;
-color: #A9BFA3;
+.footer-clinic-name {
+font-family: 'Playfair Display', serif;
+font-weight: 200;
+font-style: italic;
+font-size: 1.3rem;
+color: #3D4F3E;
+margin: 0;
+letter-spacing: 1px;
 }
-.footer-title-span {
-color: #A9BFA3;
-}
-.footer-subtitle {
+/* 🔹 FIM CONFIGURAÇÃO LOGO 🔹 */
+.footer-rights { text-align: right; }
+.footer-copy {
 font-size: 0.9rem;
-color: #000000;
+color: #3d4f3e81;
+margin-bottom: 5px;
+}
+.footer-oab {
+font-size: 0.8rem;
+color: #3D4F3E;
+opacity: 0.8;
+}
+/* Responsividade do Footer */
+@media (max-width: 768px) {
+.footer-content {
+flex-direction: column;
+text-align: center;
+gap: 30px;
 }
 .footer-rights {
 text-align: center;
 }
-@media (min-width: 768px) {
-.footer-rights {
-text-align: right;
+.footer-container {
+padding: 0 20px;
 }
 }
-.footer-copy {
-font-size: 0.95rem;
-color: #000000;
-}
-.footer-oab {
-font-size: 0.85rem;
-margin-top: 0.5rem;
-color: #000000;
-}
-/* WhatsApp Button */
+/* ===== WHATSAPP FLOATING ===== */
 .whatsapp-button {
 position: fixed;
-bottom: 2rem;
-right: 2rem;
+bottom: 25px;
+right: 25px;
 background-color: #25D366;
 color: #FFFFFF;
-width: 4.5rem;
-height: 4.5rem;
+width: 60px;
+height: 60px;
 border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+box-shadow: 0 5px 25px rgba(37, 211, 102, 0.4);
 transition: all 0.3s;
 z-index: 999;
-font-size: 1.75rem;
+font-size: 1.8rem;
 }
 .whatsapp-button:hover {
 background-color: #1ebe5d;
-transform: scale(1.1);
+transform: scale(1.08);
+box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
 }
-/* Telegram Button */
-.telegram-button-footer {
-background-color: #0088cc;
-color: #FFFFFF;
-width: 45px;
-height: 45px;
-display: flex;
+/* ===== MODAL ===== */
+.modal {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(44, 44, 44, 0.92);
+z-index: 2000;
 justify-content: center;
 align-items: center;
-border-radius: 50%;
-font-size: 1.3rem;
-transition: background-color 0.3s, transform 0.3s;
+padding: 20px;
 }
-.telegram-button-footer:hover {
-background-color: #006699;
-transform: translateY(-3px);
+.modal-content {
+background-color: #ffffff;
+padding: 40px 35px;
+border-radius: 15px;
+max-width: 480px;
+width: 100%;
+text-align: center;
+position: relative;
 }
-/* Responsividade adicional */
-@media (max-width: 767px) {
-.hero-title {
-font-size: 2rem;
+.modal-title {
+font-family: 'Playfair Display', serif;
+font-size: 1.6rem;
+font-weight: 600;
+font-style: normal;
+color: #2C2C2C;
+margin-bottom: 20px;
 }
-.hero-image img {
-max-width: 350px;
+.modal-text {
+color: #555;
+font-size: 1rem;
+line-height: 1.7;
+margin-bottom: 30px;
 }
-.location-container {
-padding: 2rem;
+.modal-buttons {
+display: flex;
+gap: 15px;
+justify-content: center;
 }
+.modal-btn {
+padding: 12px 30px;
+border-radius: 50px;
+font-weight: 500;
+font-size: 0.95rem;
+cursor: pointer;
+transition: all 0.3s ease;
+border: 2px solid transparent;
+font-family: 'Montserrat', sans-serif;
+}
+.modal-btn-yes {
+background-color: #3D4F3E;
+color: #ffffff;
+}
+.modal-btn-yes:hover {
+background-color: transparent;
+color: #3D4F3E;
+border-color: #3D4F3E;
+}
+.modal-btn-no {
+background-color: transparent;
+color: #3D4F3E;
+border-color: #3D4F3E;
+}
+.modal-btn-no:hover {
+background-color: #3D4F3E;
+color: #ffffff;
+}
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 968px) {
+.container { padding: 40px 25px; }
+#mainHeader { padding: 40px 25px 60px; }
+#mainHeader .main-title { font-size: 2.5rem; letter-spacing: 4px; }
+#mainHeader .subtitle { font-size: 1.1rem; letter-spacing: 2px; }
+#mainHeader .shell-icon img { width: 80px; }
+.hero-container { flex-direction: column; text-align: center; padding-top: 20px; }
+.hero-title { font-size: 2.3rem; }
+.hero-paragraph { margin: 0 auto 30px; }
+.hero-image img { width: 320px; }
+.about-container { flex-direction: column; text-align: center; }
+.about-image { flex: none; width: 100%; max-width: 350px; }
+.about-line { margin: 0 auto 25px; }
+.contact-container { flex-direction: column; }
+.info-contato { flex: none; width: 100%; max-width: 500px; margin: 0 auto; position: static; }
+.footer-content { flex-direction: column; text-align: center; }
+.footer-rights { text-align: center; }
+.location-image { max-height: 400px; }
+}
+@media (max-width: 480px) {
+.container { padding: 35px 20px; }
+#mainHeader { padding: 30px 20px 50px; }
+#mainHeader .main-title { font-size: 2rem; letter-spacing: 2px; }
+#mainHeader .subtitle { font-size: 1rem; letter-spacing: 1px; }
+#mainHeader .shell-icon img { width: 60px; }
+#heroSection { padding: 60px 20px 70px; }
+.hero-title { font-size: 1.9rem; }
+.hero-image img { width: 280px; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.3rem; }
+.service-item { flex-direction: column; text-align: center; }
+.case-images { grid-template-columns: 1fr; }
+.approach-grid, .google-reviews-container, .ninfoplastia-grid { grid-template-columns: 1fr; }
+.modal-content { padding: 30px 25px; }
+.modal-buttons { flex-direction: column; }
+.location-image { max-height: 300px; }
+.location-image-wrapper { margin-top: 30px; }
 }
 </style>
 </head>
 <body>
-<!-- Header SEM ÍCONE/LOGO -->
+<!-- Header (ATUALIZADO COM LOGO PERSONALIZADA) -->
 <header id="mainHeader">
-<div class="header-container">
-<div class="flex justify-between items-center">
-<div class="flex items-center">
-<!-- APENAS TEXTO - ÍCONE REMOVIDO -->
-<div>
-<h1 class="header-title">
-Dra. Mariana Cruz  <span class="header-title-span"></span>
-</h1>
-<p id="headerPhrase" class="text-xs"></p>
+<!-- Logo Personalizada -->
+<div class="shell-icon">
+<img src="logo verde.png" alt="Logo Dra. Mariana Cruz">
 </div>
-</div>
-<nav class="hidden md:block">
-<ul class="flex space-x-8">
-<li><a href="#servicos">O que eu faço</a></li>
-<li><a href="#antes-depois">Antes x Depois</a></li>
-<li><a href="#sobre">Sobre Mim</a></li>
-<li><a href="#depoimentos">Depoimentos</a></li>
-<li><a href="#google-reviews">Avaliações Google</a></li>
-<li><a href="#abordagem">Processo de atendimento</a></li>
-<li><a href="#faq">Principais dúvidas</a></li>
-<li><a href="#localizacao">Localização</a></li>
-<li><a href="#contato">Contato</a></li>
-</ul>
-</nav>
-<button class="md:hidden focus:outline-none">
-<i class="fas fa-bars text-2xl"></i>
-</button>
-</div>
-</div>
+<!-- Main Title -->
+<h1 class="main-title">Oasis Clinic</h1>
+<!-- Subtitle -->
+<h2 class="subtitle">Harmonização Íntima</h2>
+<!-- Description -->
+<p class="description">
+<br>
+</p>
+<!-- Decorative Line -->
+<div class=""></div>
 </header>
-<!-- Hero Section COM LOGO DE FUNDO FIXADO -->
 <section id="heroSection">
-<!-- Logo de fundo - FIXADO NO CENTRO DA TELA -->
-<img src="LOGO VERDE.png" alt="Logo Dra. Mariana Cruz" class="hero-background-logo">
 <div class="hero-container">
-<!-- Texto e botão -->
 <div class="hero-text">
-<h2 class="hero-title">
-Estética íntima de alta performance, sem cirurgia, com naturalidade, conforto e resultados reais.
-</h2>
+<h2 class="hero-title">Estética íntima de alta performance, sem cirurgia, com naturalidade, conforto e resultados reais.</h2>
 <p class="hero-paragraph">
 Pioneira e ÚNICA em Ninfoplastia não cirúrgica em Rio Preto e região.<br>
 Protocolos exclusivos para mulheres que buscam mais conforto, autoestima e confiança — com atendimento especializado e individualizado.
@@ -1350,26 +1052,22 @@ Protocolos exclusivos para mulheres que buscam mais conforto, autoestima e confi
 Agendar consulta agora pelo WhatsApp
 </a>
 </div>
-<!-- Imagem -->
 <div class="hero-image">
-<img src="FOTO 01.jpeg" alt="Dra. Mariana Cruz - Clínica de Estética">
+<img src="foto 002 sem fundo.png" alt="Dra. Mariana Cruz">
 </div>
 </div>
 </section>
-<!-- Serviços - NOVO DESIGN -->
+<!-- Serviços -->
 <section id="servicos">
-<div class="services-container">
-<div class="text-center mb-16">
-<h2 id="servicesTitle">
-O que eu <span class="text-gold">faço</span>
-</h2>
-<div class="services-line"></div>
-<p class="services-description">
+<div class="container">
+<div class="section-header">
+<h2>O que eu faço</h2>
+<div class="section-divider"></div>
+<p class="section-description">
 Atuo exclusivamente com estética íntima feminina, oferecendo tratamentos não cirúrgicos para:
 </p>
 </div>
 <div class="services-list">
-<!-- Item 1 -->
 <div class="service-item">
 <div class="service-number-circle">1</div>
 <div class="service-content">
@@ -1377,7 +1075,6 @@ Atuo exclusivamente com estética íntima feminina, oferecendo tratamentos não 
 <p class="service-text">Tratamento para flacidez interna e externa da região íntima feminina, proporcionando firmeza e rejuvenescimento.</p>
 </div>
 </div>
-<!-- Item 2 -->
 <div class="service-item">
 <div class="service-number-circle">2</div>
 <div class="service-content">
@@ -1385,7 +1082,6 @@ Atuo exclusivamente com estética íntima feminina, oferecendo tratamentos não 
 <p class="service-text">Correção de alterações estéticas da região íntima, proporcionando harmonização e bem-estar.</p>
 </div>
 </div>
-<!-- Item 3 -->
 <div class="service-item">
 <div class="service-number-circle">3</div>
 <div class="service-content">
@@ -1393,7 +1089,6 @@ Atuo exclusivamente com estética íntima feminina, oferecendo tratamentos não 
 <p class="service-text">Melhora da qualidade tecidual através de tratamentos avançados de rejuvenescimento íntimo.</p>
 </div>
 </div>
-<!-- Item 4 -->
 <div class="service-item">
 <div class="service-number-circle">4</div>
 <div class="service-content">
@@ -1401,7 +1096,6 @@ Atuo exclusivamente com estética íntima feminina, oferecendo tratamentos não 
 <p class="service-text">Promoção da autoestima e bem-estar feminino através de tratamentos personalizados e acolhedores.</p>
 </div>
 </div>
-<!-- Item 5 -->
 <div class="service-item">
 <div class="service-number-circle">5</div>
 <div class="service-content">
@@ -1414,119 +1108,84 @@ Atuo exclusivamente com estética íntima feminina, oferecendo tratamentos não 
 </section>
 <!-- Antes x Depois -->
 <section id="antes-depois" class="before-after-section">
-<div class="container mx-auto px-6">
-<div class="text-center mb-16">
-<h2 class="before-after-title">Antes x <span class="text-gold">Depois</span></h2>
-<div class="before-after-divider"></div>
-<p class="before-after-subtitle">Resultados reais, naturais e progressivos, respeitando a anatomia e a individualidade de cada mulher.<br>(Sempre apresentados com ética, autorização e discrição.)</p>
+<div class="container">
+<div class="section-header">
+<h2>Antes x Depois</h2>
+<div class="section-divider"></div>
 </div>
-<!-- Ninfoplastia Cases (Top Row - 3 cards) -->
+<p class="before-after-subtitle">
+Resultados reais, naturais e progressivos, respeitando a anatomia e a individualidade de cada mulher.<br>
+(Sempre apresentados com ética, autorização e discrição.)
+</p>
 <div class="ninfoplastia-grid">
-<!-- Caso 1: Ninfoplastia -->
 <div class="case-card">
 <h3 class="case-title">Ninfoplastia – Caso 1</h3>
 <div class="case-images">
-<div class="case-image-container" data-src="ninfoplastia-antes1.jpg" data-case="1" data-type="antes">
-<img src="p1.PNG" alt="Ninfoplastia Antes 1" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Ninfoplastia Antes 1</div>
-Clique para ver +18
+<div class="case-image-container" data-case="1" data-type="antes">
+<img src="p1.PNG" alt="Antes" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Antes</div>Clique para ver +18</div>
 </div>
-</div>
-<div class="case-image-container" data-src="ninfoplastia-depois1.jpg" data-case="1" data-type="depois">
-<img src="p2.PNG" alt="Ninfoplastia Depois 1" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Ninfoplastia Depois 1</div>
-Clique para ver +18
+<div class="case-image-container" data-case="1" data-type="depois">
+<img src="p2.PNG" alt="Depois" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Depois</div>Clique para ver +18</div>
 </div>
 </div>
 </div>
-</div>
-<!-- Caso 2: Ninfoplastia -->
 <div class="case-card">
 <h3 class="case-title">Ninfoplastia – Caso 2</h3>
 <div class="case-images">
-<div class="case-image-container" data-src="ninfoplastia-antes2.jpg" data-case="2" data-type="antes">
-<img src="q1.PNG" alt="Ninfoplastia Antes 2" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Ninfoplastia Antes 2</div>
-Clique para ver +18
+<div class="case-image-container" data-case="2" data-type="antes">
+<img src="q1.PNG" alt="Antes" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Antes</div>Clique para ver +18</div>
 </div>
-</div>
-<div class="case-image-container" data-src="ninfoplastia-depois2.jpg" data-case="2" data-type="depois">
-<img src="q2.PNG" alt="Ninfoplastia Depois 2" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Ninfoplastia Depois 2</div>
-Clique para ver +18
+<div class="case-image-container" data-case="2" data-type="depois">
+<img src="q2.PNG" alt="Depois" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Depois</div>Clique para ver +18</div>
 </div>
 </div>
 </div>
-</div>
-<!-- Caso 3: Ninfoplastia -->
 <div class="case-card">
 <h3 class="case-title">Ninfoplastia – Caso 3</h3>
 <div class="case-images">
-<div class="case-image-container" data-src="ninfoplastia-antes3.jpg" data-case="3" data-type="antes">
-<img src="w1.PNG" alt="Ninfoplastia Antes 3" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Ninfoplastia Antes 3</div>
-Clique para ver +18
+<div class="case-image-container" data-case="3" data-type="antes">
+<img src="w1.PNG" alt="Antes" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Antes</div>Clique para ver +18</div>
 </div>
-</div>
-<div class="case-image-container" data-src="ninfoplastia-depois3.jpg" data-case="3" data-type="depois">
-<img src="w2.PNG" alt="Ninfoplastia Depois 3" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Ninfoplastia Depois 3</div>
-Clique para ver +18
+<div class="case-image-container" data-case="3" data-type="depois">
+<img src="w2.PNG" alt="Depois" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Depois</div>Clique para ver +18</div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<!-- Other Cases (Bottom Row - 2 cards centered) -->
 <div class="other-cases-grid">
-<!-- Clareamento Íntimo -->
 <div class="case-card">
 <h3 class="case-title">Clareamento Íntimo</h3>
 <div class="case-images">
-<div class="case-image-container" data-src="clareamento-antes.jpg" data-case="4" data-type="antes">
-<img src="clareamento-antes.jpg" alt="Clareamento Antes" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Clareamento Antes</div>
-Clique para ver +18
+<div class="case-image-container" data-case="4" data-type="antes">
+<img src="clareamento-antes.jpg" alt="Antes" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Antes</div>Clique para ver +18</div>
 </div>
-</div>
-<div class="case-image-container" data-src="clareamento-depois.jpg" data-case="4" data-type="depois">
-<img src="clareamento-depois.jpg" alt="Clareamento Depois" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Clareamento Depois</div>
-Clique para ver +18
+<div class="case-image-container" data-case="4" data-type="depois">
+<img src="clareamento-depois.jpg" alt="Depois" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Depois</div>Clique para ver +18</div>
 </div>
 </div>
 </div>
-</div>
-<!-- Bioestimulador -->
 <div class="case-card">
 <h3 class="case-title">Bioestimulador</h3>
 <div class="case-images">
-<div class="case-image-container" data-src="bioestimulador-antes.jpg" data-case="5" data-type="antes">
-<img src="bioestimulador-antes.jpg" alt="Bioestimulador Antes" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Bioestimulador Antes</div>
-Clique para ver +18
+<div class="case-image-container" data-case="5" data-type="antes">
+<img src="bioestimulador-antes.jpg" alt="Antes" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Antes</div>Clique para ver +18</div>
 </div>
-</div>
-<div class="case-image-container" data-src="bioestimulador-depois.jpg" data-case="5" data-type="depois">
-<img src="bioestimulador-depois.jpg" alt="Bioestimulador Depois" class="blurred-image">
-<div class="overlay">
-<div class="overlay-text">Bioestimulador Depois</div>
-Clique para ver +18
+<div class="case-image-container" data-case="5" data-type="depois">
+<img src="bioestimulador-depois.jpg" alt="Depois" class="blurred-image">
+<div class="overlay"><div class="overlay-text">Depois</div>Clique para ver +18</div>
 </div>
 </div>
 </div>
 </div>
-</div>
-<!-- Botão Telegram -->
 <div class="telegram-button-container">
 <a href="https://t.me/+KhSJKuCW7b4wZjEx" target="_blank" class="telegram-button">💬 Telegram</a>
 </div>
@@ -1534,58 +1193,41 @@ Clique para ver +18
 </section>
 <!-- Sobre -->
 <section id="sobre">
-<div class="container mx-auto px-6">
+<div class="container">
 <div class="about-container">
-<!-- Foto -->
 <div class="about-image">
-<img src="FOTO 01.jpeg" alt="Dra. Mariana Cruz">
+<img src="foto 1 s em fundo.png" alt="Dra. Mariana Cruz">
 </div>
-<!-- Texto -->
 <div class="about-content">
-<h2 class="about-title">
-Sobre <span class="text-gold">Dra. Mariana Cruz</span>
-</h2>
+<h2 class="about-title">Sobre Dra. Mariana Cruz</h2>
 <div class="about-line"></div>
-<p class="about-paragraph">
-Sou especialista em estética íntima feminina, com atuação focada em tratamentos não cirúrgicos e protocolos personalizados.
-</p>
-<p class="about-paragraph">
-Referência no Brasil, busco unir ciência, técnica e sensibilidade para oferecer um atendimento ético, humano e de alto padrão.
-</p>
-<p class="about-paragraph">
-Pioneira e única em Rio Preto e região com a técnica de ninfoplastia não cirúrgica.
-</p>
-<p class="about-paragraph">
-Meu compromisso é cuidar da intimidade feminina com respeito, segurança e excelência.
-</p>
+<p class="about-paragraph">Sou especialista em estética íntima feminina, com atuação focada em tratamentos não cirúrgicos e protocolos personalizados.</p>
+<p class="about-paragraph">Referência no Brasil, busco unir ciência, técnica e sensibilidade para oferecer um atendimento ético, humano e de alto padrão.</p>
+<p class="about-paragraph">Pioneira e única em Rio Preto e região com a técnica de ninfoplastia não cirúrgica.</p>
+<p class="about-paragraph">Meu compromisso é cuidar da intimidade feminina com respeito, segurança e excelência.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Depoimentos do WhatsApp -->
+<!-- Depoimentos WhatsApp -->
 <section id="depoimentos" class="testimonial-section">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="testimonial-title">Depoimentos do <span class="text-gold">WhatsApp</span></h2>
-<div class="testimonial-divider"></div>
+<div class="container">
+<div class="section-header">
+<h2>Depoimentos do WhatsApp</h2>
+<div class="section-divider"></div>
 <p class="testimonial-subtitle">Veja o que nossas pacientes dizem no WhatsApp</p>
 </div>
-<!-- CARROSSEL -->
 <div class="whatsapp-testimonials">
 <div class="whatsapp-testimonials-track" id="whatsapp-testimonials-track">
-<!-- Slide 1 -->
 <div class="whatsapp-testimonials-slide">
 <img src="depoimentos/WhatsApp Image 2026-01-28 at 15.01.38 (1).jpeg" alt="Depoimento 1" class="whatsapp-testimonial-image">
 </div>
-<!-- Slide 2 -->
 <div class="whatsapp-testimonials-slide">
 <img src="depoimentos/WhatsApp Image 2026-01-28 at 15.01.38.jpeg" alt="Depoimento 2" class="whatsapp-testimonial-image">
 </div>
-<!-- Slide 3 -->
 <div class="whatsapp-testimonials-slide">
 <img src="depoimentos/WhatsApp Image 2026-01-28 at 15.01.39 (1).jpeg" alt="Depoimento 3" class="whatsapp-testimonial-image">
 </div>
-<!-- Slide 4 -->
 <div class="whatsapp-testimonials-slide">
 <img src="depoimentos/WhatsApp Image 2026-01-28 at 15.01.39.jpeg" alt="Depoimento 4" class="whatsapp-testimonial-image">
 </div>
@@ -1595,226 +1237,154 @@ Meu compromisso é cuidar da intimidade feminina com respeito, segurança e exce
 </div>
 </div>
 </section>
-<!-- AVALIAÇÕES DO GOOGLE - NOVA SEÇÃO -->
+<!-- Avaliações Google -->
 <section id="google-reviews" class="google-reviews-section">
-<div class="container mx-auto px-6">
-<div class="text-center mb-16">
-<h2 class="google-reviews-title">Avaliações do <span class="text-gold">Google</span></h2>
-<div class="google-reviews-divider"></div>
+<div class="container">
+<div class="section-header">
+<h2>Avaliações do Google</h2>
+<div class="section-divider"></div>
 <p class="google-reviews-subtitle">Veja o que nossas pacientes dizem sobre a experiência na clínica</p>
 </div>
 <div class="google-reviews-container">
-<!-- Avaliação 1 -->
 <div class="google-review-card">
 <div class="google-review-header">
 <div class="google-review-stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 </div>
-<div class="google-logo">
-<i class="fab fa-google"></i>
-</div>
+<div class="google-logo"><i class="fab fa-google"></i></div>
 </div>
 <div class="google-review-author">Nosso mundo malu e Allan</div>
-<div class="google-review-text">
-Local e atendimento ótimo, muito aconchegante o atendimento é bem humanizado de acordo com a nessecidade de cada paciente. Ambiente bem acolhedor. As profissionais que ali estão para atendimento são excelentes.. Amei a experiência ❤️ Indico pra quem ainda quer dá o primeiro passo ao cuidado, a autoestima e a saúde...♥️
-</div>
+<p class="google-review-text">Local e atendimento ótimo, muito aconchegante o atendimento é bem humanizado de acordo com a nessecidade de cada paciente. Ambiente bem acolhedor. As profissionais que ali estão para atendimento são excelentes.. Amei a experiência ❤️ Indico pra quem ainda quer dá o primeiro passo ao cuidado, a autoestima e a saúde...♥️</p>
 <div class="google-review-footer">
-<div class="google-review-date">6 meses atrás</div>
-<div class="google-review-photos">3 fotos</div>
+<span class="google-review-date">6 meses atrás</span>
+<span class="google-review-photos">3 fotos</span>
 </div>
 </div>
-<!-- Avaliação 2 -->
 <div class="google-review-card">
 <div class="google-review-header">
 <div class="google-review-stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 </div>
-<div class="google-logo">
-<i class="fab fa-google"></i>
-</div>
+<div class="google-logo"><i class="fab fa-google"></i></div>
 </div>
 <div class="google-review-author">Yanne Lima Gomes</div>
-<div class="google-review-text">
-Doutora Mariana um amor de pessoa super atenciosa muito carismática, tirou todas minhas dúvidas.. uma excelente profissional♥️
-</div>
+<p class="google-review-text">Doutora Mariana um amor de pessoa super atenciosa muito carismática, tirou todas minhas dúvidas.. uma excelente profissional♥️</p>
 <div class="google-review-footer">
-<div class="google-review-date">6 meses atrás</div>
+<span class="google-review-date">6 meses atrás</span>
 </div>
 </div>
-<!-- Avaliação 3 -->
 <div class="google-review-card">
 <div class="google-review-header">
 <div class="google-review-stars">
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
-<i class="fas fa-star"></i>
+<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
 </div>
-<div class="google-logo">
-<i class="fab fa-google"></i>
-</div>
+<div class="google-logo"><i class="fab fa-google"></i></div>
 </div>
 <div class="google-review-author">Kelly Raasch</div>
-<div class="google-review-text">
-Minha experiência foi ótima, depois de conversarmos muito, a Dra. Me deixou bem mais tranquila e confiante para realizar o procedimento, estou gostando. Super indico a todas vocês.
-</div>
+<p class="google-review-text">Minha experiência foi ótima, depois de conversarmos muito, a Dra. Me deixou bem mais tranquila e confiante para realizar o procedimento, estou gostando. Super indico a todas vocês.</p>
 <div class="google-review-footer">
-<div class="google-review-date">6 meses atrás</div>
+<span class="google-review-date">6 meses atrás</span>
 </div>
 </div>
 </div>
-<!-- Botão Ver Todas Avaliações -->
-<a href="https://www.google.com/search?q=dra.+mariana+cruz&sca_esv=f58ddf8c0126f90b&sxsrf=ANbL-n5-qUU-WH1E-juLfsLu2Scnxfk0mw%3A1770486281309&ei=CXqHaarMEr3e1sQPjvnB4Ac&biw=1920&bih=953&ved=0ahUKEwjq9IGv98eSAxU9r5UCHY58EHwQ4dUDCBE&uact=5&oq=dra.+mariana+cruz&gs_lp=Egxnd3Mtd2l6LXNlcnAiEWRyYS4gbWFyaWFuYSBjcnV6MgQQIxgnMggQABiABBjLATIIEAAYgAQYywEyDhAuGIAEGMcBGMsBGK8BMggQABiABBjLATIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB5I1QVQtARYtARwAXgAkAEAmAGWAaABlgGqAQMwLjG4AQPIAQD4AQGYAgKgAp4BwgILEAAYgAQYsAMYogSYAwCIBgGQBgSSBwMxLjGgB6YNsgcDMC4xuAecAcIHBTAuMS4xyAcGgAgA&sclient=gws-wiz-serp#lrd=0x94bdb3601d3df641:0xf1bc7b2086a4a98d,1,,,," target="_blank" class="view-reviews-button">
+<a href="https://www.google.com/search?q=dra.+mariana+cruz" target="_blank" class="view-reviews-button">
 Ver todas as avaliações no Google
 </a>
 </div>
 </section>
-<!-- Processo de atendimento -->
+<!-- Processo de Atendimento -->
 <section id="abordagem" class="approach-section">
-<div class="container mx-auto px-6 py-16">
-<div class="text-center mb-16">
-<h2 class="approach-title"><span class="text-gold">Processo de atendimento</span></h2>
-<div class="approach-divider"></div>
+<div class="container">
+<div class="section-header">
+<h2>Processo de atendimento</h2>
+<div class="section-divider"></div>
 </div>
 <div class="approach-grid">
-<!-- Etapa 1 -->
 <div class="approach-step">
-<div class="approach-icon">
-<i class="fas fa-user-md"></i>
-</div>
+<div class="approach-icon"><i class="fas fa-user-md"></i></div>
 <h3 class="approach-step-title">Consulta</h3>
 <p class="approach-step-text">Consulta especializada em estética íntima, com avaliação detalhada, escuta ativa e definição do protocolo ideal para cada paciente.</p>
 </div>
-<!-- Etapa 2 -->
 <div class="approach-step">
-<div class="approach-icon">
-<i class="fas fa-calendar-alt"></i>
-</div>
+<div class="approach-icon"><i class="fas fa-calendar-alt"></i></div>
 <h3 class="approach-step-title">Planejamento</h3>
 <p class="approach-step-text">Indicação personalizada, explicação clara do tratamento, expectativas reais e investimento.</p>
 </div>
-<!-- Etapa 3 -->
 <div class="approach-step">
-<div class="approach-icon">
-<i class="fas fa-heartbeat"></i>
-</div>
+<div class="approach-icon"><i class="fas fa-heartbeat"></i></div>
 <h3 class="approach-step-title">Procedimento</h3>
 <p class="approach-step-text">Realizado em ambiente seguro, confortável, com tecnologia de ponta e acompanhamento próximo.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Principais Dúvidas (FAQ) -->
+<!-- FAQ -->
 <section id="faq" class="faq-section">
-<div class="container mx-auto px-6">
-<div class="text-center mb-16">
-<h2 class="faq-title">Principais <span class="text-gold">dúvidas</span></h2>
-<div class="faq-divider"></div>
+<div class="container">
+<div class="section-header">
+<h2>Principais dúvidas</h2>
+<div class="section-divider"></div>
 </div>
 <div class="faq-container">
-<!-- FAQ 1 -->
 <div class="faq-item">
-<div class="faq-question">
-O procedimento é cirúrgico?
-<i class="fas fa-chevron-down"></i>
+<div class="faq-question">O procedimento é cirúrgico? <i class="fas fa-chevron-down"></i></div>
+<div class="faq-answer">Não. É 100% não cirúrgico, sem cortes, sem anestesia geral e sem tempo de recuperação prolongado.</div>
 </div>
-<div class="faq-answer">
-Não. É 100% não cirúrgico, sem cortes, sem anestesia geral e sem tempo de recuperação prolongado.
-</div>
-</div>
-<!-- FAQ 2 -->
 <div class="faq-item">
-<div class="faq-question">
-Dói ou precisa de afastamento?
-<i class="fas fa-chevron-down"></i>
+<div class="faq-question">Dói ou precisa de afastamento? <i class="fas fa-chevron-down"></i></div>
+<div class="faq-answer">O desconforto é mínimo. A maioria das pacientes retoma suas atividades no mesmo dia.</div>
 </div>
-<div class="faq-answer">
-O desconforto é mínimo. A maioria das pacientes retoma suas atividades no mesmo dia.
-</div>
-</div>
-<!-- FAQ 3 -->
 <div class="faq-item">
-<div class="faq-question">
-Em quanto tempo vejo resultados?
-<i class="fas fa-chevron-down"></i>
+<div class="faq-question">Em quanto tempo vejo resultados? <i class="fas fa-chevron-down"></i></div>
+<div class="faq-answer">Resultados iniciais aparecem após a primeira sessão, com evolução nas semanas seguintes.</div>
 </div>
-<div class="faq-answer">
-Resultados iniciais aparecem após a primeira sessão, com evolução nas semanas seguintes.
-</div>
-</div>
-<!-- FAQ 4 -->
 <div class="faq-item">
-<div class="faq-question">
-Sessão única?
-<i class="fas fa-chevron-down"></i>
+<div class="faq-question">Sessão única? <i class="fas fa-chevron-down"></i></div>
+<div class="faq-answer">Depende do caso. Alguns protocolos exigem 1 a 3 sessões para resultado ideal.</div>
 </div>
-<div class="faq-answer">
-Depende do caso. Alguns protocolos exigem 1 a 3 sessões para resultado ideal.
-</div>
-</div>
-<!-- FAQ 5 -->
 <div class="faq-item">
-<div class="faq-question">
-Quem pode ou não realizar o tratamento?
-<i class="fas fa-chevron-down"></i>
-</div>
-<div class="faq-answer">
-Avaliamos individualmente. Contraindicações incluem gestação, infecções ativas ou condições dermatológicas específicas.
-</div>
+<div class="faq-question">Quem pode ou não realizar o tratamento? <i class="fas fa-chevron-down"></i></div>
+<div class="faq-answer">Avaliamos individualmente. Contraindicações incluem gestação, infecções ativas ou condições dermatológicas específicas.</div>
 </div>
 </div>
 </div>
 </section>
-<!-- Localização & Estrutura -->
+<!-- Localização -->
 <section id="localizacao" class="location-section">
-<div class="container mx-auto px-6">
-<div class="text-center mb-16">
-<h2 class="location-title">Localização & <span class="text-gold">Estrutura</span></h2>
-<div class="location-divider"></div>
+<div class="container">
+<div class="section-header">
+<h2>Localização & Estrutura</h2>
+<div class="section-divider"></div>
 </div>
 <div class="location-container">
-<div class="location-content">
-<p>Clínica localizada no Navarro Building, sala 324, em ambiente moderno, discreto e acolhedor.</p>
-<p>Estrutura pensada para conforto, privacidade e segurança em cada etapa do atendimento.</p>
+<p class="location-content">
+Clínica localizada no Navarro Building, sala 324, em ambiente moderno, discreto e acolhedor.<br><br>
+Estrutura pensada para conforto, privacidade e segurança em cada etapa do atendimento.
+</p>
+<div class="location-image-wrapper">
+<img src="s2.PNG" alt="Navarro Building - Localização da Clínica" class="location-image">
 </div>
 </div>
 </div>
 </section>
 <!-- Contato -->
 <section id="contato" class="contact-section">
-<div class="container mx-auto px-6">
-<div class="text-center mb-16">
-<h2 class="contact-title">Agende sua <span class="text-gold">Consulta</span></h2>
-<div class="contact-divider"></div>
+<div class="container">
+<div class="section-header">
+<h2>Agende sua Consulta</h2>
+<div class="section-divider"></div>
 <p class="contact-subtitle">
-Preencha o formulário e entraremos em contato para agendar sua consulta inicial. Atendimento online e presencial disponível.</p>
+Preencha o formulário e entraremos em contato para agendar sua consulta inicial. Atendimento online e presencial disponível.
+</p>
 </div>
 <div class="contact-container">
-<!-- Formulário -->
-<div class="contact-form">
-<form action="#" method="POST" class="space-y-6">
-<div>
+<form class="contact-form" action="#" method="POST">
 <label for="nome">Nome</label>
 <input type="text" id="nome" name="nome" required>
-</div>
-<div>
 <label for="telefone">WhatsApp (com DDD)</label>
 <input type="tel" id="telefone" name="telefone" placeholder="(17) 99999-9999" required>
-</div>
-<div>
 <label for="mensagem">Principal queixa</label>
 <textarea id="mensagem" name="mensagem" rows="4" placeholder="Conte um pouco sobre o que você busca..."></textarea>
-</div>
-<div>
 <label for="investimento">Expectativa de investimento</label>
 <select id="investimento" name="investimento" required>
 <option value="">Selecione</option>
@@ -1823,73 +1393,51 @@ Preencha o formulário e entraremos em contato para agendar sua consulta inicial
 <option value="5000-10000">R$ 5.000 a R$ 10.000</option>
 <option value="acima-10000">Acima de R$ 10.000</option>
 </select>
-</div>
 <button type="submit" class="contact-button">Enviar solicitação</button>
 </form>
-</div>
-<!-- Informações de Contato -->
 <div class="info-contato">
 <h3>Informações de Contato</h3>
-<div class="space-y-6">
 <div class="item">
-<div class="icon">
-<i class="fas fa-map-marker-alt"></i>
-</div>
+<div class="icon"><i class="fas fa-map-marker-alt"></i></div>
 <div>
 <h4 class="titulo">Clínica</h4>
 <p class="descricao">Atendimento presencial e online para todo o Brasil</p>
 </div>
 </div>
 <div class="item">
-<div class="icon">
-<i class="fas fa-phone-alt"></i>
-</div>
+<div class="icon"><i class="fas fa-phone-alt"></i></div>
 <div>
 <h4 class="titulo">Telefone/WhatsApp</h4>
 <p class="descricao">17 99776-0646</p>
 </div>
 </div>
 <div class="item">
-<div class="icon">
-<i class="fab fa-instagram"></i>
-</div>
+<div class="icon"><i class="fab fa-instagram"></i></div>
 <div>
 <h4 class="titulo">Instagram</h4>
 <p class="descricao">@dra.marianacruz.estetica</p>
 </div>
 </div>
 <div class="item">
-<div class="icon">
-<i class="fab fa-telegram"></i>
-</div>
+<div class="icon"><i class="fab fa-telegram"></i></div>
 <div>
 <h4 class="titulo">Telegram</h4>
 <p class="descricao">@dra.marianacruz.oficial</p>
 </div>
 </div>
 <div class="item">
-<div class="icon">
-<i class="fas fa-clock"></i>
-</div>
+<div class="icon"><i class="fas fa-clock"></i></div>
 <div>
 <h4 class="titulo">Horário de Atendimento</h4>
 <p class="descricao">Segunda a Sexta: 9h às 19h<br>Sábado: 9h às 13h</p>
 </div>
 </div>
-</div>
-<!-- Redes Sociais -->
 <div class="redes-sociais">
 <h4>Nos siga nas redes sociais</h4>
 <div class="redes-icons">
-<a href="https://wa.me/5517997760646" target="_blank" aria-label="WhatsApp">
-<i class="fab fa-whatsapp"></i>
-</a>
-<a href="https://www.instagram.com/dramariana.cruz/" target="_blank" aria-label="Instagram">
-<i class="fab fa-instagram"></i>
-</a>
-<a href="https://t.me/+KhSJKuCW7b4wZjEx" target="_blank" aria-label="Telegram">
-<i class="fab fa-telegram"></i>
-</a>
+<a href="https://wa.me/5517997760646" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="https://www.instagram.com/dramariana.cruz/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://t.me/+KhSJKuCW7b4wZjEx" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
 </div>
 </div>
 </div>
@@ -1900,34 +1448,24 @@ Preencha o formulário e entraremos em contato para agendar sua consulta inicial
 <footer class="footer">
 <div class="footer-container">
 <div class="footer-content">
-<!-- Marca -->
+<!-- Lado Esquerdo: Logo + Nome -->
 <div class="footer-brand">
-<div class="footer-icon">
-<!-- Substitua o ícone abaixo pela sua imagem PNG -->
-<img src="LOGO VERDE.png" alt="Dra. Mariana Cruz" class="footer-icon-img">
+<img src="logo verde.png" alt="Logo Oasis Clinic" class="footer-icon-img">
+<p class="footer-clinic-name">Oasis Clinic</p>
 </div>
-<div>
-<h2 class="footer-title">
-Dra. Mariana Cruz <span class="footer-title-span">Estética</span>
-</h2>
-<p class="footer-subtitle">Cuidando da sua saúde e bem-estar feminino</p>
-</div>
-</div>
-<!-- Direitos autorais -->
+<!-- Lado Direito: Direitos e CRM -->
 <div class="footer-rights">
-<p class="footer-copy">
-&copy; <span id="anoAtual"></span> Dra. Mariana Cruz Estética.
-</p>
-<p class="footer-oab"></p>
+<p class="footer-copy">&copy; <span id="anoAtual"></span> Dra. Mariana Cruz Estética.</p>
+<p class="footer-oab">CRM: 123.456 | RQE: 78.901</p>
 </div>
 </div>
 </div>
 </footer>
-<!-- Botão WhatsApp -->
+<!-- Botão WhatsApp Flutuante -->
 <a href="https://wa.me/5517997760646" class="whatsapp-button" target="_blank" rel="noopener noreferrer" aria-label="Contato WhatsApp">
 <i class="fab fa-whatsapp"></i>
 </a>
-<!-- Modal de Verificação de Idade -->
+<!-- Modal de Idade -->
 <div id="ageModal" class="modal">
 <div class="modal-content">
 <h3 class="modal-title">Atenção</h3>
@@ -1940,9 +1478,26 @@ Dra. Mariana Cruz <span class="footer-title-span">Estética</span>
 </div>
 <!-- Scripts -->
 <script>
+// Ano atual no footer
 document.getElementById("anoAtual").textContent = new Date().getFullYear();
-// Formulário de contato
-document.querySelector('.contact-form')?.addEventListener('submit', function (e) {
+
+// Smooth scroll para links internos
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const target = document.querySelector(targetId);
+if (target) {
+e.preventDefault();
+const headerHeight = document.getElementById('mainHeader')?.offsetHeight || 0;
+const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+}
+});
+});
+
+// Formulário de contato -> WhatsApp
+document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
 e.preventDefault();
 const nome = document.getElementById('nome').value.trim();
 const telefone = document.getElementById('telefone').value.trim();
@@ -1952,15 +1507,13 @@ if (!nome || !telefone || !investimento) {
 alert('Por favor, preencha todos os campos obrigatórios.');
 return;
 }
-// Mapeamento dos valores de investimento
 const investimentoMap = {
 'ate-2000': 'Até R$ 2.000',
 '2000-5000': 'R$ 2.000 a R$ 5.000',
 '5000-10000': 'R$ 5.000 a R$ 10.000',
 'acima-10000': 'Acima de R$ 10.000'
 };
-const texto =
-'Olá Dra. Mariana! Gostaria de agendar uma consulta.%0A%0A' +
+const texto = 'Olá Dra. Mariana! Gostaria de agendar uma consulta.%0A%0A' +
 '*Nome:* ' + nome + '%0A' +
 '*WhatsApp:* ' + telefone + '%0A' +
 '*Principal queixa:* ' + (mensagem || 'Não informado') + '%0A' +
@@ -1969,93 +1522,87 @@ const numero = '5517997760646';
 const link = `https://wa.me/${numero}?text=${texto}`;
 window.open(link, '_blank');
 });
-// Rolagem suave
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-anchor.addEventListener('click', function (e) {
-const targetId = this.getAttribute('href');
-if (targetId === '#') return;
-const target = document.querySelector(targetId);
-if (target) {
-e.preventDefault();
-const headerHeight = document.getElementById('mainHeader').offsetHeight;
-const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
-window.scrollTo({
-top: targetPosition,
-behavior: 'smooth'
-});
-}
-});
-});
-// Header fixo ao rolar
-window.addEventListener('scroll', function() {
-const header = document.getElementById('mainHeader');
-if (window.scrollY > 50) {
-header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
-} else {
-header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-}
-});
-// CARROSSEL DE DEPOIMENTOS
+
+// Carrossel de depoimentos + FAQ + Modal de idade
 document.addEventListener('DOMContentLoaded', function() {
+// Carrossel
 const track = document.getElementById('whatsapp-testimonials-track');
 const slides = document.querySelectorAll('.whatsapp-testimonials-slide');
 const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 let currentIndex = 0;
 const totalSlides = slides.length;
+
 function updateCarousel() {
 const slideWidth = slides[0].offsetWidth;
 track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 }
-prevBtn.addEventListener('click', function() {
+
+prevBtn.addEventListener('click', () => {
 currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
 updateCarousel();
 });
-nextBtn.addEventListener('click', function() {
+
+nextBtn.addEventListener('click', () => {
 currentIndex = (currentIndex + 1) % totalSlides;
 updateCarousel();
 });
-// Inicializa o carrossel
+
 updateCarousel();
-// Para responsividade, atualiza o carrossel quando a janela for redimensionada
 window.addEventListener('resize', updateCarousel);
-// FAQ ACCORDION
-const faqItems = document.querySelectorAll('.faq-item');
-faqItems.forEach(item => {
-const question = item.querySelector('.faq-question');
-question.addEventListener('click', () => {
+
+// FAQ Accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+item.querySelector('.faq-question').addEventListener('click', () => {
 item.classList.toggle('active');
 });
 });
-// ANTES X DEPOIS - VERIFICAÇÃO DE IDADE E REVELAÇÃO NO CARD
+
+// 🔹 MODAL DE IDADE + REVELAÇÃO DE IMAGENS (COM ALTERNAÇÃO MOSTRAR/OCULTAR) 🔹
 let currentImageContainer = null;
-// Abrir modal de idade ao clicar em uma imagem
+
 document.querySelectorAll('.case-image-container').forEach(container => {
 container.addEventListener('click', function(e) {
 e.preventDefault();
 currentImageContainer = this;
+
+// Verifica se a imagem já está revelada
+const img = currentImageContainer.querySelector('.blurred-image');
+const overlay = currentImageContainer.querySelector('.overlay');
+
+if (img.classList.contains('revealed-image')) {
+// Se já está revelada, oculta novamente (SEM modal)
+img.classList.remove('revealed-image');
+overlay.classList.remove('revealed-overlay');
+currentImageContainer.classList.remove('revealed');
+} else {
+// Se está borrada, mostra o modal de idade
 document.getElementById('ageModal').style.display = 'flex';
+}
 });
 });
-// Botão "Não" no modal de idade
-document.getElementById('ageNoBtn').addEventListener('click', function() {
+
+document.getElementById('ageNoBtn').addEventListener('click', () => {
 document.getElementById('ageModal').style.display = 'none';
+currentImageContainer = null;
 });
-// Botão "Sim" no modal de idade
-document.getElementById('ageYesBtn').addEventListener('click', function() {
+
+document.getElementById('ageYesBtn').addEventListener('click', () => {
 if (currentImageContainer) {
-// Revelar a imagem no próprio card
 const img = currentImageContainer.querySelector('.blurred-image');
 const overlay = currentImageContainer.querySelector('.overlay');
 img.classList.add('revealed-image');
 overlay.classList.add('revealed-overlay');
+currentImageContainer.classList.add('revealed');
 document.getElementById('ageModal').style.display = 'none';
+currentImageContainer = null;
 }
 });
-// Fechar modal ao clicar fora
+
 document.getElementById('ageModal').addEventListener('click', function(e) {
 if (e.target === this) {
 this.style.display = 'none';
+currentImageContainer = null;
 }
 });
 });
