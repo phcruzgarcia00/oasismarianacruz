@@ -23,7 +23,6 @@ body {
     margin: 0 auto;
     padding: 60px 40px;
 }
-
 /* ===== TIPOGRAFIA ===== */
 h1, h2, h3, h4 {
     font-family: 'Playfair Display', serif;
@@ -49,63 +48,16 @@ p {
     line-height: 1.7;
 }
 a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
-
-/* ===== ANIMAÇÕES DE REVEAL (NOVO) ===== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-/* Classe base para elementos que serão revelados */
+/* ===== ANIMAÇÕES DE REVEAL ===== */
 .reveal {
     opacity: 0;
+    transform: translateY(40px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .reveal.active {
     opacity: 1;
-    transform: translateX(0) translateY(0) scale(1);
+    transform: translateY(0);
 }
-
 /* Variações de direção */
 .reveal-up { transform: translateY(40px); }
 .reveal-down { transform: translateY(-40px); }
@@ -169,7 +121,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     background: #3D4F3E;
     margin: 40px auto 0;
 }
-
 /* ===== HERO SECTION ===== */
 #heroSection {
     padding: 80px 40px 100px;
@@ -260,7 +211,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0);
     object-fit: cover;
 }
-
 /* ===== SEÇÃO SERVIÇOS ===== */
 #servicos {
     padding: 80px 40px;
@@ -327,7 +277,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     margin-bottom: 8px;
 }
 .service-text { color: #555; }
-
 /* ===== ANTES X DEPOIS ===== */
 .before-after-section {
     padding: 80px 40px;
@@ -441,7 +390,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
 }
-
 /* ===== SOBRE ===== */
 #sobre {
     padding: 80px 40px;
@@ -502,7 +450,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     margin-bottom: 18px;
     color: #555;
 }
-
 /* ===== DEPOIMENTOS ===== */
 .testimonial-section {
     padding: 80px 40px;
@@ -561,7 +508,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 }
 .whatsapp-testimonials-btn.prev { left: 10px; }
 .whatsapp-testimonials-btn.next { right: 10px; }
-
 /* ===== GOOGLE REVIEWS ===== */
 .google-reviews-section {
     padding: 80px 40px;
@@ -644,7 +590,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     color: #3D4F3E;
     transform: translateY(-2px);
 }
-
 /* ===== ABORDAGEM ===== */
 .approach-section {
     padding: 80px 40px;
@@ -686,7 +631,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     margin-bottom: 15px;
 }
 .approach-step-text { color: #555; font-size: 0.95rem; }
-
 /* ===== FAQ ===== */
 .faq-section {
     padding: 80px 40px;
@@ -740,7 +684,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     padding-top: 15px;
 }
 .faq-item.active .faq-question i { transform: rotate(180deg); }
-
 /* ===== LOCALIZAÇÃO ===== */
 .location-section {
     padding: 80px 40px;
@@ -781,7 +724,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     box-shadow: 0 15px 50px rgba(255, 255, 255, 0.15);
     display: block;
 }
-
 /* ===== CONTATO ===== */
 .contact-section {
     padding: 80px 40px;
@@ -915,12 +857,11 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     background-color: #2C2C2C;
     transform: translateY(-3px);
 }
-
 /* ===== FOOTER ===== */
 .footer {
     background: linear-gradient(135deg, #c2c5c227 0%, #ffffff 100%);
     color: #3D4F3E;
-    padding: 40px 0;
+    padding: 50px 0;
     border-top: 1px solid rgba(61, 79, 62, 0.1);
 }
 .footer-container {
@@ -930,19 +871,29 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 }
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
 }
+
+/* ✅ CORREÇÃO DO FOOTER - LOGO CENTRALIZADA COM REVEAL */
 .footer-brand {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-brand.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 .footer-icon-img {
-    width: 80px;
+    width: 100px;
     height: auto;
     display: block;
 }
@@ -950,24 +901,37 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     font-family: 'Playfair Display', serif;
     font-weight: 200;
     font-style: italic;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #3D4F3E;
     margin: 0;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
-.footer-rights { text-align: right; }
+
+/* ✅ DIREITOS AUTORAIS COM REVEAL */
+.footer-rights {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-rights.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 .footer-copy {
     font-size: 0.9rem;
-    color: #3d4f3e81;
+    color: #3D4F3E; /* ✅ Cor sólida, sem transparência */
     margin-bottom: 5px;
+    font-weight: 500;
 }
 .footer-oab {
     font-size: 0.8rem;
     color: #3D4F3E;
-    opacity: 0.8;
+    opacity: 1; /* ✅ Opacidade total */
+    font-weight: 400;
 }
 
-/* ===== WHATSAPP FLOATING ===== */
+/* ✅ WHATSAPP FLOATING BUTTON - REVEAL FUNCIONANDO */
 .whatsapp-button {
     position: fixed;
     bottom: 25px;
@@ -984,13 +948,18 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     transition: all 0.3s;
     z-index: 999;
     font-size: 1.8rem;
+    opacity: 0;
+    transform: scale(0.9);
+}
+.whatsapp-button.active {
+    opacity: 1;
+    transform: scale(1);
 }
 .whatsapp-button:hover {
     background-color: #1ebe5d;
     transform: scale(1.08);
     box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
 }
-
 /* ===== MODAL ===== */
 .modal {
     display: none;
@@ -1006,7 +975,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     padding: 20px;
 }
 .modal-content {
-    background-color: #ffffff;
+    background-color: #c40b0b;
     padding: 40px 35px;
     border-radius: 15px;
     max-width: 480px;
@@ -1045,7 +1014,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 }
 .modal-btn-yes {
     background-color: #3D4F3E;
-    color: #ffffff;
+    color: #af1818;
 }
 .modal-btn-yes:hover {
     background-color: transparent;
@@ -1061,7 +1030,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     background-color: #3D4F3E;
     color: #ffffff;
 }
-
 /* ===== RESPONSIVIDADE ===== */
 @media (max-width: 968px) {
     .container { padding: 40px 25px; }
@@ -1078,8 +1046,6 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     .about-line { margin: 0 auto 25px; }
     .contact-container { flex-direction: column; }
     .info-contato { flex: none; width: 100%; max-width: 500px; margin: 0 auto; position: static; }
-    .footer-content { flex-direction: column; text-align: center; }
-    .footer-rights { text-align: center; }
     .location-image { max-height: 400px; }
 }
 @media (max-width: 480px) {
@@ -1100,6 +1066,8 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
     .modal-buttons { flex-direction: column; }
     .location-image { max-height: 300px; }
     .location-image-wrapper { margin-top: 30px; }
+    .footer-icon-img { width: 80px; }
+    .footer-clinic-name { font-size: 1.2rem; }
 }
 </style>
 </head>
@@ -1527,11 +1495,13 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-content">
+            <!-- ✅ LOGO CENTRALIZADA COM TEXTO ABAIXO -->
             <div class="footer-brand reveal reveal-up">
                 <img src="logo verde.png" alt="Logo Oasis Clinic" class="footer-icon-img">
                 <p class="footer-clinic-name">Oasis Clinic</p>
             </div>
-            <div class="footer-rights reveal reveal-up" style="transition-delay: 0.1s;">
+            <!-- ✅ DIREITOS AUTORAIS CENTRALIZADOS -->
+            <div class="footer-rights reveal reveal-up" style="transition-delay: 0.15s;">
                 <p class="footer-copy">&copy; <span id="anoAtual"></span> Dra. Mariana Cruz Estética.</p>
                 <p class="footer-oab">CRM: 123.456 | RQE: 78.901</p>
             </div>
@@ -1567,21 +1537,34 @@ function initRevealOnScroll() {
     
     const revealOnScroll = () => {
         const windowHeight = window.innerHeight;
-        const elementVisible = 100; // Distância do topo para ativar
+        const elementVisible = 150;
         
         revealElements.forEach((element) => {
             const elementTop = element.getBoundingClientRect().top;
+            const elementBottom = element.getBoundingClientRect().bottom;
             
-            if (elementTop < windowHeight - elementVisible) {
+            // ✅ Verifica se o elemento está dentro ou perto da viewport
+            if (elementTop < windowHeight - elementVisible || elementBottom <= windowHeight) {
                 element.classList.add('active');
             }
         });
     };
     
-    // Ativa no carregamento e no scroll
-    window.addEventListener('scroll', revealOnScroll);
+    // ✅ Ativa no carregamento, scroll e resize
+    window.addEventListener('scroll', revealOnScroll, { passive: true });
     window.addEventListener('load', revealOnScroll);
-    revealOnScroll(); // Chama uma vez para elementos já visíveis
+    window.addEventListener('resize', revealOnScroll);
+    
+    // ✅ Chama imediatamente para elementos já visíveis
+    revealOnScroll();
+    
+    // ✅ Chama novamente após delays para garantir footer
+    setTimeout(revealOnScroll, 100);
+    setTimeout(revealOnScroll, 300);
+    setTimeout(revealOnScroll, 500);
+    setTimeout(revealOnScroll, 1000);
+    setTimeout(revealOnScroll, 1500);
+    setTimeout(revealOnScroll, 2000);
 }
 
 // Smooth scroll para links internos
@@ -1589,6 +1572,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
+        
         const target = document.querySelector(targetId);
         if (target) {
             e.preventDefault();
@@ -1602,29 +1586,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Formulário de contato -> WhatsApp
 document.querySelector('.contact-form')?.addEventListener('submit', function(e) {
     e.preventDefault();
+    
     const nome = document.getElementById('nome').value.trim();
     const telefone = document.getElementById('telefone').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
     const investimento = document.getElementById('investimento').value.trim();
-
+    
     if (!nome || !telefone || !investimento) {
         alert('Por favor, preencha todos os campos obrigatórios.');
         return;
     }
-
+    
     const investimentoMap = {
         'ate-2000': 'Até R$ 2.000',
         '2000-5000': 'R$ 2.000 a R$ 5.000',
         '5000-10000': 'R$ 5.000 a R$ 10.000',
         'acima-10000': 'Acima de R$ 10.000'
     };
-
+    
     const texto = 'Olá Dra. Mariana! Gostaria de agendar uma consulta.%0A%0A' +
         '*Nome:* ' + nome + '%0A' +
         '*WhatsApp:* ' + telefone + '%0A' +
         '*Principal queixa:* ' + (mensagem || 'Não informado') + '%0A' +
         '*Expectativa de investimento:* ' + investimentoMap[investimento];
-
+    
     const numero = '5517997760646';
     const link = `https://wa.me/${numero}?text=${texto}`;
     window.open(link, '_blank');
@@ -1642,42 +1627,42 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextBtn = document.getElementById('next-btn');
     let currentIndex = 0;
     const totalSlides = slides.length;
-
+    
     function updateCarousel() {
         const slideWidth = slides[0].offsetWidth;
         track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
     }
-
+    
     prevBtn.addEventListener('click', () => {
         currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
         updateCarousel();
     });
-
+    
     nextBtn.addEventListener('click', () => {
         currentIndex = (currentIndex + 1) % totalSlides;
         updateCarousel();
     });
-
+    
     updateCarousel();
     window.addEventListener('resize', updateCarousel);
-
+    
     // FAQ Accordion
     document.querySelectorAll('.faq-item').forEach(item => {
         item.querySelector('.faq-question').addEventListener('click', () => {
             item.classList.toggle('active');
         });
     });
-
+    
     // MODAL DE IDADE + REVELAÇÃO DE IMAGENS
     let currentImageContainer = null;
-
+    
     document.querySelectorAll('.case-image-container').forEach(container => {
         container.addEventListener('click', function(e) {
             e.preventDefault();
             currentImageContainer = this;
             const img = currentImageContainer.querySelector('.blurred-image');
             const overlay = currentImageContainer.querySelector('.overlay');
-
+            
             if (img.classList.contains('revealed-image')) {
                 img.classList.remove('revealed-image');
                 overlay.classList.remove('revealed-overlay');
@@ -1687,12 +1672,12 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
+    
     document.getElementById('ageNoBtn').addEventListener('click', () => {
         document.getElementById('ageModal').style.display = 'none';
         currentImageContainer = null;
     });
-
+    
     document.getElementById('ageYesBtn').addEventListener('click', () => {
         if (currentImageContainer) {
             const img = currentImageContainer.querySelector('.blurred-image');
@@ -1704,7 +1689,7 @@ document.addEventListener('DOMContentLoaded', function() {
             currentImageContainer = null;
         }
     });
-
+    
     document.getElementById('ageModal').addEventListener('click', function(e) {
         if (e.target === this) {
             this.style.display = 'none';
