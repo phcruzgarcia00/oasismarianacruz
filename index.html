@@ -2,30 +2,40 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#2F402C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Dra. Mariana Cruz - Estética Íntima</title>
+    
+    <!-- Pré-carregamento de fontes para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"></noscript>
     
     <style>
         /* ========================================
            [00] RESET & GLOBAL STYLES
            ======================================== */
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
-        body, html { width: 100%; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-        a { text-decoration: none; }
-        img { max-width: 100%; display: block; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+        body, html { width: 100%; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; overflow-x: hidden; font-size: 16px; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; height: auto; }
         section { width: 100%; }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            input, select, textarea, button { font-size: 16px !important; }
+        }
 
         /* ========================================
            [AN] SCROLL REVEAL ANIMATION
            ======================================== */
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+            will-change: opacity, transform;
         }
         .reveal.active {
             opacity: 1;
@@ -80,7 +90,9 @@
             margin-bottom: 35px; 
         }
         .home-btn-whatsapp { 
-            display: inline-block; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: #835f47; 
             color: #FFFFFF; 
             padding: 20px 45px; 
@@ -89,6 +101,8 @@
             text-align: center; 
             line-height: 1.2; 
             transition: transform 0.2s, box-shadow 0.2s; 
+            min-height: 56px;
+            cursor: pointer;
         }
         .home-btn-whatsapp:hover { 
             transform: translateY(-2px); 
@@ -143,6 +157,7 @@
         .sobre-btn-results { 
             display: inline-flex; 
             align-items: center; 
+            justify-content: center;
             border: 1.5px solid #4a4a4a; 
             padding: 14px 35px; 
             color: #4a4a4a; 
@@ -152,6 +167,8 @@
             text-transform: uppercase; 
             gap: 12px; 
             transition: background-color 0.2s, color 0.2s; 
+            min-height: 48px;
+            cursor: pointer;
         }
         .sobre-btn-results:hover { background-color: #4fb0e1; color: white; }
         .sobre-btn-results:hover svg circle { fill: white; }
@@ -244,6 +261,7 @@
             border-radius: 4px; 
             cursor: pointer; 
             overflow: hidden; 
+            min-height: 280px;
         }
         .procedimentos-1-fotos-grid { 
             display: flex; 
@@ -362,6 +380,7 @@
             border-radius: 4px; 
             cursor: pointer; 
             overflow: hidden; 
+            min-height: 280px;
         }
         .procedimentos-2-fotos-grid { 
             display: flex; 
@@ -421,10 +440,14 @@
             color: white; 
             padding: 15px 25px; 
             border-radius: 30px; 
-            display: inline-block; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             margin-top: 25px; 
             transition: transform 0.2s, box-shadow 0.2s; 
             text-align: center; 
+            min-height: 52px;
+            cursor: pointer;
         }
         .procedimentos-2-btn-whatsapp:hover { 
             transform: translateY(-2px); 
@@ -629,6 +652,7 @@
             cursor: pointer; 
             border: none; 
             transition: opacity 0.2s, transform 0.2s; 
+            min-height: 44px;
         }
         .footer-map-btn:hover { opacity: 0.85; transform: translateY(-2px); }
         .footer-map-btn.waze { 
@@ -688,6 +712,8 @@
             cursor: pointer; 
             transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s; 
             flex-shrink: 0;
+            min-width: 44px;
+            min-height: 44px;
         }
         .footer-social-icon:hover { 
             transform: translateY(-3px) scale(1.05); 
@@ -719,6 +745,8 @@
             z-index: 9999; 
             transition: transform 0.3s, box-shadow 0.3s;
             animation: floating-whatsapp-pulse 2s infinite;
+            min-width: 44px;
+            min-height: 44px;
         }
         .floating-whatsapp:hover { 
             transform: scale(1.1); 
@@ -763,185 +791,401 @@
             cursor: pointer; 
             font-weight: bold; 
             margin: 5px; 
+            min-height: 44px;
+            min-width: 100px;
         }
         .modal-btn-confirm { background-color: #4b5335; color: white; }
         .modal-btn-cancel { background-color: #ccc; }
 
         /* ========================================
-           [09] RESPONSIVE MEDIA QUERIES - OTIMIZADO
+           [09] RESPONSIVE - MOBILE OTIMIZADO
            ======================================== */
-        
-        /* Tablets e mobile médio */
+
+        /* Tablets */
         @media (max-width: 1024px) {
             .depoimentos-grid { grid-template-columns: 1fr; }
-            .depoimentos-col-2, .depoimentos-col-3 { padding-top: 0; }
-            .depoimentos-header h2 { font-size: 60px; }
-            .sobre-container { flex-direction: column; text-align: center; }
-            .sobre-text-side { text-align: center; margin-top: 50px; }
-            .home-title { font-size: 42px; }
-            .home-content { padding: 0 30px; }
+            .depoimentos-col-2, .depoimentos-col-3 { padding-top: 0 !important; }
+            .depoimentos-header h2 { font-size: 50px; letter-spacing: -1px; }
+            
+            .sobre-container { flex-direction: column; text-align: center; padding: 0 30px; }
+            .sobre-text-side { text-align: center; margin-top: 40px; max-width: 100%; }
+            
             .experiencia-container { flex-direction: column; }
-            .experiencia-main-title { font-size: 85px; }
-            .experiencia-sub-title { font-size: 40px; }
-            .experiencia-content-side { padding: 50px 30px; }
+            .experiencia-main-title { font-size: 70px; }
+            .experiencia-sub-title { font-size: 32px; }
+            .experiencia-content-side { padding: 40px 30px; text-align: center; }
+            .experiencia-description, .experiencia-quote { margin-left: auto; margin-right: auto; text-align: center; }
         }
-        
-        /* Mobile - HERO SECTION OTIMIZADA */
+
+        /* Mobile Médio (até 768px) */
         @media (max-width: 768px) {
+            /* 🎯 HERO CENTRALIZADO NO MOBILE */
             .home-section {
                 background-position: center center !important;
                 background-size: cover;
                 min-height: 90vh;
-                align-items: flex-end;
-                padding-bottom: 80px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 60px 20px 80px;
             }
             
             .home-content {
-                padding: 0 25px;
-                display: flex;
-                align-items: flex-end;
-                justify-content: center;
+                width: 100%;
+                max-width: 480px;
+                padding: 0;
                 text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             
             .home-text-wrap {
                 max-width: 100%;
-                text-align: center;
+                width: 100%;
             }
             
             .home-title {
-                font-size: 38px;
+                font-size: 34px;
+                line-height: 1.15;
+                margin: 0 auto 20px;
                 text-align: center;
-                margin-bottom: 25px;
-                line-height: 1.1;
             }
             
             .home-info {
-                font-size: 18px;
+                font-size: 16px;
+                margin: 0 auto 20px;
                 text-align: center;
-                margin-bottom: 25px;
             }
             
             .home-info strong {
-                margin-bottom: 20px;
+                display: block;
+                margin: 0 auto 15px;
+                font-size: 17px;
+                text-align: center;
+            }
+            
+            .home-info p {
+                margin: 0;
+                text-align: center;
             }
             
             .home-divider {
-                width: 200px;
+                width: 120px;
+                height: 1.5px;
+                background-color: rgba(255, 255, 255, 0.7);
                 margin: 0 auto 25px;
             }
             
             .home-btn-whatsapp {
-                display: block;
-                margin: 0 auto;
-                text-align: center;
-                padding: 18px 35px;
-                font-size: 16px;
-            }
-            
-            .home-logo {
-                position: relative;
-                bottom: auto;
-                left: auto;
-                margin: 30px auto 0;
-                text-align: center;
-                display: block;
-            }
-            
-            .home-logo img {
-                height: 120px;
-                margin: 0 auto;
-            }
-        }
-        
-        /* Mobile pequeno - HERO */
-        @media (max-width: 480px) {
-            .home-section {
-                min-height: 85vh;
-                padding-bottom: 70px;
-            }
-            
-            .home-title {
-                font-size: 32px;
-                letter-spacing: 1px;
-            }
-            
-            .home-info {
-                font-size: 16px;
-            }
-            
-            .home-divider {
-                width: 180px;
-            }
-            
-            .home-btn-whatsapp {
-                padding: 16px 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto 30px;
+                padding: 16px 28px;
                 font-size: 15px;
+                min-height: 48px;
+                width: 100%;
+                max-width: 320px;
+                text-align: center;
             }
             
-            .home-logo img {
-                height: 100px;
+            /* 🎯 LOGO DO HERO CENTRALIZADA ABAIXO DO BOTÃO */
+            .home-logo {
+                position: relative !important;
+                bottom: auto !important;
+                left: auto !important;
+                margin: 0 auto !important;
+                display: block !important;
+                text-align: center !important;
+                width: 100%;
             }
-        }
-        
-        /* Mobile - PROCEDIMENTOS E FOOTER */
-        @media (max-width: 850px) {
-            .procedimentos-1-grid, .procedimentos-2-grid { grid-template-columns: 1fr; }
-            .procedimentos-1-col-center { padding-top: 0; }
-            .procedimentos-2-grid { padding: 30px 20px; }
-            .footer-info-section { justify-content: center; text-align: center; }
-            .footer-info-right { align-items: center; text-align: center; }
-            .footer-hours { text-align: center; }
-            .floating-whatsapp { width: 55px; height: 55px; bottom: 20px; right: 20px; }
-            .floating-whatsapp svg { width: 28px; height: 28px; }
-            .reveal-delay-1, .reveal-delay-2, .reveal-delay-3, .reveal-delay-4, .reveal-delay-5 { transition-delay: 0.15s; }
-            .procedimentos-disclaimer { font-size: 9px; padding: 0 10px; }
             
-            /* Centraliza os botões do mapa no footer */
+            .home-logo img { 
+                height: 100px; 
+                margin: 0 auto;
+                display: block;
+            }
+
+            /* SOBRE */
+            .sobre-headline { font-size: 28px; margin-bottom: 25px; }
+            .sobre-subheadline { font-size: 16px; }
+            .sobre-paragraph { font-size: 16px; margin-bottom: 30px; }
+            .sobre-btn-results { 
+                padding: 12px 28px; 
+                font-size: 14px; 
+                min-height: 44px;
+                justify-content: center;
+                width: 100%;
+                max-width: 280px;
+            }
+
+            /* DEPOIMENTOS */
+            .depoimentos-section { padding: 60px 0 100px 0; }
+            .depoimentos-container { padding: 0 20px; }
+            .depoimentos-header h2 { font-size: 42px; line-height: 0.9; }
+            .depoimentos-grid { gap: 25px; margin-top: 40px; }
+            .depoimentos-card-img { box-shadow: 8px 8px 25px rgba(0,0,0,0.15); }
+            
+            /* 🎯 LOGO DEPOIMENTOS CENTRALIZADA */
+            .depoimentos-footer { 
+                position: relative !important; 
+                bottom: auto !important; 
+                left: auto !important; 
+                margin: 40px auto 0 !important; 
+                text-align: center !important;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            
+            .depoimentos-footer img { 
+                height: 100px; 
+                margin: 0 auto;
+                display: block;
+            }
+
+            /* PROCEDIMENTOS */
+            .procedimentos-1-section, .procedimentos-2-section { padding: 40px 0; }
+            .procedimentos-1-container, .procedimentos-2-container { padding: 0; }
+            .procedimentos-1-content, .procedimentos-2-content { padding: 0 20px; }
+            
+            .procedimentos-1-title, .procedimentos-2-title { 
+                font-size: 32px; 
+                margin-bottom: 25px; 
+                text-align: center;
+            }
+            
+            .procedimentos-1-grid, .procedimentos-2-grid { 
+                grid-template-columns: 1fr; 
+                gap: 25px; 
+                padding: 0;
+            }
+            
+            .procedimentos-1-col-center { padding-top: 0; gap: 25px; }
+            
+            .procedimentos-1-card, .procedimentos-2-card { padding: 8px; }
+            
+            .procedimentos-1-subtitle, .procedimentos-2-subtitle { 
+                font-size: 18px; 
+                margin: 12px 0 8px; 
+                text-align: center;
+            }
+            
+            .procedimentos-1-text, .procedimentos-2-text { 
+                font-size: 14px; 
+                text-align: center;
+                line-height: 1.4;
+            }
+            
+            .procedimentos-1-foto-wrapper, .procedimentos-2-foto-wrapper {
+                min-height: 280px;
+            }
+            
+            .procedimentos-click-text {
+                font-size: 11px;
+                margin: 8px 0 12px;
+                text-align: center;
+            }
+            
+            .procedimentos-2-cta-main { font-size: 18px; }
+            .procedimentos-2-cta-paragraph { font-size: 13px; max-width: 100%; }
+            
+            .procedimentos-2-btn-whatsapp {
+                padding: 14px 24px;
+                font-size: 14px;
+                min-height: 48px;
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .procedimentos-disclaimer {
+                font-size: 10px;
+                padding: 0 10px;
+                margin-top: 20px;
+            }
+
+            /* EXPERIÊNCIA */
+            .experiencia-main-title { font-size: 58px; letter-spacing: -2px; }
+            .experiencia-sub-title { font-size: 26px; margin-bottom: 30px; }
+            .experiencia-doctor-name { font-size: 24px; margin-bottom: 20px; }
+            .experiencia-description, .experiencia-quote { font-size: 16px; }
+            
+            .experiencia-image-side { min-height: 300px; }
+            .experiencia-profile-img { max-width: 70%; }
+            .experiencia-logo-container { 
+                top: 20px; 
+                left: 20px; 
+                width: 70px; 
+            }
+
+            /* FOOTER */
+            .footer-section { padding: 30px 20px 40px; }
+            
+            .footer-logo img { max-height: 120px; }
+            
+            .footer-info-section { 
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .footer-info-left, .footer-info-right { 
+                align-items: center; 
+                text-align: center; 
+            }
+            
+            .footer-address { 
+                font-size: 14px; 
+                max-width: 100%; 
+                line-height: 1.6;
+            }
+            
+            .footer-phone { font-size: 20px; }
+            .footer-hours { font-size: 12px; text-align: center; }
+            
             .footer-map-buttons {
                 justify-content: center;
-                margin: 0 auto;
                 width: 100%;
-                max-width: 220px;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            
+            .footer-map-btn {
+                width: 100%;
+                max-width: 140px;
+                height: 42px;
+                font-size: 12px;
+                min-height: 44px;
+            }
+            
+            .footer-social-row {
+                gap: 15px;
+                max-width: 100%;
+                padding: 15px 0;
+            }
+            
+            .footer-social-icon {
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+            }
+            
+            .footer-social-icon svg { width: 22px; height: 22px; }
+            
+            .footer-divider { max-width: 100%; }
+
+            /* FLOATING WHATSAPP */
+            .floating-whatsapp {
+                width: 52px;
+                height: 52px;
+                bottom: 15px;
+                right: 15px;
+                z-index: 999;
+            }
+            .floating-whatsapp svg { width: 26px; height: 26px; }
+
+            /* MODAL AGE */
+            .modal-content {
+                padding: 30px 25px;
+                margin: 20px;
+                width: calc(100% - 40px);
+            }
+            
+            .modal-content h3 { font-size: 20px; margin-bottom: 15px; }
+            .modal-content p { font-size: 15px; margin-bottom: 25px; }
+            
+            .modal-btn {
+                padding: 12px 28px;
+                font-size: 15px;
+                min-height: 44px;
+                min-width: 100px;
+                margin: 8px 4px;
             }
         }
-        
-        /* Mobile muito pequeno - AJUSTES FINAIS */
-        @media (max-width: 600px) {
-            .footer-logo img { max-height: 130px; }
-            .footer-phone { font-size: 20px; }
-            .footer-map-btn { 
-                width: 90px; 
-                height: 38px; 
-                font-size: 11px; 
-                padding: 0 8px;
-            }
-            .footer-social-icon { width: 44px; height: 44px; }
-            .footer-social-icon svg { width: 22px; height: 22px; }
-            .overlay-logo { max-height: 50px; }
-            .footer-social-row { gap: 16px; max-width: 180px; }
-            .procedimentos-disclaimer { font-size: 8px; margin-top: 20px; }
+
+        /* Mobile Pequeno (até 480px) */
+        @media (max-width: 480px) {
+            .home-title { font-size: 30px; }
+            .home-info { font-size: 14px; }
+            .home-btn-whatsapp { padding: 14px 24px; font-size: 14px; }
+            .home-logo img { height: 85px; }
             
-            /* Garante que os botões do mapa fiquem bem centralizados */
-            .footer-map-buttons {
-                gap: 10px;
+            .sobre-headline { font-size: 24px; }
+            .sobre-subheadline { font-size: 14px; }
+            
+            .depoimentos-header h2 { font-size: 36px; }
+            .depoimentos-footer img { height: 90px; }
+            
+            .procedimentos-1-title, .procedimentos-2-title { font-size: 28px; }
+            .procedimentos-1-subtitle, .procedimentos-2-subtitle { font-size: 16px; }
+            
+            .experiencia-main-title { font-size: 48px; }
+            .experiencia-sub-title { font-size: 22px; }
+            
+            .footer-logo img { max-height: 100px; }
+            .footer-phone { font-size: 18px; }
+            .footer-map-btn { height: 40px; font-size: 11px; }
+            
+            .floating-whatsapp { width: 48px; height: 48px; }
+        }
+
+        /* PERFORMANCE MOBILE */
+        @media (max-width: 768px) {
+            .reveal {
+                transition: opacity 0.5s ease, transform 0.5s ease !important;
+            }
+            
+            .procedimentos-1-fotos-grid,
+            .procedimentos-2-fotos-grid {
+                filter: blur(15px) !important;
+                transition: filter 0.4s ease !important;
+            }
+            
+            html { scroll-behavior: smooth; }
+            input, select, textarea { font-size: 16px !important; }
+        }
+
+        /* TOUCH-FRIENDLY */
+        @media (hover: none) and (pointer: coarse) {
+            a, button, [onclick], .home-btn-whatsapp, 
+            .sobre-btn-results, .procedimentos-2-btn-whatsapp,
+            .footer-map-btn, .footer-social-icon, .floating-whatsapp {
+                min-height: 44px;
+                min-width: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .home-btn-whatsapp:hover,
+            .sobre-btn-results:hover,
+            .procedimentos-2-btn-whatsapp:hover,
+            .footer-map-btn:hover,
+            .footer-social-icon:hover,
+            .floating-whatsapp:hover {
+                transform: none !important;
+                box-shadow: none !important;
+            }
+            
+            a:active, button:active, [onclick]:active {
+                opacity: 0.85;
+                transition: opacity 0.1s;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- ========================================
-         COMPONENT: FLOATING WHATSAPP
-         ======================================== -->
+    <!-- FLOATING WHATSAPP -->
     <a href="https://wa.me/5517997760646?text=Olá,%20gostaria%20de%20agendar%20uma%20avaliação!" 
        class="floating-whatsapp" target="_blank" aria-label="Contato via WhatsApp" title="Agendar pelo WhatsApp">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     </a>
 
-    <!-- ========================================
-         SECTION [01]: HOME / HERO
-         ======================================== -->
+    <!-- HOME / HERO -->
     <section id="home" class="home-section">
         <div class="home-content">
             <div class="home-text-wrap reveal">
@@ -956,12 +1200,11 @@
                 </a>
             </div>
         </div>
+        <!-- Logo centralizada abaixo do botão no mobile -->
         <div class="home-logo reveal reveal-delay-2"><img src="logo cabeçalho.png" alt="Oasis Clinic"></div>
     </section>
 
-    <!-- ========================================
-         SECTION [02]: SOBRE
-         ======================================== -->
+    <!-- SOBRE -->
     <section id="sobre" class="sobre-section">
         <div class="sobre-container">
             <div class="sobre-image-side reveal">
@@ -979,9 +1222,7 @@
         </div>
     </section>
 
-    <!-- ========================================
-         SECTION [03]: DEPOIMENTOS
-         ======================================== -->
+    <!-- DEPOIMENTOS -->
     <section id="depoimentos" class="depoimentos-section">
         <div class="depoimentos-container">
             <div class="depoimentos-header reveal">
@@ -1001,15 +1242,14 @@
                     <img src="depoimentos/depoimentro b3.jpeg" class="depoimentos-card-img" alt="Whats 3">
                 </div>
             </div>
+            <!-- Logo centralizada no final da seção -->
             <div class="depoimentos-footer reveal reveal-delay-4">
                 <img src="logo cabeçalho.png" alt="Oasis Clinic Logo">
             </div>
         </div>
     </section>
 
-    <!-- ========================================
-         COMPONENT: AGE VERIFICATION MODAL
-         ======================================== -->
+    <!-- AGE MODAL -->
     <div class="modal-overlay" id="ageModal">
         <div class="modal-content">
             <h3>Conteúdo Restrito</h3>
@@ -1019,9 +1259,7 @@
         </div>
     </div>
 
-    <!-- ========================================
-         SECTION [04a]: PROCEDIMENTOS - PARTE 1
-         ======================================== -->
+    <!-- PROCEDIMENTOS - PARTE 1 -->
     <section id="procedimentos-1" class="procedimentos-1-section">
         <div class="procedimentos-1-container">
             <div class="procedimentos-1-content">
@@ -1029,7 +1267,12 @@
                 <div class="procedimentos-1-grid">
                     <!-- Card 1: Ninfoplastia -->
                     <div class="procedimentos-1-card reveal reveal-delay-1">
-                        <div class="procedimentos-1-foto-wrapper" onclick="handleInteraction(this)">
+                        <div class="procedimentos-1-foto-wrapper" 
+                             onclick="handleInteraction(this)" 
+                             role="button" 
+                             tabindex="0"
+                             aria-label="Clique para revelar fotos de antes e depois da Ninfoplastia"
+                             onkeypress="if(event.key==='Enter'){handleInteraction(this)}">
                             <div class="procedimentos-1-blur-overlay">
                                 <img src="logo cabeçalho.png" alt="Dra. Mariana Cruz" class="overlay-logo">
                             </div>
@@ -1046,7 +1289,11 @@
                     <!-- Cards Centrais -->
                     <div class="procedimentos-1-col-center reveal reveal-delay-2">
                         <div>
-                            <div class="procedimentos-1-foto-wrapper" onclick="handleInteraction(this)">
+                            <div class="procedimentos-1-foto-wrapper" 
+                                 onclick="handleInteraction(this)"
+                                 role="button"
+                                 tabindex="0"
+                                 onkeypress="if(event.key==='Enter'){handleInteraction(this)}">
                                 <div class="procedimentos-1-blur-overlay">
                                     <img src="logo cabeçalho.png" alt="Dra. Mariana Cruz" class="overlay-logo">
                                 </div>
@@ -1058,7 +1305,11 @@
                             <p class="procedimentos-click-text">Clique para ver os resultados</p>
                         </div>
                         <div>
-                            <div class="procedimentos-1-foto-wrapper" onclick="handleInteraction(this)">
+                            <div class="procedimentos-1-foto-wrapper" 
+                                 onclick="handleInteraction(this)"
+                                 role="button"
+                                 tabindex="0"
+                                 onkeypress="if(event.key==='Enter'){handleInteraction(this)}">
                                 <div class="procedimentos-1-blur-overlay">
                                     <img src="logo cabeçalho.png" alt="Dra. Mariana Cruz" class="overlay-logo">
                                 </div>
@@ -1073,7 +1324,11 @@
                     
                     <!-- Card 3: Flacidez -->
                     <div class="procedimentos-1-card reveal reveal-delay-3">
-                        <div class="procedimentos-1-foto-wrapper" onclick="handleInteraction(this)">
+                        <div class="procedimentos-1-foto-wrapper" 
+                             onclick="handleInteraction(this)"
+                             role="button"
+                             tabindex="0"
+                             onkeypress="if(event.key==='Enter'){handleInteraction(this)}">
                             <div class="procedimentos-1-blur-overlay">
                                 <img src="logo cabeçalho.png" alt="Dra. Mariana Cruz" class="overlay-logo">
                             </div>
@@ -1088,7 +1343,6 @@
                     </div>
                 </div>
                 
-                <!-- DISCLAIMER -->
                 <p class="procedimentos-disclaimer">
                     Todas as imagens exibidas neste site são reais, devidamente autorizadas pelas pacientes, e não representam promessa de resultados, uma vez que cada organismo responde de forma individual aos tratamentos.
                 </p>
@@ -1096,9 +1350,7 @@
         </div>
     </section>
 
-    <!-- ========================================
-         SECTION [04b]: PROCEDIMENTOS - PARTE 2
-         ======================================== -->
+    <!-- PROCEDIMENTOS - PARTE 2 -->
     <section id="procedimentos-2" class="procedimentos-2-section">
         <div class="procedimentos-2-container">
             <div class="procedimentos-2-content">
@@ -1106,7 +1358,11 @@
                 <div class="procedimentos-2-grid">
                     <!-- Card 1: Redução monte de vênus -->
                     <div class="procedimentos-2-card reveal reveal-delay-1">
-                        <div class="procedimentos-2-foto-wrapper" onclick="handleInteraction(this)">
+                        <div class="procedimentos-2-foto-wrapper" 
+                             onclick="handleInteraction(this)"
+                             role="button"
+                             tabindex="0"
+                             onkeypress="if(event.key==='Enter'){handleInteraction(this)}">
                             <div class="procedimentos-2-blur-overlay">
                                 <img src="logo cabeçalho.png" alt="Dra. Mariana Cruz" class="overlay-logo">
                             </div>
@@ -1129,7 +1385,11 @@
                     
                     <!-- Card 3: Clareamento -->
                     <div class="procedimentos-2-card reveal reveal-delay-3">
-                        <div class="procedimentos-2-foto-wrapper" onclick="handleInteraction(this)">
+                        <div class="procedimentos-2-foto-wrapper" 
+                             onclick="handleInteraction(this)"
+                             role="button"
+                             tabindex="0"
+                             onkeypress="if(event.key==='Enter'){handleInteraction(this)}">
                             <div class="procedimentos-2-blur-overlay">
                                 <img src="logo cabeçalho.png" alt="Dra. Mariana Cruz" class="overlay-logo">
                             </div>
@@ -1144,7 +1404,6 @@
                     </div>
                 </div>
                 
-                <!-- DISCLAIMER -->
                 <p class="procedimentos-disclaimer">
                     Todas as imagens exibidas neste site são reais, devidamente autorizadas pelas pacientes, e não representam promessa de resultados, uma vez que cada organismo responde de forma individual aos tratamentos.
                 </p>
@@ -1152,9 +1411,7 @@
         </div>
     </section>
 
-    <!-- ========================================
-         SECTION [05]: EXPERIENCIA / 10 ANOS
-         ======================================== -->
+    <!-- EXPERIENCIA / 10 ANOS -->
     <section id="experiencia" class="experiencia-section">
         <div class="experiencia-container">
             <div class="experiencia-image-side reveal">
@@ -1171,9 +1428,7 @@
         </div>
     </section>
 
-    <!-- ========================================
-         SECTION [06]: FOOTER / CONTATO
-         ======================================== -->
+    <!-- FOOTER / CONTATO -->
     <section id="footer" class="footer-section">
         <div class="footer-bg-layer"><img src="mato.PNG" alt="Background"></div>
         <div class="footer-bg-overlay"></div>
@@ -1194,7 +1449,6 @@
             </div>
             <div class="footer-divider reveal reveal-delay-3"></div>
             
-            <!-- BOTÕES SOCIAIS CENTRALIZADOS COM ÍCONES CORRIGIDOS -->
             <div class="footer-social-row reveal reveal-delay-4">
                 <a href="https://www.instagram.com/amariicruz/" class="footer-social-icon instagram" target="_blank" aria-label="Instagram" title="Instagram">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1217,9 +1471,7 @@
         </div>
     </section>
 
-    <!-- ========================================
-         JAVASCRIPT
-         ======================================== -->
+    <!-- JAVASCRIPT -->
     <script>
         let pendingElement = null;
 
@@ -1240,22 +1492,33 @@
             pendingElement = null;
         }
 
+        document.getElementById('ageModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+                pendingElement = null;
+            }
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
             const revealElements = document.querySelectorAll('.reveal');
             
-            const revealObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -40px 0px'
                 });
-            }, {
-                threshold: 0.12,
-                rootMargin: '0px 0px -40px 0px'
-            });
 
-            revealElements.forEach(el => revealObserver.observe(el));
+                revealElements.forEach(el => revealObserver.observe(el));
+            } else {
+                revealElements.forEach(el => el.classList.add('active'));
+            }
         });
     </script>
 
